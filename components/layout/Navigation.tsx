@@ -29,7 +29,7 @@ export const Navigation = () => {
               <NexlayerLogo className="h-7 w-auto" />
             </a>
             <span className="bg-teal-900/50 text-cyan-400 text-xs font-medium px-2 py-1 rounded border border-cyan-400/30">
-              🚀 Join the Beta
+              <span className="max-[374px]:hidden">🚀 Join</span> Beta
             </span>
           </div>
 

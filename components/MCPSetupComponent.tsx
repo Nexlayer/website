@@ -34,7 +34,7 @@ export const MCPSetupComponent = () => {
   }
 
   return (
-    <div className="group rounded-xl p-6 border border-[#2a2a2a] h-full bg-black hover:bg-black transition-all duration-300 cursor-pointer overflow-hidden">
+    <div className="group h-full transition-all duration-300 cursor-pointer overflow-hidden">
       {/* Header */}
       <div className="mb-8">
         <h3 className="text-2xl font-semibold text-white mb-4">Setup with your AI agent assistant</h3>

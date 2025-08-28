@@ -1,37 +1,32 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import React from "react"
-import { Button } from "../ui/button"
-import { TypingEffect } from "../shared/TypingEffect"
-import { ComparisonSection } from "./ComparisonSection"
+import { useState } from "react";
+import React from "react";
+import { Button } from "../ui/button";
+import { TypingEffect } from "../shared/TypingEffect";
+import { ComparisonSection } from "./ComparisonSection";
 
 export const HeroSection = () => {
-  const [userInput, setUserInput] = useState("")
+  const [userInput, setUserInput] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUserInput(e.target.value)
-  }
+    setUserInput(e.target.value);
+  };
 
   const handleDeploy = () => {
     window.open(
       "https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=hero_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1",
-      "_blank",
-    )
-  }
+      "_blank"
+    );
+  };
 
   return (
     <>
-      <section className="flex-1 flex flex-col items-center justify-center px-4 py-20 bg-black">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Gradient Heart Icon */}
-          <div className="mb-12"></div>
-
-          <div className="mb-6"></div>
+      <section className="px-4 py-20 bg-black">
+        <div className="text-center mx-auto">
 
           <h1
-            className="text-white mb-6 leading-tight font-medium max-w-4xl mx-auto whitespace-nowrap"
-            style={{ fontSize: "75px" }}
+            className="mt-12 sm:mt-20 text-5xl sm:text-[75px] text-white mb-6 leading-tight font-medium"
           >
             <span>The first </span>
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
@@ -40,10 +35,10 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-xl text-gray-400 mb-16 font-normal max-w-3xl mx-auto">
-            From github repo to production in minutes — no infra setup, no configs, no humans in the loop. 5,000+ apps live. The next is yours.
+            From github repo to production in minutes — no infra setup, no
+            configs, no humans in the loop. 5,000+ apps live. The next is yours.
           </p>
 
-          {/* Main Input Area */}
           <div className="max-w-4xl mx-auto mb-12">
             <div className="bg-black rounded-2xl border-2 border-gray-600 p-1 shadow-lg">
               <div className="flex items-center gap-1 px-4 pt-3 pb-2"></div>
@@ -69,7 +64,9 @@ export const HeroSection = () => {
                     className="px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
                     style={{ backgroundColor: "#28B8CD" }}
                   >
-                    <span className="text-sm text-black font-bold">Get Beta Access</span>
+                    <span className="text-sm text-black font-bold">
+                      Get Beta Access
+                    </span>
                   </Button>
                 </div>
               </div>
@@ -77,7 +74,8 @@ export const HeroSection = () => {
               <div className="flex justify-center px-4 pb-2">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700">
                   <span className="text-xs text-gray-300 font-medium">
-                    Nexlayer is in early beta. Start shipping → Give feedback → Help shape the future of the agent-native cloud.
+                    Nexlayer is in early beta. Start shipping → Give feedback →
+                    Help shape the future of the agent-native cloud.
                   </span>
                 </div>
               </div>
@@ -85,9 +83,11 @@ export const HeroSection = () => {
           </div>
 
           {/* Social Proof Section */}
-          <div className="max-w-4xl mx-auto mb-20 text-center">
-            <p className="text-gray-400 text-lg mb-8">Built by a team who've scaled products for millions at</p>
-            <div className="flex items-center justify-center space-x-12 opacity-60">
+          <div className="max-w-4xl mx-auto mb-6 sm:mb-20 text-center">
+            <p className="text-gray-400 text-lg mb-8">
+              Built by a team who've scaled products for millions at
+            </p>
+            <div className="flex items-center justify-center space-x-2 sm:space-x-12 opacity-60">
               {/* Google Logo */}
               <div className="flex items-center">
                 <img
@@ -139,5 +139,5 @@ export const HeroSection = () => {
 
       <ComparisonSection />
     </>
-  )
-}
+  );
+};

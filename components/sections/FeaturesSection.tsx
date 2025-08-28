@@ -331,7 +331,7 @@ export const FeaturesSection: React.FC<Props> = ({
           {/* Flow Diagram */}
           <div ref={containerRef} className="relative">
             {/* Section Labels */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div className="flex max-sm:flex-col justify-between gap-8 mb-12">
               <div className="flex items-center justify-center lg:justify-start">
                 <div className="w-8 h-px bg-gradient-to-r from-[#23B6CB] to-blue-500 mr-3"></div>
                 <div className="text-sm font-medium text-gray-500 tracking-wider uppercase">Agents build</div>
@@ -345,7 +345,7 @@ export const FeaturesSection: React.FC<Props> = ({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 relative">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-20 relative">
               {/* Left Column - Sources */}
               <div className="space-y-6 flex flex-col items-start">
                 {sources.map((source, index) => {
@@ -422,9 +422,8 @@ export const FeaturesSection: React.FC<Props> = ({
                 })}
               </div>
 
-              {/* Center Column - Core */}
-              <div className="relative flex items-center justify-center">
-                <div data-center className="w-[520px] min-h-[520px] flex items-center justify-center">
+              <div className="max-md:hidden relative flex items-center justify-center">
+                <div data-center className="flex items-center justify-center">
                   <AgenticCloudOrb />
                 </div>
               </div>

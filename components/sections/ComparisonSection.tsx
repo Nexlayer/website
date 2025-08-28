@@ -2,17 +2,17 @@ import { Clock, Wrench, AlertTriangle, Server, Database, Shield, Globe, Settings
 
 export const ComparisonSection = () => {
   return (
-    <div className="py-20 bg-[#191919] px-4 bg-[rgba(10,10,10,1)]">
+    <div className="py-12 sm:py-20 bg-[#191919] px-4 bg-[rgba(10,10,10,1)]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12"></div>
 
         {/* Main Comparison */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-12 relative">
+        <div className="grid lg:grid-cols-2 gap-36 lg:gap-12 mb-12 relative">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/20 transform -translate-x-1/2 z-0"></div>
 
           {/* VS Badge */}
-          <div className="absolute left-1/2 top-[40%] transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+          <div className="absolute left-1/2 top-[62%] lg:top-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
             <span className="text-2xl font-bold text-gray-900">VS</span>
           </div>
 
@@ -232,10 +232,9 @@ export const ComparisonSection = () => {
             </div>
           </div>
 
-          {/* Right Side - With Nexlayer (Clean Stack) */}
           <div className="relative">
             <h2 className="text-2xl font-bold text-white mb-6 text-center">With Nexlayer</h2>
-            <div className="space-y-3">
+            <div className="space-y-3 px-8">
               {/* One Prompt → Deploy */}
               <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-3 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
                 <div className="flex items-center gap-3">
