@@ -1,8 +1,8 @@
 import { Zap, Boxes, Globe, Gauge, ShieldCheck, Terminal, Power } from "lucide-react"
-import Apple from "./logos/Apple"
-import Google from "./logos/Google"
-import Discord from "./logos/Discord"
-import Netflix from "./logos/Netflix"
+import Apple from "../logos/Apple"
+import Google from "../logos/Google"
+import Discord from "../logos/Discord"
+import Netflix from "../logos/Netflix"
 
 export const FeaturesGridSection = () => {
   return (

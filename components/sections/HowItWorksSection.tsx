@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { MCPSetupComponent } from "./MCPSetupComponent"
+import { MCPSetupComponent } from "../MCPSetupComponent"
 
 export const HowItWorksSection = () => {
   const [isFullscreen, setIsFullscreen] = useState(false)

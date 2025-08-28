@@ -3,12 +3,12 @@
 import type React from "react"
 import { useEffect, useRef, useState, useCallback } from "react"
 import { Cpu, Settings, BarChart3, MessageSquare, Terminal, Layers, Activity, Globe } from "lucide-react"
-import CursorLogo from "./CursorLogo"
-import ClaudeAI from "./ClaudeAI"
-import GitHubCopilot from "./GitHubCopilot"
-import Windsurf from "./Windsurf"
-import OpenAI from "./OpenAI"
-import AgenticCloudOrb from "./AgenticCloudOrb"
+import CursorLogo from "../CursorLogo"
+import ClaudeAI from "../ClaudeAI"
+import GitHubCopilot from "../GitHubCopilot"
+import Windsurf from "../Windsurf"
+import OpenAI from "../OpenAI"
+import AgenticCloudOrb from "../AgenticCloudOrb"
 
 type Node = { id: string; label: string; icon?: React.ReactNode }
 
