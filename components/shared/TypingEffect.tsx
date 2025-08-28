@@ -4,20 +4,15 @@ import { useState, useEffect, useRef } from "react"
 
 interface TypingEffectProps {
   show?: boolean
-  text?: string
-  typingSpeed?: number
-  pauseTime?: number
 }
 
-export const TypingEffect = ({ 
-  show = true, 
-  text = "Deploy this http://github.com/nexlayer/ai-todo-app",
-  typingSpeed = 50,
-  pauseTime = 1000
-}: TypingEffectProps) => {
+export const TypingEffect = ({ show = true }: TypingEffectProps) => {
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const fullText = "Deploy my app https://github.com/Nexlayer/ai-code-arena to nexlayer"
+  const typingSpeed = 50 // Twice as fast
+  const pauseTime = 1000 // Shorter pause for smoother loop
 
   useEffect(() => {
     if (intervalRef.current) {
@@ -32,8 +27,8 @@ export const TypingEffect = ({
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         const nextIndex = prevIndex + 1
-        if (nextIndex <= text.length) {
-          setDisplayText(text.slice(0, nextIndex))
+        if (nextIndex <= fullText.length) {
+          setDisplayText(fullText.slice(0, nextIndex))
           return nextIndex
         } else {
           clearInterval(intervalRef.current!)
@@ -51,14 +46,14 @@ export const TypingEffect = ({
         clearInterval(intervalRef.current)
       }
     }
-  }, [currentIndex, text, show, typingSpeed, pauseTime])
+  }, [currentIndex, fullText, show])
 
   if (!show) return null
 
   return (
     <div className="w-full h-20 text-lg bg-black border-0 text-gray-400 px-6 font-medium flex items-center rounded-2xl">
-      {displayText}
-      <span className="animate-pulse">|</span>
+      <span className="text-gray-400 font-mono">{displayText}</span>
+      <span className="text-gray-400 animate-pulse ml-1">|</span>
     </div>
   )
 }

@@ -1,120 +1,179 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "../ui/button"
-
-interface StepProps {
-  number: number
-  title: string
-  description: string
-  videoSrc: string
-  isActive: boolean
-  onClick: () => void
-}
-
-const Step = ({ number, title, description, videoSrc, isActive, onClick }: StepProps) => (
-  <div
-    className={`flex-1 p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer ${
-      isActive
-        ? "border-cyan-400 bg-cyan-400/5"
-        : "border-gray-700 bg-gray-800/20 hover:border-gray-600"
-    }`}
-    onClick={onClick}
-  >
-    <div className="flex items-center mb-4">
-      <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${
-        isActive ? "bg-cyan-400 text-black" : "bg-gray-600 text-white"
-      }`}>
-        {number}
-      </div>
-      <h3 className={`text-lg font-bold ${isActive ? "text-cyan-400" : "text-white"}`}>
-        {title}
-      </h3>
-    </div>
-    <p className="text-gray-400 text-sm">{description}</p>
-  </div>
-)
+import { useState, useEffect } from "react"
+import { MCPSetupComponent } from "./MCPSetupComponent"
 
 export const HowItWorksSection = () => {
-  const [activeStep, setActiveStep] = useState(1)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
-  const steps = [
-    {
-      number: 1,
-      title: "Connect Your Repo",
-      description: "Link your GitHub repository to Nexlayer with one click",
-      videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deploy-production-grade-apps-in-minutes-with-nexlayer-kDjfZ7nBPIjusrpugZb28UDg0VD693.mp4"
-    },
-    {
-      number: 2,
-      title: "Deploy Globally",
-      description: "Your app is automatically deployed to 200+ global regions",
-      videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/from-local-to-global-app-EhEDyeKqYNJWXAd3Jzg1kWv2jSZT6V.mp4"
-    },
-    {
-      number: 3,
-      title: "Scale Automatically",
-      description: "AI agents handle scaling, optimization, and monitoring",
-      videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/claim-extend-reserve-it-nexlayer-c0LsegwBtzeAtUl3WV8bcGVoruVwSG.mp4"
+  const toggleFullscreen = (videoElement: HTMLVideoElement) => {
+    if (!document.fullscreenElement) {
+      videoElement
+        .requestFullscreen()
+        .then(() => {
+          setIsFullscreen(true)
+        })
+        .catch((err) => {
+          console.error("Error attempting to enable fullscreen:", err)
+        })
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false)
+      })
     }
-  ]
+  }
 
-  const activeStepData = steps.find(step => step.number === activeStep)
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement)
+    }
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange)
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange)
+    }
+  }, [])
 
   return (
-    <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
+    <section style={{ backgroundColor: "#191919" }} className="px-4 py-20">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            See How It Works
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            From GitHub to global deployment in three simple steps
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-4">See how it works</h2>
+          <p className="text-xl text-gray-400">From AI-generated code to a live production-grade app in 5 minutes.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Steps */}
-          <div className="space-y-4">
-            {steps.map((step) => (
-              <Step
-                key={step.number}
-                number={step.number}
-                title={step.title}
-                description={step.description}
-                videoSrc={step.videoSrc}
-                isActive={activeStep === step.number}
-                onClick={() => setActiveStep(step.number)}
-              />
-            ))}
-          </div>
-
-          {/* Video Demo */}
-          <div className="relative">
-            <div className="bg-gray-800/20 border border-gray-700 rounded-2xl overflow-hidden">
-              {activeStepData && (
-                <video
-                  className="w-full h-96 object-cover"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  <source src={activeStepData.videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              )}
+        <div className="space-y-16">
+          {/* Step 1 - MCP Setup */}
+          <div className="flex items-center gap-12">
+            <div className="flex-1">
+              <h3 className="text-2xl font-semibold text-white mb-4 text-left">
+                1. Connect your coding agent to Nexlayer
+              </h3>
+              <p className="text-lg text-gray-400 text-left mb-4">
+                Generate a token and link Cursor, Claude Code, Windsurf or any AI coding agent — one line, and you're
+                connected.
+              </p>
+              <div className="flex items-center gap-4 mb-6"></div>
+            </div>
+            <div className="flex-1">
+              <MCPSetupComponent />
             </div>
           </div>
-        </div>
 
-        <div className="text-center mt-12">
-          <Button
-            onClick={() => window.open("https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=how_it_works_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1", "_blank")}
-            className="bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold px-8 py-4 rounded-full hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
-          >
-            Try It Now
-          </Button>
+          {/* Step 2 - Deploy from AI Editor */}
+          <div className="flex items-center gap-12">
+            <div className="flex-1">
+              <div className="relative group">
+                <video className="w-full rounded-xl border border-gray-700" autoPlay loop muted playsInline>
+                  <source
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deploy-production-grade-apps-in-minutes-with-nexlayer-kDjfZ7nBPIjusrpugZb28UDg0VD693.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+
+                <button
+                  onClick={(e) => {
+                    const video = e.currentTarget.previousElementSibling as HTMLVideoElement
+                    toggleFullscreen(video)
+                  }}
+                  className="absolute bottom-4 right-4 bg-black/70 hover:bg-black/90 text-white px-3 py-2 rounded-lg flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm font-medium"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                    />
+                  </svg>
+                  Fullscreen
+                </button>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-semibold text-white mb-4 text-right">2. Deploy with one prompt.</h3>
+              <p className="text-lg text-gray-400 text-right">
+                Type: "Deploy my app https://github.com/repo to nexlayer".
+              </p>
+            </div>
+          </div>
+
+          {/* Step 3 - App Goes Live */}
+          <div className="flex items-center gap-12">
+            <div className="flex-1">
+              <h3 className="text-2xl font-semibold text-white mb-4 text-left">
+                3. Share your live URL with the world.
+              </h3>
+              <p className="text-lg text-gray-400">
+                Your app is now live and auto-scaling for free. Claim it, extend it or reserve to keep it running.
+              </p>
+            </div>
+            <div className="flex-1">
+              <div className="relative group">
+                <video className="w-full rounded-xl border border-gray-700" autoPlay loop muted playsInline>
+                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/from-local-to-global-app-EhEDyeKqYNJWXAd3Jzg1kWv2jSZT6V.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                <button
+                  onClick={(e) => {
+                    const video = e.currentTarget.previousElementSibling as HTMLVideoElement
+                    toggleFullscreen(video)
+                  }}
+                  className="absolute bottom-4 right-4 bg-black/70 hover:bg-black/90 text-white px-3 py-2 rounded-lg flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm font-medium"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                    />
+                  </svg>
+                  Fullscreen
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 4 - Claim and Extend */}
+          <div className="flex items-center gap-12">
+            <div className="flex-1">
+              <div className="relative group">
+                <video className="w-full rounded-xl border border-gray-700" autoPlay loop muted playsInline>
+                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/claim-extend-reserve-it-nexlayer-c0LsegwBtzeAtUl3WV8bcGVoruVwSG.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                <button
+                  onClick={(e) => {
+                    const video = e.currentTarget.previousElementSibling as HTMLVideoElement
+                    toggleFullscreen(video)
+                  }}
+                  className="absolute bottom-4 right-4 bg-black/70 hover:bg-black/90 text-white px-3 py-2 rounded-lg flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm font-medium"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                    />
+                  </svg>
+                  Fullscreen
+                </button>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-semibold text-white mb-4 text-right">
+                Step 4: claim it, extend it and reserve it.
+              </h3>
+              <p className="text-lg text-gray-400 text-right">
+                Claim it to keep it live, share with friends, or reserve it to scale it globally in one click.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

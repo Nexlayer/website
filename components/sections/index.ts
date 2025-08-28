@@ -1,7 +1,6 @@
 export { HeroSection } from './HeroSection'
 export { ComparisonSection } from './ComparisonSection'
-export { CloudAgentsTrustSection } from './CloudAgentsTrustSection'
 export { HowItWorksSection } from './HowItWorksSection'
 export { FeaturesSection } from './FeaturesSection'
+export { FeaturesGridSection } from './FeaturesGridSection'
 export { TestimonialsSection } from './TestimonialsSection'
-export { ReadyToShipSection } from './ReadyToShipSection'

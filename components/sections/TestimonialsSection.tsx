@@ -1,100 +1,74 @@
-"use client"
-
-import { useState } from "react"
-
-interface TestimonialProps {
-  quote: string
-  author: string
-  role: string
-  company: string
-  avatar: string
-}
-
-const Testimonial = ({ quote, author, role, company, avatar }: TestimonialProps) => (
-  <div className="bg-gray-800/20 border border-gray-700 rounded-2xl p-8">
-    <div className="mb-6">
-      <svg className="w-8 h-8 text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-      </svg>
-      <p className="text-gray-300 text-lg leading-relaxed">{quote}</p>
-    </div>
-    <div className="flex items-center">
-      <img
-        src={avatar}
-        alt={author}
-        className="w-12 h-12 rounded-full mr-4"
-      />
-      <div>
-        <h4 className="text-white font-semibold">{author}</h4>
-        <p className="text-gray-400 text-sm">{role} at {company}</p>
-      </div>
-    </div>
-  </div>
-)
-
 export const TestimonialsSection = () => {
-  const [activeTestimonial, setActiveTestimonial] = useState(0)
-
   const testimonials = [
     {
-      quote: "Nexlayer transformed our deployment process. What used to take days now takes minutes. The AI agents handle everything automatically.",
-      author: "Sarah Chen",
-      role: "CTO",
-      company: "TechFlow",
-      avatar: "/public/images/amish-avatar.png"
+      quote: "Moved my AI project from Render to Nexlayer. 95% cost savings, instant deploys. Game-changing.",
+      author: "Leah T.",
+      role: "ex-Stripe, AWS Engineer, Founder @ BlinkAI",
+      avatar: "/images/leah-avatar.png",
     },
     {
-      quote: "The global edge network is incredible. Our users worldwide experience lightning-fast performance without any configuration.",
-      author: "Marcus Rodriguez",
-      role: "Lead Engineer",
-      company: "GlobalScale",
-      avatar: "/public/images/frank-avatar.png"
+      quote: "I deployed my Lovable MVP with supabase with one prompt to Nexlayer. 🤯",
+      author: "Amish M.",
+      role: "Founder & CTO @ StellarStack",
+      avatar: "/images/amish-avatar.png",
     },
     {
-      quote: "Zero configuration deployment is a game-changer. Our team can focus on building features instead of managing infrastructure.",
-      author: "Emily Watson",
-      role: "VP of Engineering",
-      company: "InnovateCorp",
-      avatar: "/public/images/leah-avatar.png"
-    }
+      quote:
+        "Nexlayer is building The Cloud Agents Trust.™ This is exactly the kind of platform shift we saw when AWS first launched — but reimagined for the agent era.",
+      author: "Frank H.",
+      role: "ex-Google X, Tech Lead",
+      avatar: "/images/frank-avatar.png",
+    },
   ]
 
   return (
-    <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Trusted by Developers Worldwide
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            See what developers are saying about their experience with Nexlayer
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <section className="py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Testimonial
-              key={index}
-              quote={testimonial.quote}
-              author={testimonial.author}
-              role={testimonial.role}
-              company={testimonial.company}
-              avatar={testimonial.avatar}
-            />
+            <div key={index} className="bg-black rounded-2xl p-8 border border-gray-800">
+              {/* Quote marks */}
+              <div className="text-4xl text-cyan-400 mb-6 font-serif">"</div>
+
+              {/* Testimonial text */}
+              <p className="text-white text-lg mb-6 leading-relaxed">{testimonial.quote}</p>
+
+              {/* Attribution */}
+              <div className="text-gray-400 text-sm flex items-center gap-3">
+                {testimonial.avatar && (
+                  <img
+                    src={testimonial.avatar || "/placeholder.svg"}
+                    alt={testimonial.author}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                )}
+                <div>
+                  <div className="font-medium">{testimonial.author}</div>
+                  <div>{testimonial.role}</div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        <div className="text-center">
-          <div className="flex justify-center space-x-2 mb-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  activeTestimonial === index ? "bg-cyan-400" : "bg-gray-600"
-                }`}
-              />
-            ))}
+        <div className="text-center mt-16">
+          <h2 className="text-4xl font-bold text-white mb-4">Ready to start shipping?</h2>
+          <p className="text-xl text-gray-400 mb-8">Start for free today — no credit card required.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=hero_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1&typeform-source=preview-fork-of-nexlayer-website-32-c6lbguqz3vzumzqeu.vusercontent.net"
+              className="inline-flex items-center px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg font-semibold transition-colors"
+            >
+              Start shipping
+            </a>
+            <a
+              href="https://cal.com/nexlayer/30min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 hover:bg-gray-600 rounded-lg font-semibold transition-colors bg-white text-black"
+            >
+              Talk with an engineer
+            </a>
           </div>
         </div>
       </div>
