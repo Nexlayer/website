@@ -113,7 +113,7 @@ export const Footer = () => {
         {/* Bottom section with copyright */}
         <div className="mt-12 pt-8 border-t border-[#2a2a2a]">
           <p className="text-gray-400 text-sm text-center">
-            © 2024 Nexlayer. All rights reserved. Nexlayer – The Cloud Agents Trust™ are trademarks of AuditDeploy, Inc.
+            © 2025 Nexlayer. All rights reserved. Nexlayer – The Cloud Agents Trust™ are trademarks of AuditDeploy, Inc.
           </p>
         </div>
       </div>

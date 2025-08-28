@@ -2,13 +2,13 @@ import { Clock, Wrench, AlertTriangle, Server, Database, Shield, Globe, Settings
 
 export const ComparisonSection = () => {
   return (
-    <div className="min-h-screen bg-[#191919] p-6 bg-[rgba(10,10,10,1)]">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-20 bg-[#191919] px-4 bg-[rgba(10,10,10,1)]">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16"></div>
+        <div className="text-center mb-12"></div>
 
         {/* Main Comparison */}
-        <div className="grid lg:grid-cols-2 gap-16 mb-16 relative">
+        <div className="grid lg:grid-cols-2 gap-12 mb-12 relative">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/20 transform -translate-x-1/2 z-0"></div>
 
           {/* VS Badge */}
@@ -18,9 +18,9 @@ export const ComparisonSection = () => {
 
           {/* Left Side - Without Nexlayer (Chaotic) */}
           <div className="relative">
-            <h2 className="text-2xl font-bold text-white mb-8 text-center">Without Nexlayer</h2>
-            <div className="relative h-[600px] overflow-hidden">
-              <svg className="absolute inset-0 w-full h-full z-0" viewBox="0 0 400 600">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">Without Nexlayer</h2>
+            <div className="relative h-[400px] overflow-hidden">
+              <svg className="absolute inset-0 w-full h-full z-0" viewBox="0 0 400 400">
                 <defs>
                   <pattern id="dashPattern" patternUnits="userSpaceOnUse" width="8" height="8">
                     <path d="M0,4 L8,4" stroke="rgba(255,255,255,0.3)" strokeWidth="1" strokeDasharray="4,4" />
@@ -234,13 +234,13 @@ export const ComparisonSection = () => {
 
           {/* Right Side - With Nexlayer (Clean Stack) */}
           <div className="relative">
-            <h2 className="text-2xl font-bold text-white mb-8 text-center">With Nexlayer</h2>
-            <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">With Nexlayer</h2>
+            <div className="space-y-3">
               {/* One Prompt → Deploy */}
-              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-4 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
+              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-3 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400 text-white"></div>
-                  <span className="text-black font-bold">One Prompt</span>
+                  <span className="text-black font-bold">One Prompt → Deploy</span>
                 </div>
               </div>
 
@@ -249,15 +249,15 @@ export const ComparisonSection = () => {
               {/* Nexlayer YAML */}
 
               {/* Scaling Handled */}
-              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-4 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
+              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-3 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400"></div>
-                  <span className="font-bold text-black">Agent-drven deployment</span>
+                  <span className="font-bold text-black">Agent-driven workflow</span>
                 </div>
               </div>
 
               {/* Live App URL */}
-              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-4 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300 ring-2 ring-[#28B8CD]/50">
+              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-3 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300 ring-2 ring-[#28B8CD]/50">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400"></div>
                   <span className="font-bold text-black">Live App URL</span>

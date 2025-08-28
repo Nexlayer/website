@@ -1,201 +1,377 @@
-# Nexlayer Website
+# Nexlayer Website - Developer Guide
 
-A modern, modular React/Next.js website for Nexlayer - the first agent-native cloud platform.
+A modern, modular React/Next.js website for Nexlayer - the first agent-native cloud platform. This guide helps developers efficiently update, edit, and manage the website.
 
-## 🏗️ Architecture
+## 🛠️ Technology Stack
 
-The website is built with a modular, scalable architecture that separates concerns and makes it easy to maintain and update individual sections.
+### **Frontend Framework**
+- **Next.js 14** - React framework with App Router
+- **React 18** - UI library with hooks and modern features
+- **TypeScript** - Type-safe JavaScript development
 
-### 📁 Project Structure
+### **Styling & UI**
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Pre-built, accessible UI components
+- **Framer Motion** - Animation library for smooth transitions
+
+### **Development Tools**
+- **Node.js 18+** - JavaScript runtime
+- **npm/yarn** - Package managers
+- **ESLint** - Code linting and formatting
+- **PostCSS** - CSS processing
+
+### **Deployment & Hosting**
+- **Nexlayer** - Platform for deployment and hosting
+- **GitHub** - Version control and collaboration
+- **GitHub Assets** - Image and asset hosting via GitHub releases or raw content
+
+### **Key Libraries**
+- **Lucide React** - Icon library
+- **clsx** - Conditional CSS classes
+- **class-variance-authority** - Component variant management
+
+### **Performance & Optimization**
+- **Next.js Image** - Optimized image handling
+- **Code Splitting** - Automatic bundle optimization
+- **Static Generation** - Fast page loads
+- **Responsive Design** - Mobile-first approach
+- **GitHub Raw Content** - Direct image hosting via GitHub
+
+## 🏗️ Architecture Overview
+
+The website uses a **modular component architecture** where each section is completely independent. This means you can:
+- ✅ Edit any section without affecting others
+- ✅ Add new sections easily
+- ✅ Remove sections without breaking the site
+- ✅ Reorder sections by changing import order
+
+## 📁 Project Structure
 
 ```
-components/
-├── layout/           # Layout components (Navigation, Footer)
-├── sections/         # Main page sections
-├── shared/           # Reusable components (TypingEffect, etc.)
-├── ui/              # UI components (Button, etc.)
-└── logos/           # Logo components
-
-app/
-├── page.tsx         # Main landing page
-├── layout.tsx       # Root layout
-└── globals.css      # Global styles
+nexlayer-website/
+├── app/                          # Next.js 14 App Router
+│   ├── page.tsx                  # Main landing page (imports all sections)
+│   ├── layout.tsx                # Root layout with metadata
+│   ├── globals.css               # Global Tailwind styles
+│   └── blog/                     # Blog pages (if needed)
+├── components/
+│   ├── layout/                   # Layout components
+│   │   ├── Navigation.tsx        # Top navigation bar
+│   │   └── Footer.tsx            # Site footer
+│   ├── sections/                 # Main page sections (MODULAR)
+│   │   ├── HeroSection.tsx       # Hero with CTA
+│   │   ├── ComparisonSection.tsx # Without vs With comparison
+│   │   ├── FeaturesSection.tsx   # Features grid
+│   │   ├── FeaturesGridSection.tsx # Production features
+│   │   ├── HowItWorksSection.tsx # Interactive step-by-step
+│   │   ├── TestimonialsSection.tsx # Customer testimonials
+│   │   └── index.ts              # Section exports
+│   ├── shared/                   # Reusable components
+│   │   ├── TypingEffect.tsx      # Animated typing
+│   │   ├── ShaderBackground.tsx  # Animated background
+│   │   └── AgenticCloudOrb.tsx   # Cloud orb animation
+│   ├── ui/                       # shadcn/ui components
+│   │   ├── button.tsx            # Button component
+│   │   ├── card.tsx              # Card component
+│   │   └── ...                   # Other UI components
+│   └── logos/                    # Company logos
+├── public/                       # Static assets
+│   ├── images/                   # Images and avatars
+│   └── icons/                    # SVG icons
+├── lib/                          # Utilities
+│   └── utils.ts                  # Helper functions
+├── hooks/                        # Custom React hooks
+├── tailwind.config.js            # Tailwind configuration
+├── next.config.mjs               # Next.js configuration
+└── package.json                  # Dependencies
 ```
 
-## 🎯 Sections
+## 🎯 Section Management
 
-The website is organized into the following modular sections:
+### Current Sections (in order of appearance):
 
-1. **Hero Section** (`components/sections/HeroSection.tsx`)
-   - Main headline and value proposition
-   - Interactive typing effect
-   - Social proof logos
-   - Primary CTA
+1. **HeroSection** - Main headline, CTA, social proof
+2. **ComparisonSection** - "Without vs With" visual comparison  
+3. **FeaturesSection** - Feature comparison grid
+4. **FeaturesGridSection** - Production-ready features
+5. **HowItWorksSection** - Interactive 4-step process
+6. **TestimonialsSection** - Customer testimonials
+7. **Footer** - Site footer with links
 
-2. **Comparison Section** (`components/sections/ComparisonSection.tsx`)
-   - "Without vs With" comparison
-   - Interactive tab switching
-   - Clear value demonstration
+### How to Edit a Section:
 
-3. **Cloud Agents Trust** (`components/sections/CloudAgentsTrustSection.tsx`)
-   - Trust indicators and statistics
-   - Enterprise-grade features
-   - Security and compliance highlights
-
-4. **How It Works** (`components/sections/HowItWorksSection.tsx`)
-   - Step-by-step process
-   - Interactive video demos
-   - Visual workflow explanation
-
-5. **Features** (`components/sections/FeaturesSection.tsx`)
-   - Production-ready features grid
-   - Categorized feature cards
-   - Comprehensive capability showcase
-
-6. **Testimonials** (`components/sections/TestimonialsSection.tsx`)
-   - Customer testimonials
-   - Social proof
-   - Trust building
-
-7. **Ready to Ship CTA** (`components/sections/ReadyToShipSection.tsx`)
-   - Final call-to-action
-   - Multiple action options
-   - Conversion optimization
-
-## 🚀 Key Features
-
-### ✅ Modular Design
-- Each section is a separate, self-contained component
-- Easy to add, remove, or reorder sections
-- No impact on other sections when updating
-
-### ✅ Scalable Architecture
-- Clean separation of concerns
-- Reusable components and utilities
-- Consistent design patterns
-
-### ✅ TypeScript Support
-- Full TypeScript implementation
-- Type-safe props and interfaces
-- Better developer experience
-
-### ✅ Responsive Design
-- Mobile-first approach
-- Tailwind CSS for styling
-- Consistent breakpoints
-
-### ✅ Performance Optimized
-- Lazy loading ready
-- Optimized images and videos
-- Minimal bundle size
-
-## 🛠️ Development
-
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-
-### Installation
-```bash
-npm install
+**Example: Update HeroSection text**
+```tsx
+// components/sections/HeroSection.tsx
+export const HeroSection = () => {
+  return (
+    <section className="...">
+      <h1 className="text-6xl font-bold">
+        {/* Change this text - no other files affected */}
+        Your new headline here
+      </h1>
+    </section>
+  )
+}
 ```
 
-### Development Server
-```bash
-npm run dev
-```
+### How to Add a New Section:
 
-### Build
-```bash
-npm run build
-```
-
-## 📝 Adding New Sections
-
-To add a new section:
-
-1. Create a new component in `components/sections/`
-2. Follow the established patterns:
-   - Use TypeScript interfaces for props
-   - Implement responsive design
-   - Add proper accessibility attributes
-   - Include hover states and animations
-
-3. Export from `components/sections/index.ts`
-4. Import and add to `app/page.tsx`
-
-Example:
+1. **Create the component:**
 ```tsx
 // components/sections/NewSection.tsx
 "use client"
 
-import { Button } from "../ui/button"
-
-interface NewSectionProps {
-  title?: string
-  // Add other props as needed
-}
-
-export const NewSection = ({ title = "Default Title" }: NewSectionProps) => {
+export const NewSection = () => {
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-white mb-6">{title}</h2>
-        {/* Section content */}
+        <h2 className="text-4xl font-bold text-white">New Section</h2>
+        {/* Your content */}
       </div>
     </section>
   )
 }
 ```
 
+2. **Export it:**
+```tsx
+// components/sections/index.ts
+export { NewSection } from './NewSection'
+```
+
+3. **Add to main page:**
+```tsx
+// app/page.tsx
+import { NewSection } from '@/components/sections'
+
+export default function Home() {
+  return (
+    <main>
+      <HeroSection />
+      <ComparisonSection />
+      <NewSection /> {/* Add here */}
+      <FeaturesSection />
+      {/* ... other sections */}
+    </main>
+  )
+}
+```
+
+### How to Remove a Section:
+
+Simply delete the import and component call from `app/page.tsx`. The section file can remain for future use.
+
+## 🛠️ Development Workflow
+
+### Quick Start:
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+### Making Changes:
+
+1. **Edit Content:** Modify text, images, links in section components
+2. **Update Styling:** Use Tailwind classes in component JSX
+3. **Add Features:** Create new components in appropriate folders
+4. **Test:** Check responsiveness and functionality
+5. **Commit:** Use conventional commit messages
+
+### Common Tasks:
+
+**Change a button link:**
+```tsx
+// In any section component
+<Button onClick={() => window.open('https://new-link.com')}>
+  Updated Button Text
+</Button>
+```
+
+**Update colors:**
+```tsx
+// Use Tailwind classes or update tailwind.config.js
+<div className="bg-cyan-400 text-black"> // Primary brand color
+<div className="bg-blue-500 text-white"> // Secondary color
+```
+
+**Add animations:**
+```tsx
+// Use Tailwind animation classes
+<div className="animate-pulse">Pulsing effect</div>
+<div className="hover:scale-105 transition-transform">Hover effect</div>
+```
+
 ## 🎨 Design System
 
-### Colors
-- Primary: Cyan (#28B8CD)
-- Secondary: Blue (#3B82F6)
-- Background: Black (#0A0A0A)
-- Text: White, Gray-400
+### Colors (Tailwind Classes):
+- **Primary:** `bg-cyan-400`, `text-cyan-400` (#28B8CD)
+- **Secondary:** `bg-blue-500`, `text-blue-500` (#3B82F6)
+- **Background:** `bg-black`, `bg-[#0a0a0a]`
+- **Text:** `text-white`, `text-gray-400`
 
-### Typography
-- Headings: Bold, large scale
-- Body: Regular weight, readable
-- Consistent spacing and hierarchy
+### Typography:
+- **Headings:** `text-4xl font-bold`, `text-2xl font-semibold`
+- **Body:** `text-lg`, `text-base`
+- **Small:** `text-sm`
 
-### Components
-- Consistent border radius (rounded-2xl)
-- Hover states and transitions
-- Accessible focus states
+### Spacing:
+- **Sections:** `py-20` (vertical padding)
+- **Containers:** `max-w-7xl mx-auto px-4`
+- **Elements:** `mb-6`, `mt-8`, `gap-4`
 
-## 🔧 Configuration
+### Components:
+- **Buttons:** Use `Button` from `components/ui/button`
+- **Cards:** Use `Card` from `components/ui/card`
+- **Layout:** Use `Container` pattern with `max-w-7xl mx-auto`
 
-### Environment Variables
-Create a `.env.local` file:
+## 🔧 Configuration Files
+
+### `tailwind.config.js` - Styling
+```js
+// Add custom colors, fonts, animations
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'brand': '#28B8CD',
+      }
+    }
+  }
+}
 ```
-NEXT_PUBLIC_SITE_URL=https://nexlayer.com
+
+### `next.config.mjs` - Next.js Settings
+```js
+// Configure images, redirects, headers
+const nextConfig = {
+  images: {
+    domains: ['raw.githubusercontent.com', 'github.com']
+  }
+}
 ```
 
-### Tailwind Configuration
-Custom colors and utilities are defined in `tailwind.config.js`
+### `components.json` - shadcn/ui Config
+```json
+// UI component configuration
+{
+  "style": "default",
+  "tailwind": {
+    "config": "tailwind.config.js"
+  }
+}
+```
 
-## 📱 Browser Support
+## 📱 Responsive Design
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+### Breakpoints:
+- **Mobile:** `< 768px` (default)
+- **Tablet:** `md:` (768px+)
+- **Desktop:** `lg:` (1024px+)
+- **Large:** `xl:` (1280px+)
+
+### Example:
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  {/* Responsive grid */}
+</div>
+```
+
+## 🚀 Performance Tips
+
+### Images:
+- Use Next.js `Image` component for optimization
+- Host images via GitHub raw content or releases
+- Use appropriate formats (WebP, AVIF)
+- Nexlayer platform handles image optimization and CDN delivery
+
+### Code Splitting:
+- Each section is automatically code-split
+- Lazy load non-critical components if needed
+
+### Bundle Size:
+- Import only needed components
+- Use dynamic imports for heavy libraries
+
+## 🐛 Troubleshooting
+
+### Common Issues:
+
+**Build Errors:**
+```bash
+# Clear Next.js cache
+rm -rf .next
+npm run build
+```
+
+**Styling Issues:**
+```bash
+# Rebuild Tailwind
+npm run build:css
+```
+
+**Import Errors:**
+- Check file paths are correct
+- Ensure components are exported from index files
+- Verify TypeScript types
+
+### Debug Mode:
+```bash
+# Run with debug logging
+DEBUG=* npm run dev
+```
+
+## 📝 Best Practices
+
+### Code Organization:
+- ✅ Keep components small and focused
+- ✅ Use TypeScript for all components
+- ✅ Follow consistent naming conventions
+- ✅ Add comments for complex logic
+
+### Performance:
+- ✅ Optimize images and videos
+- ✅ Use proper semantic HTML
+- ✅ Implement accessibility features
+- ✅ Test on multiple devices
+
+### Maintenance:
+- ✅ Update dependencies regularly
+- ✅ Monitor bundle size
+- ✅ Test after major changes
+- ✅ Document new features
 
 ## 🤝 Contributing
 
-1. Create a feature branch
-2. Follow the established patterns
-3. Add TypeScript types
-4. Test responsiveness
-5. Submit a pull request
+1. **Create a branch:** `git checkout -b feature/new-section`
+2. **Make changes:** Follow established patterns
+3. **Test thoroughly:** Check all breakpoints
+4. **Commit:** Use conventional commits
+5. **Submit PR:** Include description of changes
 
-## 📄 License
+### Commit Convention:
+```
+feat: add new testimonials section
+fix: update hero CTA link
+style: adjust comparison section spacing
+docs: update README with new section
+```
 
-This project is proprietary to Nexlayer.
+## 📞 Support
+
+For questions about:
+- **Code structure:** Check this README
+- **Design system:** Review existing components
+- **Deployment:** Check Nexlayer platform documentation
+- **Issues:** Create GitHub issue with details
 
 ---
 
-Built with ❤️ by the Nexlayer team
+**Built with:** Next.js 14, React 18, TypeScript, Tailwind CSS  
+**Last Updated:** January 2025
