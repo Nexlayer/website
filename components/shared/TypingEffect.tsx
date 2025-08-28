@@ -51,7 +51,13 @@ export const TypingEffect = ({ show = true }: TypingEffectProps) => {
   if (!show) return null
 
   return (
-    <div className="w-full h-20 text-lg bg-black border-0 text-gray-400 px-6 font-medium flex items-center rounded-2xl">
+    <div
+      className="w-full min-h-20 text-lg bg-black border-0 text-gray-400 px-6 font-medium flex items-center rounded-2xl"
+      style={{
+        wordBreak: "break-word",
+        overflowWrap: "anywhere"
+      }}
+    >
       <span className="text-gray-400 font-mono">{displayText}</span>
       <span className="text-gray-400 animate-pulse ml-1">|</span>
     </div>

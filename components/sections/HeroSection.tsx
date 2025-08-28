@@ -24,7 +24,6 @@ export const HeroSection = () => {
     <>
       <section className="px-4 py-20 bg-black">
         <div className="text-center mx-auto">
-
           <h1
             className="mt-12 sm:mt-20 text-5xl sm:text-[75px] text-white mb-6 leading-tight font-medium"
           >
@@ -34,14 +33,14 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-xl text-gray-400 mb-16 font-normal max-w-3xl mx-auto">
-            From github repo to production in minutes — no infra setup, no
-            configs, no humans in the loop. 5,000+ apps live. The next is yours.
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-3xl mx-auto px-4">
+            From github repo to production in minutes — no infra setup, no configs, no humans in the loop. 5,000+ apps deployed. The next is yours.
           </p>
 
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-black rounded-2xl border-2 border-gray-600 p-1 shadow-lg">
-              <div className="flex items-center gap-1 px-4 pt-3 pb-2"></div>
+          {/* Main Input Area */}
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
+            <div className="bg-black rounded-xl sm:rounded-2xl border-2 border-gray-600 p-1 shadow-lg">
+              <div className="flex items-center gap-1 px-3 sm:px-4 pt-3 pb-2"></div>
 
               <div className="relative">
                 <TypingEffect show={true} />
@@ -49,19 +48,19 @@ export const HeroSection = () => {
                   type="text"
                   value={userInput}
                   onChange={handleInputChange}
-                  className="absolute inset-0 w-full h-20 text-lg bg-black border-0 text-white px-6 font-medium flex items-center outline-none font-mono opacity-0 rounded-2xl"
+                  className="absolute inset-0 w-full h-20 text-lg bg-black border-0 text-white px-6 font-medium flex items-center outline-none font-mono opacity-0 rounded-2xl text-wrap"
                   placeholder=""
                 />
               </div>
 
-              <div className="flex items-center justify-between px-4 pb-4">
+              <div className="flex flex-col sm:flex-row items-center justify-between px-3 sm:px-4 pb-4 gap-3 sm:gap-0">
                 <div className="flex items-center space-x-4">
                   {/* Removed Attach and Import buttons as per previous request */}
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 w-full sm:w-auto">
                   <Button
                     onClick={handleDeploy}
-                    className="px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
+                    className="w-full sm:w-auto px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
                     style={{ backgroundColor: "#28B8CD" }}
                   >
                     <span className="text-sm text-black font-bold">
@@ -71,11 +70,10 @@ export const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center px-4 pb-2">
+              <div className="flex justify-center px-3 sm:px-4 pb-2">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700">
-                  <span className="text-xs text-gray-300 font-medium">
-                    Nexlayer is in early beta. Start shipping → Give feedback →
-                    Help shape the future of the agent-native cloud.
+                  <span className="text-xs text-gray-300 font-medium text-center">
+                    Nexlayer is in early beta. Start shipping → Give feedback → Help shape the future of the agent-native cloud.
                   </span>
                 </div>
               </div>
@@ -83,17 +81,15 @@ export const HeroSection = () => {
           </div>
 
           {/* Social Proof Section */}
-          <div className="max-w-4xl mx-auto mb-6 sm:mb-20 text-center">
-            <p className="text-gray-400 text-lg mb-8">
-              Built by a team who've scaled products for millions at
-            </p>
-            <div className="flex items-center justify-center space-x-2 sm:space-x-12 opacity-60">
+          <div className="max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20 text-center px-4">
+            <p className="text-gray-400 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8">Built by a team who've scaled products for millions at</p>
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12 opacity-60">
               {/* Google Logo */}
               <div className="flex items-center">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BbwvJ2gUosbcGWO7KGm2kRZnB08PIw.png"
                   alt="Google"
-                  className="h-10 w-auto"
+                  className="h-8 sm:h-10 w-auto"
                 />
               </div>
 
@@ -102,7 +98,7 @@ export const HeroSection = () => {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-m7c19LlD4LJefDOOuJLMWxWqkcPmAL.png"
                   alt="IBM"
-                  className="h-8 w-auto"
+                  className="h-6 sm:h-8 w-auto"
                 />
               </div>
 
@@ -111,7 +107,7 @@ export const HeroSection = () => {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hSE4jSsjQGcWW0cbgDHaEKmtEgXK1l.png"
                   alt="MIT"
-                  className="h-8 w-auto"
+                  className="h-6 sm:h-8 w-auto"
                 />
               </div>
 
@@ -120,7 +116,7 @@ export const HeroSection = () => {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N428ig9VCIaw0G5IipFov5uqk6edkk.png"
                   alt="ADP"
-                  className="h-8 w-auto"
+                  className="h-6 sm:h-8 w-auto"
                 />
               </div>
 
@@ -129,7 +125,7 @@ export const HeroSection = () => {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BL0T5WZyd4LqMhTnBuGLoqtd6h6j8z.png"
                   alt="Experian"
-                  className="h-8 w-auto"
+                  className="h-6 sm:h-8 w-auto"
                 />
               </div>
             </div>
