@@ -1,4 +1,4 @@
-const Google = (props) => (
+const Google = (props: { className?: string }) => (
   <svg
     width="1em"
     height="1em"

@@ -1,4 +1,4 @@
-const Discord = (props) => (
+const Discord = (props: { className?: string }) => (
   <svg
     viewBox="0 0 256 199"
     width="1em"

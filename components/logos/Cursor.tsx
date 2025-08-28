@@ -1,4 +1,4 @@
-const Cursor = (props) => (
+const Cursor = (props: { className?: string }) => (
   <svg
     height="1em"
     style={{

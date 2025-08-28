@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import type React from "react"
-import { FeaturesSection } from "./FeaturesSection"
+import { FeaturesSection } from "./sections/FeaturesSection"
 
 // Button component (replacing shadcn/ui button)
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

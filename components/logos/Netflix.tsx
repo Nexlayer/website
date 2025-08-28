@@ -1,4 +1,4 @@
-const Netflix = (props) => (
+const Netflix = (props: { className?: string }) => (
   <svg
     viewBox="0 0 256 256"
     width="1em"
