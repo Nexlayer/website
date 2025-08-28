@@ -20,7 +20,7 @@ export const Navigation = () => {
             <Button variant="ghost" className="text-gray-300 hover:text-white text-sm font-medium">
               Sign in
             </Button>
-            <Button className="bg-white text-black hover:bg-gray-100 text-sm px-4 py-2 font-medium rounded-lg">
+            <Button className="bg-white text-black hover:bg-transparent hover:border-cyan-400 hover:border-2 hover:text-cyan-400 text-sm px-4 py-2 font-medium rounded-lg transition-all duration-300">
               Sign up
             </Button>
           </div>

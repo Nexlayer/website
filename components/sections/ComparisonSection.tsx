@@ -12,7 +12,7 @@ export const ComparisonSection = () => {
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/20 transform -translate-x-1/2 z-0"></div>
 
           {/* VS Badge */}
-          <div className="absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+          <div className="absolute left-1/2 top-[40%] transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
             <span className="text-2xl font-bold text-gray-900">VS</span>
           </div>
 
@@ -227,8 +227,8 @@ export const ComparisonSection = () => {
               <AlertTriangle className="absolute top-48 left-44 h-6 w-6 text-red-400 animate-pulse" />
               <AlertTriangle className="absolute top-64 right-16 h-6 w-6 text-orange-400 animate-pulse" />
             </div>
-            <div className="mt-4 text-center">
-              <div className="text-lg text-red-300">🚀 Without Nexlayer: months of complex infrastructure hell...</div>
+            <div className="mt-2 text-center">
+              <div className="text-lg text-red-300">🚀 Months of complex, time-consuming, expensive infra hell...</div>
             </div>
           </div>
 
@@ -240,7 +240,7 @@ export const ComparisonSection = () => {
               <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-4 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400 text-white"></div>
-                  <span className="text-black font-bold">One Prompt → Deploy</span>
+                  <span className="text-black font-bold">One Prompt</span>
                 </div>
               </div>
 
@@ -252,7 +252,7 @@ export const ComparisonSection = () => {
               <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-4 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400"></div>
-                  <span className="font-bold text-black">Auto-scale</span>
+                  <span className="font-bold text-black">Agent-drven deployment</span>
                 </div>
               </div>
 
@@ -264,8 +264,8 @@ export const ComparisonSection = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 text-center">
-              <div className="text-lg text-green-300">⚡ With Nexlayer: live in minutes</div>
+            <div className="mt-2 text-center">
+              <div className="text-lg text-green-300">⚡ Live in minutes</div>
             </div>
           </div>
         </div>

@@ -11,9 +11,12 @@ export const FeaturesGridSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
-              {"Production-ready in one prompt."}
+            Ship to scale in minutes.
             </h2>
-            <p className="mt-3 text-zinc-400">From MVP to production in minutes. Scalable. Reliable. Secure.</p>
+            <p className="mt-3 text-zinc-400 max-w-2xl">
+              Enterprise-grade cloud that handles orchestration, scaling, and uptime<br />
+              for you — so you can ship real apps, not just demos.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

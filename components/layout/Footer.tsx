@@ -14,14 +14,21 @@ export const Footer = () => {
 
             {/* Social Links */}
             <div className="flex items-center space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="https://x.com/nexlayerai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <X className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/nexlayerai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -30,12 +37,6 @@ export const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  About
-                </a>
-              </li>
-
               <li>
                 <a href="http://nexlayer.com/blog" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Blog
@@ -49,17 +50,25 @@ export const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a 
+                  href="https://docs.nexlayer.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a 
+                  href="https://docs.nexlayer.com/documentation/api-reference" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
                   API Reference
                 </a>
               </li>
-              <li></li>
-
               <li>
                 <a
                   href="https://discord.gg/vQWumBAR"
@@ -95,11 +104,6 @@ export const Footer = () => {
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Terms & Conditions
-                </a>
-              </li>
-              <li>
-                <a href="/disclaimer" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Disclaimer
                 </a>
               </li>
             </ul>

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 
 export const MCPSetupComponent = () => {
   const [activeTab, setActiveTab] = useState("cursor")
@@ -35,7 +34,7 @@ export const MCPSetupComponent = () => {
   }
 
   return (
-    <div className="group rounded-xl p-8 border border-[#2a2a2a] min-h-[500px] bg-black hover:bg-black transition-all duration-300 cursor-pointer overflow-hidden">
+    <div className="group rounded-xl p-6 border border-[#2a2a2a] h-full bg-black hover:bg-black transition-all duration-300 cursor-pointer overflow-hidden">
       {/* Header */}
       <div className="mb-8">
         <h3 className="text-2xl font-semibold text-white mb-4">Setup with your AI agent assistant</h3>
@@ -51,7 +50,7 @@ export const MCPSetupComponent = () => {
               activeTab === "cursor" ? "bg-gray-700 text-white" : "text-gray-400 hover:text-white"
             }`}
           >
-            <Image src="/icons/cursor-dark.svg" alt="Cursor" width={16} height={16} className="w-4 h-4" />
+            <img src="/icons/cursor-dark.svg" alt="Cursor" className="w-4 h-4" />
             <span>Cursor</span>
           </button>
           <button
@@ -60,7 +59,7 @@ export const MCPSetupComponent = () => {
               activeTab === "claude" ? "bg-gray-700 text-white" : "text-gray-400 hover:text-white"
             }`}
           >
-            <Image src="/icons/claude-ai-icon.svg" alt="Claude" width={16} height={16} className="w-4 h-4" />
+            <img src="/icons/claude-ai-icon.svg" alt="Claude" className="w-4 h-4" />
             <span>Claude</span>
           </button>
           <button
@@ -75,8 +74,8 @@ export const MCPSetupComponent = () => {
       </div>
 
       {/* Code Block */}
-      <div className="flex-grow">
-        <div className="bg-[#191919] rounded-lg border border-gray-600 overflow-hidden h-full">
+      <div className="flex-1 flex flex-col">
+        <div className="bg-[#191919] rounded-lg border border-gray-600 overflow-hidden flex-1 flex flex-col">
           {/* Code header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-gray-600">
             <span className="text-gray-300 text-sm font-mono">
@@ -95,7 +94,7 @@ export const MCPSetupComponent = () => {
           </div>
 
           {/* Code content */}
-          <div className="p-4 min-h-[300px]">
+          <div className="p-4 flex-1 overflow-auto">
             <pre className="text-sm text-gray-300 font-mono leading-relaxed whitespace-pre-wrap break-all">
               <code>{configurations[activeTab as keyof typeof configurations].code}</code>
             </pre>

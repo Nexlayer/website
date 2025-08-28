@@ -65,7 +65,7 @@ export const TestimonialsSection = () => {
               href="https://cal.com/nexlayer/30min?overlayCalendar=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 hover:bg-gray-600 rounded-lg font-semibold transition-colors bg-white text-black"
+              className="inline-flex items-center px-8 py-4 hover:bg-transparent hover:border-cyan-400 hover:border-2 hover:text-cyan-400 rounded-lg font-semibold transition-all duration-300 bg-white text-black"
             >
               Talk with an engineer
             </a>

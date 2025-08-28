@@ -15,7 +15,6 @@ export default function AgenticCloudOrb() {
           thickness={0.08}
           softness={0.4}
           intensity={2.5}
-          spotsPerColor={6}
           spotSize={0.15}
           pulse={0.4}
           smoke={0.3}

@@ -35,7 +35,7 @@ export const Navigation = () => {
 
           <div className="flex items-center space-x-4">
             <Button
-              className="bg-white !text-black hover:bg-gray-100 text-sm px-4 py-2 font-medium rounded-lg"
+              className="bg-white !text-black hover:bg-transparent hover:border-cyan-400 hover:border-2 hover:!text-cyan-400 text-sm px-4 py-2 font-medium rounded-lg transition-all duration-300"
               onClick={() => window.open("https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=hero_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1", "_blank")}
             >
               Join the Beta

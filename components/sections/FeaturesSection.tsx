@@ -48,8 +48,6 @@ const defaultConsumers: Node[] = [
 export const FeaturesSection: React.FC<Props> = ({
   sources = defaultSources,
   consumers = defaultConsumers,
-  centerTitle = "Nexlayer Core",
-  centerHexes = ["Deploy", "Scale", "Secure"],
   className = "",
 }) => {
   const svgRef = useRef<SVGSVGElement>(null)
@@ -183,11 +181,13 @@ export const FeaturesSection: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Ship real software that  
-powers real businesses.</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              From prototype to production.<br />
+              Ship apps that run real businesses.
+            </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Most platforms stop at websites and previews. Nexlayer ships full-stack, production-grade apps — frontend,
-              backend, APIs, agents, and databases — live in minutes, ready to scale and serve real users.
+              Most platforms stop at websites and previews. Nexlayer ships full-stack, frontends,
+              backends, databases, vectors DBs, APIs, and AI services — live in minutes, ready to serve real users.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ powers real businesses.</h2>
               <div className="border border-gray-700 rounded-2xl p-8 h-full bg-neutral-800">
                 <div className="mb-6">
                   <span className="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-medium">
-                    Traditional PaaS
+                    Traditional clouds
                   </span>
                 </div>
                 <div className="space-y-6">
