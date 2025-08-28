@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type React from "react"
+import React from "react"
 import { Button } from "../ui/button"
 import { TypingEffect } from "../shared/TypingEffect"
 import { ComparisonSection } from "./ComparisonSection"
@@ -69,7 +69,7 @@ export const HeroSection = () => {
                     className="px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
                     style={{ backgroundColor: "#28B8CD" }}
                   >
-                    <span className="text-sm text-black font-bold">{"Get Beta Access"}</span>
+                    <span className="text-sm text-black font-bold">Get Beta Access</span>
                   </Button>
                 </div>
               </div>
@@ -77,7 +77,7 @@ export const HeroSection = () => {
               <div className="flex justify-center px-4 pb-2">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700">
                   <span className="text-xs text-gray-300 font-medium">
-                  Nexlayer is in early beta. Start shipping → Give feedback → Help shape the future of the agent-native cloud.
+                    Nexlayer is in early beta. Start shipping → Give feedback → Help shape the future of the agent-native cloud.
                   </span>
                 </div>
               </div>
