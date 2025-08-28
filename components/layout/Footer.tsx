@@ -1,5 +1,5 @@
-import { X, Linkedin, Github } from "./icons"
-import { NexlayerLogo } from "./NexlayerLogo"
+import { X, Linkedin, Github } from "../icons"
+import { NexlayerLogo } from "../NexlayerLogo"
 
 export const Footer = () => {
   return (
