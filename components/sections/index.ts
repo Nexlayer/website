@@ -1,0 +1,7 @@
+export { HeroSection } from './HeroSection'
+export { ComparisonSection } from './ComparisonSection'
+export { CloudAgentsTrustSection } from './CloudAgentsTrustSection'
+export { HowItWorksSection } from './HowItWorksSection'
+export { FeaturesSection } from './FeaturesSection'
+export { TestimonialsSection } from './TestimonialsSection'
+export { ReadyToShipSection } from './ReadyToShipSection'

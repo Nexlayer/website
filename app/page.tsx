@@ -1,11 +1,14 @@
 "use client"
-import { Navigation } from "@/components/Navigation"
-import { HeroSection } from "@/components/HeroSection"
-import { HowItWorksSection } from "@/components/HowItWorksSection"
-import { FeaturesGridSection } from "@/components/FeaturesGridSection"
-import { FeaturesSection } from "@/components/FeaturesSection"
-import { Footer } from "@/components/Footer"
-import { TestimonialsSection } from "@/components/TestimonialsSection"
+
+import { Navigation } from "@/components/layout/Navigation"
+import { HeroSection } from "@/components/sections/HeroSection"
+import { ComparisonSection } from "@/components/sections/ComparisonSection"
+import { CloudAgentsTrustSection } from "@/components/sections/CloudAgentsTrustSection"
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection"
+import { FeaturesSection } from "@/components/sections/FeaturesSection"
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection"
+import { ReadyToShipSection } from "@/components/sections/ReadyToShipSection"
+import { Footer } from "@/components/layout/Footer"
 
 export default function LandingPage() {
   return (
@@ -14,10 +17,12 @@ export default function LandingPage() {
 
       <main>
         <HeroSection />
-        <FeaturesSection />
+        <ComparisonSection />
+        <CloudAgentsTrustSection />
         <HowItWorksSection />
-        <FeaturesGridSection />
+        <FeaturesSection />
         <TestimonialsSection />
+        <ReadyToShipSection />
       </main>
 
       <Footer />
