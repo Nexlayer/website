@@ -92,7 +92,7 @@ export const HowItWorksSection = () => {
 
           {/* Video Demo */}
           <div className="relative w-full lg:w-[60%]">
-            <div className="bg-black min-h-[402px] border border-gray-700 rounded-2xl overflow-hidden group">
+            <div className="bg-black md:min-h-[396px] border border-gray-700 rounded-2xl overflow-hidden group">
               {activeStepData?.component ? (
                 <div className="w-full h-full p-6">
                   {activeStepData.component}
@@ -100,12 +100,13 @@ export const HowItWorksSection = () => {
               ) : activeStepData?.videoSrc ? (
                 <>
                   <video
-                    key={activeStepData.videoSrc} // Force re-render when video changes
+                    key={activeStepData.videoSrc} 
                     className="w-full h-full object-contain"
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload ="auto"
                   >
                     <source src={activeStepData.videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.

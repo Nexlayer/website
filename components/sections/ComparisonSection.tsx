@@ -12,14 +12,14 @@ export const ComparisonSection = () => {
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-white/20 transform -translate-x-1/2 z-0"></div>
 
           {/* VS Badge */}
-          <div className="absolute left-1/2 top-[62%] lg:top-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+          <div className="absolute left-1/2 top-[65%] lg:top-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
             <span className="text-2xl font-bold text-gray-900">VS</span>
           </div>
 
           {/* Left Side - Without Nexlayer (Chaotic) */}
           <div className="relative">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 text-center">Without Nexlayer</h2>
-            <div className="relative h-[300px] sm:h-[400px] overflow-hidden">
+            <div className="relative h-[400px] overflow-hidden">
               <svg className="absolute inset-0 w-full h-full z-0" viewBox="0 0 400 400">
                 <defs>
                   <pattern id="dashPattern" patternUnits="userSpaceOnUse" width="8" height="8">

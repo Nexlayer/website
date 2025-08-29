@@ -7,7 +7,6 @@ export const Footer = () => {
     <footer className="bg-[#0a0a0a] border-t border-[#2a2a2a] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Left side - Logo and Social Links */}
           <div className="lg:col-span-2">
             <Link href="/">
               <div className="mb-6">
@@ -15,7 +14,6 @@ export const Footer = () => {
               </div>
             </Link>
 
-            {/* Social Links */}
             <div className="flex items-center space-x-4">
               <a
                 href="https://x.com/nexlayerai"
@@ -36,7 +34,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Product Column */}
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
@@ -51,7 +48,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources Column */}
           <div>
             <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-3">
