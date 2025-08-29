@@ -6,34 +6,47 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nexlayer — The Cloud Agents Trust™",
+  metadataBase: new URL("https://nexlayer.com"),
+  title: {
+    template: "%s | Nexlayer",
+    default: "Nexlayer - AI-native Cloud Platform",
+  },
   description:
-    "Nexlayer is the first agent-native cloud. From GitHub repo to production in minutes — no infra setup, no configs, no humans in the loop. 5,000+ apps live. The next is yours.",
-  generator: "Next.js",
-  robots: "index, follow",
+    "Deploy full-stack AI applications in seconds, not weeks. One simple launchfile deploys your entire app stack—frontend, backend, database, vector store, AI model —instantly to production. Built for AI agents, not humans",
+  keywords:
+    "AI deployment, cloud platform, full-stack deployment, AI-native cloud, launchfile, instant deployment, AI agents, nexlayer yaml, AI developer tools, AI cloud infrastructure",
   openGraph: {
-    title: "Nexlayer — The first agent-native cloud",
+    title: {
+      template: "%s | Nexlayer",
+      default: "Nexlayer - AI-native Cloud Platform",
+    },
     description:
-      "Deploy AI apps to production with one prompt. Agents build, Nexlayer ships.",
-    url: "https://nexlayer.com/",
-    siteName: "Nexlayer",
+      "Deploy full-stack AI applications in seconds, not weeks. One launchfile. Full stack. Live instantly. Built for the age of AI agents.",
+    type: "website",
+    url: new URL("https://nexlayer.com"),
     images: [
       {
-        url: "https://nexlayer.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Nexlayer — The Cloud Agents Trust™",
+        url: new URL("https://nexlayer.com/og-image.png"),
+        alt: "Nexlayer Open Graph Image",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexlayer — The Cloud Agents Trust™",
+    site: "@nexlayer",
+    title: {
+      template: "%s | Nexlayer",
+      default: "Nexlayer - AI-native Cloud Platform",
+    },
     description:
-      "From repo to live in minutes. No infra. No configs. 5,000+ apps live.",
-    images: ["https://nexlayer.com/og-image.png"],
+      "Deploy full-stack AI applications in seconds, not weeks. One launchfile. Full stack. Live instantly.",
+    creator: "@nexlayer",
+    images: [
+      {
+        url: new URL("https://nexlayer.com/og-image.png"),
+        alt: "Nexlayer Twitter Image",
+      },
+    ],
   },
 };
 
