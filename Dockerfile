@@ -30,7 +30,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Copy built frontend files
 WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/build .
+COPY --from=builder /app/out .
 
 # Expose both Nginx and Socket.IO ports
 EXPOSE 80 8080
