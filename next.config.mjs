@@ -13,7 +13,7 @@ const nextConfig = {
     unoptimized: true,
     domains: [],
   },
-  output: 'export',
+  // output: 'export',
   distDir: 'out',
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
