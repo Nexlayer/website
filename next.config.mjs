@@ -1,3 +1,6 @@
+// next.config.mjs (fully ESM-compatible and correct)
+import withMDX from '@next/mdx';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -9,6 +12,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
+  output: 'export',
+  distDir: 'build',
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+};
 
-export default nextConfig
+export default withMDX({
+  extension: /\.mdx?$/,
+})(nextConfig);
