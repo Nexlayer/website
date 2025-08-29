@@ -81,7 +81,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Social Proof Section */}
-          <div className="max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20 text-center px-4">
+          <div className="max-w-4xl mx-auto mb-4 sm:mb-16 lg:mb-20 text-center px-4">
             <p className="text-gray-400 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8">Built by a team who've scaled products for millions at</p>
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12 opacity-60">
               {/* Google Logo */}

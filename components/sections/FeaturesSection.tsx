@@ -192,7 +192,7 @@ export const FeaturesSection: React.FC<Props> = ({
           </div>
 
           {/* Comparison Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 mb-6 sm:mb-16">
             {/* Traditional PaaS - Left Side */}
             <div className="relative">
               <div className="border border-gray-700 rounded-2xl p-8 h-full bg-neutral-800">
