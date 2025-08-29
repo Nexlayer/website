@@ -1,4 +1,4 @@
-// next.config.mjs
+// next.config.mjs (fully ESM-compatible and correct)
 import withMDX from '@next/mdx';
 
 /** @type {import('next').NextConfig} */
@@ -11,21 +11,10 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    domains: [],
   },
-  // output: 'export',
-  distDir: 'out',
-  trailingSlash: true,
+  output: 'export',
+  distDir: 'build',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  // Add any rewrites or redirects if needed
-  async rewrites() {
-    return [
-      {
-        source: '/blog/:path*',
-        destination: '/blog/:path*',
-      },
-    ];
-  },
 };
 
 export default withMDX({
