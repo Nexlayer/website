@@ -1,5 +1,6 @@
-   application:
+application:
     name: nexlayer-website
+    environment: environment
     pods:
     - name: website
       image: ghcr.io/nexlayer/nexlayer-website:latest

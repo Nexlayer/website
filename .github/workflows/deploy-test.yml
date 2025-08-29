@@ -1,9 +1,10 @@
-name: Build and Deploy Update to Nexlayer
+name: Build and Deploy Test to Nexlayer
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
+  workflow_dispatch:  # Allow manual triggering
 
 env:
   IMAGE_NAME: nexlayer-website
@@ -50,20 +51,20 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Update nexlayer-update.yaml
+      - name: Update nexlayer.yaml
         run: |
           # Extract the short SHA
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
           
-					# Update the environment in nexlayer-update.yaml
-					sed -i "s|environment:.*|environment: ${{ secrets.NEXLAYER_WEBSITE_ENVIRONMENT }}|" nexlayer-update.yaml
-
-          # Update the image in nexlayer-update.yaml
-          sed -i "s|image:.*|image: ghcr.io/nexlayer/${{ env.IMAGE_NAME }}:$SHORT_SHA|" nexlayer-update.yaml
+          # Update the image in nexlayer.yaml
+          sed -i "s|image:.*|image: ghcr.io/nexlayer/${{ env.IMAGE_NAME }}:$SHORT_SHA|" nexlayer.yaml
+          
+          # Display the updated file for verification
+          cat nexlayer.yaml
 
       - name: Deploy to Nexlayer
         run: |
-          # Deploy update to Nexlayer using the API
-          curl -X POST https://app.nexlayer.io/updateUserDeployment \
+          # Deploy to Nexlayer using the API
+          curl -X POST https://app.nexlayer.io/startUserDeployment \
             -H "Content-Type: text/x-yaml" \
-            --data-binary @nexlayer-update.yaml
+            --data-binary @nexlayer.yaml
