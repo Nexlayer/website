@@ -1,10 +1,10 @@
 import React from "react";
-import ClaudeAI from "../ClaudeAI"
-import GitHubCopilot from "../GitHubCopilot"
-import Windsurf from "../Windsurf"
-import OpenAI from "../OpenAI"
-import AgenticCloudOrb from "../AgenticCloudOrb"
-import CursorLogo from "../CursorLogo"
+import ClaudeAI from "../ClaudeAI";
+import GitHubCopilot from "../GitHubCopilot";
+import Windsurf from "../Windsurf";
+import OpenAI from "../OpenAI";
+import AgenticCloudOrb from "../AgenticCloudOrb";
+import CursorLogo from "../CursorLogo";
 
 interface Node {
   id: string;
@@ -38,7 +38,6 @@ function AnimationSection({
   return (
     <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-black ${className}`}>
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <div className="text-sm font-medium text-cyan-400 mb-4 tracking-wider uppercase">
             Agents are the new developers.
@@ -52,11 +51,81 @@ function AnimationSection({
           </p>
         </div>
 
-        {/* Flow Diagram */}
-        <div ref={containerRef} className="relative">
-          {/* Section Labels */}
-          <div className="flex max-sm:flex-col justify-between gap-8 mb-12">
-            <div className="flex items-center justify-center lg:justify-start">
+        {/* Mobile layout: vertical, centered, glowing orb, icons above and below */}
+        <div className="lg:hidden flex flex-col items-center justify-center gap-8 relative">
+          <div className="flex items-center justify-start">
+            <div className="w-8 h-px bg-gradient-to-r from-[#23B6CB] to-blue-500 mr-3"></div>
+            <div className="text-sm font-medium text-gray-500 tracking-wider uppercase">
+              Agents build
+            </div>
+          </div>
+          <div className="flex items-center justify-center gap-8 mb-4">
+            {sources.map((source, index) => {
+              if (
+                ["cursor", "claude", "vscode", "windsurf", "openai"].includes(
+                  source.id
+                )
+              ) {
+                const IconComponent =
+                  source.id === "cursor"
+                    ? CursorLogo
+                    : source.id === "claude"
+                    ? ClaudeAI
+                    : source.id === "vscode"
+                    ? GitHubCopilot
+                    : source.id === "windsurf"
+                    ? Windsurf
+                    : OpenAI;
+                return (
+                  <div key={source.id} className="flex flex-col items-center">
+                    <IconComponent className="h-10 w-10 sm:h-14 sm:w-14" />
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+          {/* Glowing orb center */}
+          <div className="relative flex items-center justify-center mb-4">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-400 via-indigo-500 to-pink-500 blur-2xl opacity-40 w-40 h-40" />
+            <div className="relative z-10 flex items-center justify-center">
+              <AgenticCloudOrb />
+              <span className="absolute text-white text-lg font-bold tracking-wide opacity-80">
+                NEXLAYER SHIPS
+              </span>
+            </div>
+          </div>
+          {/* Bottom features/consumers */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
+            {consumers.map((consumer, index) => (
+              <div
+                key={consumer.id}
+                className="group rounded-xl border border-indigo-500/20 bg-indigo-500/5 p-2 text-center hover:border-indigo-500/30 transition-all duration-300 w-[120px] min-h-[60px] flex flex-col justify-center"
+              >
+                <div className="max-lg:pt-2 flex items-center justify-center gap-2 mb-1 text-indigo-400">
+                  <div className="p-1 rounded-lg bg-indigo-500/10">
+                    {consumer.icon}
+                  </div>
+                </div>
+                <div className="max-lg:pb-2 text-xs font-medium text-white">
+                  {consumer.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-center">
+            <div className="text-sm font-medium text-gray-500 tracking-wider uppercase">
+              Production in minutes.
+            </div>
+            <div className="w-8 h-px bg-gradient-to-r from-blue-500 to-indigo-500 ml-3"></div>
+          </div>
+        </div>
+
+        {/* Desktop layout: keep as is for lg and above */}
+        <div ref={containerRef} className="relative hidden lg:block">
+          <div className="flex justify-between gap-8 mb-12">
+            <div className="flex items-center justify-start">
               <div className="w-8 h-px bg-gradient-to-r from-[#23B6CB] to-blue-500 mr-3"></div>
               <div className="text-sm font-medium text-gray-500 tracking-wider uppercase">
                 Agents build
@@ -67,7 +136,7 @@ function AnimationSection({
                 Nexlayer ships
               </div>
             </div>
-            <div className="flex items-center justify-center lg:justify-end">
+            <div className="flex items-center justify-end">
               <div className="text-sm font-medium text-gray-500 tracking-wider uppercase">
                 Production in minutes.
               </div>
@@ -156,20 +225,19 @@ function AnimationSection({
               })}
             </div>
 
-            <div className="max-md:hidden relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center">
               <div data-center className="flex items-center justify-center">
                 <AgenticCloudOrb />
               </div>
             </div>
 
-            {/* Right Column - Consumers */}
             <div className="space-y-6 flex flex-col items-end">
               {consumers.map((consumer, index) => (
                 <div
                   key={consumer.id}
                   data-consumer={index}
                   role="group"
-                  className="group rounded-xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-center hover:border-indigo-500/30 transition-all duration-300 w-[240px] h-[100px] flex flex-col justify-center ml-8"
+                  className="max-lg:py-3 group rounded-xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-center hover:border-indigo-500/30 transition-all duration-300 w-[240px] h-[100px] flex flex-col justify-center ml-8"
                 >
                   <div className="flex items-center justify-center gap-2 mb-2 text-indigo-400">
                     <div className="p-1.5 rounded-lg bg-indigo-500/10">
@@ -184,7 +252,6 @@ function AnimationSection({
             </div>
           </div>
 
-          {/* SVG Connections */}
           {!isMobile && (
             <svg
               ref={svgRef}
@@ -224,7 +291,6 @@ function AnimationSection({
 
               {paths.map((pathData, index) => (
                 <g key={index}>
-                  {/* Source path */}
                   {pathData.source && (
                     <>
                       <path
@@ -260,7 +326,6 @@ function AnimationSection({
                     </>
                   )}
 
-                  {/* Consumer path */}
                   {pathData.consumer && (
                     <>
                       <path
@@ -269,7 +334,7 @@ function AnimationSection({
                         strokeWidth="1"
                         fill="none"
                         opacity="0.25"
-                        data-path={index + sources.length * 2} // Updated index to account for reverse paths
+                        data-path={index + sources.length * 2}
                       />
                       <circle
                         className="pulse"
@@ -285,8 +350,6 @@ function AnimationSection({
             </svg>
           )}
         </div>
-
-        {/* Apple-style feature strip with horizontal steps */}
       </div>
     </section>
   );

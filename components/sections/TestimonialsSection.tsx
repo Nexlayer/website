@@ -57,7 +57,7 @@ export const TestimonialsSection = () => {
           <div className="flex flex-col items-center sm:flex-row gap-4 justify-center">
             <a
               href="https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=hero_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1&typeform-source=preview-fork-of-nexlayer-website-32-c6lbguqz3vzumzqeu.vusercontent.net"
-              className="w-max inline-flex items-center px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg font-semibold transition-colors"
+              className="max-sm:max-w-[232px] w-full sm:w-max inline-flex justify-center items-center px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg font-semibold transition-colors text-center"
             >
               Start shipping
             </a>
