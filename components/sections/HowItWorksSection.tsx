@@ -20,7 +20,7 @@ export const HowItWorksSection = () => {
       title: "Deploy with one prompt.",
       description: 'Type: "Deploy my app https://github.com/repo to nexlayer".',
       videoSrc:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deploy-production-grade-apps-in-minutes-with-nexlayer-kDjfZ7nBPIjusrpugZb28UDg0VD693.mp4",
+        "/deploy-production.mp4",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ export const HowItWorksSection = () => {
       description:
         "Your app is now live and auto-scaling for free. Claim it, extend it or reserve to keep it running.",
       videoSrc:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/from-local-to-global-app-EhEDyeKqYNJWXAd3Jzg1kWv2jSZT6V.mp4",
+        "/from-local-to-global-app.mp4",
     },
     {
       id: 4,
@@ -36,7 +36,7 @@ export const HowItWorksSection = () => {
       description:
         "Claim it to keep it live, share with friends, or reserve it to scale it globally in one click.",
       videoSrc:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/claim-extend-reserve-it-nexlayer-c0LsegwBtzeAtUl3WV8bcGVoruVwSG.mp4",
+        "/claim-extend.mp4",
     },
   ];
 
