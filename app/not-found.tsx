@@ -17,7 +17,7 @@ export default function NotFound() {
           OOps!
           <br /> Page Not Found
         </p>
-        <p className="mt-4 px-6 max-w-[380px] mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-[#878593] text-center">
+        <p className="mt-4 px-6 max-w-[430px] mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-[#878593] text-center">
           Sorry about that! Please visit our homepage to get where you need to
           go.
         </p>
