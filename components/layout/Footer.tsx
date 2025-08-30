@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-[#2a2a2a] py-16">
+    <footer className="bg-[#0a0a0a] border-t border-[#2a2a2a] pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex max-sm:flex-col justify-between gap-8 md:gap-12">
           <div className="lg:col-span-2">
@@ -113,7 +113,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#2a2a2a]">
+        <div className="mt-12 pt-8 mb-8 border-t border-[#2a2a2a]">
           <p className="text-gray-400 text-sm text-center">
             © 2025 Nexlayer. All rights reserved. Nexlayer – The Cloud Agents
             Trust™ are trademarks of AuditDeploy, Inc.
