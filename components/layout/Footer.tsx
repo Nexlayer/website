@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="bg-[#0a0a0a] border-t border-[#2a2a2a] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="flex max-sm:flex-col justify-between gap-8 md:gap-12">
           <div className="lg:col-span-2">
             <Link href="/">
               <div className="mb-6">
@@ -34,85 +34,85 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="http://nexlayer.com/blog"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
+          <div className="max-sm:flex justify-between max-sm:mt-4 grid gap-4 md:gap-12 col-span-2 lg:col-span-3 grid-cols-3">
+            <div>
+              <h3 className="text-white text-sm sm:text-base font-semibold mb-4">Company</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                <li>
+                  <a
+                    href="http://nexlayer.com/blog"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Blog
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://docs.nexlayer.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://docs.nexlayer.com/documentation/api-reference"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  API Reference
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://discord.gg/vQWumBAR"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Support
-                </a>
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h3 className="text-white text-sm sm:text-base font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                <li>
+                  <a
+                    href="https://docs.nexlayer.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Documentation
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://docs.nexlayer.com/documentation/api-reference"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    API Reference
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://discord.gg/vQWumBAR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Support
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          {/* Legal Column */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://app.nexlayer.io/legal/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://app.nexlayer.io/legal/terms"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Terms & Conditions
-                </a>
-              </li>
-            </ul>
+            <div>
+              <h3 className="text-white text-sm sm:text-base font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                <li>
+                  <a
+                    href="https://app.nexlayer.io/legal/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://app.nexlayer.io/legal/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Terms & Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* Bottom section with copyright */}
         <div className="mt-12 pt-8 border-t border-[#2a2a2a]">
           <p className="text-gray-400 text-sm text-center">
             © 2025 Nexlayer. All rights reserved. Nexlayer – The Cloud Agents
