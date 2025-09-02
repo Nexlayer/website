@@ -64,7 +64,7 @@ export const HeroSection = () => {
                     style={{ backgroundColor: "#28B8CD" }}
                   >
                     <span className="text-sm text-black font-bold">
-                      Get Beta Access
+                      Start free beta
                     </span>
                   </Button>
                 </div>
