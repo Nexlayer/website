@@ -154,9 +154,9 @@ function AnimationSection({
                       key={source.id}
                       data-source={index}
                       role="group"
-                      className="flex items-center justify-start w-[64px] h-[100px]"
+                      className="-ml-3 size-24"
                     >
-                      <CursorLogo className="h-16 w-16" />
+                      <img src="/cursor.svg" alt="Cursor Icon"/>
                     </div>
                   );
                 } else if (source.id === "claude") {
