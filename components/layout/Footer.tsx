@@ -64,7 +64,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://docs.nexlayer.com/documentation/api-reference"
+                    href="https://docs.nexlayer.com/api-reference"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
