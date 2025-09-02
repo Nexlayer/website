@@ -11,19 +11,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nexlayer.com"),
   title: {
     template: "%s | Nexlayer",
-    default: "Nexlayer - AI-native Cloud Platform",
+    default: "Nexlayer - The First Agent-Native Cloud Platform",
   },
   description:
-    "Deploy full-stack AI applications in seconds, not weeks. One simple launchfile deploys your entire app stack—frontend, backend, database, vector store, AI model —instantly to production. Built for AI agents, not humans",
+    "Nexlayer is the first AI agent-native cloud. Deploy any GitHub repo in minutes with Nexlayer-MCP — auto-detect, containerize, and go live. No DevOps.",
   keywords:
-    "AI deployment, cloud platform, full-stack deployment, AI-native cloud, launchfile, instant deployment, AI agents, nexlayer yaml, AI developer tools, AI cloud infrastructure",
+    "AI agent-native cloud, GitHub deployment, Nexlayer-MCP, auto-detect stack, containerize, instant deployment, no DevOps, cloud agents, AI cloud platform, production deployment",
   openGraph: {
     title: {
       template: "%s | Nexlayer",
-      default: "Nexlayer - AI-native Cloud Platform",
+      default: "Nexlayer - The First Agent-Native Cloud Platform",
     },
     description:
-      "Deploy full-stack AI applications in seconds, not weeks. One launchfile. Full stack. Live instantly. Built for the age of AI agents.",
+      "Nexlayer is the first AI agent-native cloud, enabling agents and developers to deploy any GitHub repo instantly. The Nexlayer-MCP auto-detects your stack, containerizes, orchestrates, and delivers a live production URL — no dashboards, no DevOps. The Cloud Agents Trust™.",
     type: "website",
     url: new URL("https://nexlayer.com"),
     images: [
@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     site: "@nexlayer",
     title: {
       template: "%s | Nexlayer",
-      default: "Nexlayer - AI-native Cloud Platform",
+      default: "Nexlayer - The First Agent-Native Cloud Platform",
     },
     description:
-      "Deploy full-stack AI applications in seconds, not weeks. One launchfile. Full stack. Live instantly.",
+      "Nexlayer is the first AI agent-native cloud, enabling agents and developers to deploy any GitHub repo instantly. The Nexlayer-MCP auto-detects your stack, containerizes, orchestrates, and delivers a live production URL — no dashboards, no DevOps. The Cloud Agents Trust™.",
     creator: "@nexlayer",
     images: [
       {
