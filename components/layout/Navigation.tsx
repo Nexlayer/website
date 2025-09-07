@@ -34,9 +34,17 @@ export const Navigation = () => {
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-4">
+            <a
+              href="https://docs.nexlayer.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-cyan-400 text-xs sm:text-sm font-medium transition-colors duration-300"
+            >
+              Documentation
+            </a>
             <Button
               className="bg-white !text-black hover:bg-transparent hover:border-cyan-400 hover:border-2 border-2 hover:!text-cyan-400 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 font-medium rounded-lg transition-all duration-300"
-              onClick={() => window.open("https://app.nexlayer.io/", "_blank")}
+              onClick={() => window.open("https://outgoing-violin-38-staging.authkit.app/sign-up?redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K4JKPDTWM8VM5W1MMK7RQRRK", "_blank")}
             >
               <span className="hidden sm:inline">Start free beta</span>
               <span className="sm:hidden">Free beta</span>

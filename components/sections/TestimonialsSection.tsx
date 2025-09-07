@@ -50,27 +50,6 @@ export const TestimonialsSection = () => {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Ready to start shipping?</h2>
-          <p className="text-xl text-gray-400 mb-8">Start for free today — no credit card required.</p>
-          <div className="flex flex-col items-center sm:flex-row gap-4 justify-center">
-            <a
-              href="https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=hero_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1&typeform-source=preview-fork-of-nexlayer-website-32-c6lbguqz3vzumzqeu.vusercontent.net"
-              className="max-sm:max-w-[232px] w-full sm:w-max inline-flex justify-center items-center px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-black rounded-lg font-semibold transition-colors text-center"
-            >
-              Start shipping
-            </a>
-            <a
-              href="https://cal.com/nexlayer/30min?overlayCalendar=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-max inline-flex items-center px-8 py-3 hover:bg-transparent hover:border-cyan-400 border-2 hover:border-2 hover:text-cyan-400 rounded-lg font-semibold transition-all duration-300 bg-white text-black"
-            >
-              Talk with an engineer
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   )

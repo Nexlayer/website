@@ -4,6 +4,8 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { FeaturesGridSection } from "@/components/sections/FeaturesGridSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { PricingAndFAQSection } from "@/components/sections/PricingAndFAQSection";
+import { FAQSection } from "@/components/sections/FAQSection";
 
 export default function LandingPage() {
   return (
@@ -12,7 +14,9 @@ export default function LandingPage() {
       <FeaturesSection />
       <HowItWorksSection />
       <FeaturesGridSection />
+      <PricingAndFAQSection />
       <TestimonialsSection />
+      <FAQSection />
     </div>
   );
 }
