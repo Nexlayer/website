@@ -25,7 +25,7 @@ export const HeroSection = () => {
       <section className="px-4 py-20 bg-black">
         <div className="text-center mx-auto">
           <h1
-            className="mt-12 sm:mt-20 text-5xl sm:text-[75px] text-white mb-6 leading-tight font-medium"
+            className="mt-12 sm:mt-20 text-4xl sm:text-6xl text-white mb-6 leading-tight font-medium"
           >
             <span>The first </span>
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
@@ -33,8 +33,8 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-3xl mx-auto px-4">
-            From github repo to production in minutes — no infra setup, no configs, no humans in the loop. 5,000+ apps deployed. The next is yours.
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-3xl mx-auto px-4 whitespace-nowrap">
+            The fastest way from code to cloud. 5,000+ apps deployed. The next is yours.
           </p>
 
           {/* Main Input Area */}
