@@ -33,7 +33,7 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-3xl mx-auto px-4 whitespace-nowrap">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-3xl mx-auto px-4">
             The fastest way from code to cloud. 5,000+ apps deployed. The next is yours.
           </p>
 
