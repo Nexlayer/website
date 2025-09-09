@@ -172,10 +172,12 @@ export const MCPSetupComponent = () => {
                           <div style={{ background: '#18181b', color: '#fff', borderRadius: '8px', padding: '12px', fontFamily: 'monospace', fontSize: '13px', margin: '10px 0 0 0', overflowX: 'auto', border: '1px solid #333' }}>
                             <pre style={{ margin: 0 }}>
                               {`"nexlayer-mcp": {
-    ..."headers": {
-      "Authorization": "Bearer <NEXLAYER_MCP_TOKEN>"
-    }
-  }`}
+  "url": "https://mcp.nexlayer.ai/api/mcp",
+  "type": "http",
+  "headers": {
+    "Authorization": "Bearer <NEXLAYER_MCP_TOKEN>"
+  }
+}`}
                             </pre>
                           </div>
                         )}
