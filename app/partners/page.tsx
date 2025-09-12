@@ -1,0 +1,248 @@
+"use client"
+
+import { Button } from "../../components/ui/button"
+import { Card } from "../../components/ui/card"
+import { Badge } from "../../components/ui/badge"
+import { Navigation } from "../../components/layout/Navigation"
+import { Footer } from "../../components/layout/Footer"
+
+export default function PartnersPage() {
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            Hire a Nexlayer Partner
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Whether you're just getting started with Nexlayer or looking to implement advanced functionality, 
+            our partners have the expertise and industry knowledge to deliver the right solution.
+          </p>
+          <Button 
+            className="bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 text-lg font-medium rounded-lg transition-all duration-300"
+            onClick={() => document.getElementById('partners-section')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Meet our partners
+          </Button>
+          <div className="mt-6">
+            <a 
+              href="mailto:partnerships@nexlayer.com"
+              className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"
+            >
+              Are you a builder or agency? Apply to become a partner →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-cyan-400 text-black rounded-lg flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                1
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Describe Your Project</h3>
+              <p className="text-gray-300">
+                Tell us about your project vision and core features to build
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-cyan-400 text-black rounded-lg flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Get Paired</h3>
+              <p className="text-gray-300">
+                We match your application with the perfect builder or you can contact expert builders directly
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-cyan-400 text-black rounded-lg flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Build Your Project</h3>
+              <p className="text-gray-300">
+                Your expert builder brings your vision to life
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-cyan-400 text-black rounded-lg flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                4
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Maintain Control</h3>
+              <p className="text-gray-300">
+                Edit your project with Nexlayer anytime and re-engage with expert builders as needed
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section id="partners-section" className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6">
+            Meet our Nexlayer Partners
+          </h2>
+          <p className="text-lg text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            Connect directly with our partners below. Can't find the right fit?{" "}
+            <span className="text-cyan-400">Let us help match you</span> with the perfect partner.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Partner 1 */}
+            <Card className="bg-gray-900 border-gray-700 p-6 relative">
+              <Badge className="absolute top-4 right-4 bg-orange-500 text-white">
+                Preferred Partner
+              </Badge>
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mr-4 relative overflow-hidden">
+                  {/* StellarStack isometric cube logo */}
+                  <div className="relative w-8 h-8">
+                    {/* Cube structure */}
+                    <div className="absolute inset-0 transform rotate-45">
+                      {/* Top face */}
+                      <div className="absolute top-0 left-0 w-4 h-4 bg-blue-300 border border-blue-400"></div>
+                      {/* Front face */}
+                      <div className="absolute top-2 left-2 w-4 h-4 bg-blue-600 border border-blue-700"></div>
+                      {/* Right face */}
+                      <div className="absolute top-1 left-3 w-2 h-4 bg-blue-800 border border-blue-900 transform skew-y-12"></div>
+                    </div>
+                    {/* Central star */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
+                    {/* Star rays */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-1 h-1 bg-white absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
+                      <div className="w-1 h-1 bg-white absolute -bottom-1 left-1/2 transform -translate-x-1/2"></div>
+                      <div className="w-1 h-1 bg-white absolute top-1/2 -left-1 transform -translate-y-1/2"></div>
+                      <div className="w-1 h-1 bg-white absolute top-1/2 -right-1 transform -translate-y-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">StellarStack</h3>
+                  <p className="text-gray-400 text-sm">British Columbia, Canada • English</p>
+                </div>
+              </div>
+              <div className="space-y-2 mb-6">
+                <p className="text-white"><span className="text-gray-400">Budget:</span> Starting from $1500</p>
+                <p className="text-white"><span className="text-gray-400">Hourly Rate:</span> $55/hr</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Website:</span>https://www.stellarstack.co/</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Nexlayer Projects:</span>37</p>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-white font-semibold mb-2">Key Services:</h4>
+                <ul className="text-gray-300 space-y-1">
+                  <li>• Rapid MVP Development</li>
+                  <li>• AUI/UX Design</li>
+                  <li>• Full-Stack Application Development</li>
+                  <li>• API integrations</li>
+                  <li>• AI/LLM model integration</li>
+                  <li>• Cloud infrastructure management</li>
+                </ul>
+              </div>
+              <Button 
+                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                onClick={() => window.open('mailto:contact@clouddeploypro.com', '_blank')}
+              >
+                Contact
+              </Button>
+            </Card>
+
+            {/* Partner 2 */}
+            <Card className="bg-gray-900 border-gray-700 p-6 relative">
+              <Badge className="absolute top-4 right-4 bg-orange-500 text-white">
+                Preferred Partner
+              </Badge>
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4">
+                  {/* Tekiesoft logo - stylized human figure */}
+                  <div className="relative w-8 h-8">
+                    {/* Head (circle) */}
+                    <div className="absolute top-0 right-0 w-3 h-3 bg-blue-500 rounded-full"></div>
+                    {/* Body (curved shape) */}
+                    <div className="absolute top-1.5 left-0 w-6 h-5">
+                      <div className="w-full h-full bg-blue-500 rounded-full transform rotate-12"></div>
+                      <div className="absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full transform -rotate-12"></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Tekiesoft</h3>
+                  <p className="text-gray-400 text-sm">Atlanta, Georgia • English</p>
+                </div>
+              </div>
+              <div className="space-y-2 mb-6">
+                <p className="text-white"><span className="text-gray-400">Budget:</span> Starting from $3,000</p>
+                <p className="text-white"><span className="text-gray-400">Hourly Rate:</span>$75/hr</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Website:</span>www.tekiesoft.com</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Nexlayer Projects:</span>23</p>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-white font-semibold mb-2">Key Services:</h4>
+                <ul className="text-gray-300 space-y-1">
+                  <li>• CI/CD Pipelines for automated deployments</li>
+                  <li>• Cloud Cost Optimization</li>
+                  <li>• Data pipeline architecture</li>
+                  <li>• Custom AI integrations</li>
+                  <li>• Scaling guidance</li>
+                  <li>• Startup-Ready Security</li>
+                </ul>
+              </div>
+              <Button 
+                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                onClick={() => window.open('mailto:hello@aibuilders.co', '_blank')}
+              >
+                Contact
+              </Button>
+            </Card>
+
+            {/* Partner 3 */}
+            <Card className="bg-gray-900 border-gray-700 p-6">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4">
+                  <span className="text-white font-bold text-lg">SD</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">StartupDeploy</h3>
+                  <p className="text-gray-400 text-sm">Austin, TX • English</p>
+                </div>
+              </div>
+              <div className="space-y-2 mb-6">
+                <p className="text-white"><span className="text-gray-400">Budget:</span> Starting from $3,500/mo</p>
+                <p className="text-white"><span className="text-gray-400">Hourly Rate:</span> $120/hr</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Website:</span> www.startupdeploy.io</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Nexlayer Projects:</span> 28</p>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-white font-semibold mb-2">Key Services:</h4>
+                <ul className="text-gray-300 space-y-1">
+                  <li>• MVP development</li>
+                  <li>• Startup consulting</li>
+                  <li>• Rapid prototyping</li>
+                  <li>• Product strategy</li>
+                  <li>• Technical due diligence</li>
+                </ul>
+              </div>
+              <Button 
+                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                onClick={() => window.open('mailto:contact@startupdeploy.io', '_blank')}
+              >
+                Contact
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+}

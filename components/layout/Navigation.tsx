@@ -33,6 +33,26 @@ export const Navigation = () => {
             </span>
           </div>
 
+          {/* Center Navigation Links */}
+          <div className="hidden md:flex items-center space-x-6">
+            <a
+              href="https://jnsbqhb7fyt.typeform.com/startupprogram?utm_source=nexlayer-website&utm_medium=web&utm_campaign=startup-program&utm_term=nexlayer-startup-program&utm_content=website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"
+            >
+              Startup Program
+            </a>
+            <a
+              href="https://discord.gg/U9N23Zzd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"
+            >
+              Feedback & Community
+            </a>
+          </div>
+
           <div className="flex items-center space-x-2 sm:space-x-4">
             <a
               href="https://docs.nexlayer.com/"

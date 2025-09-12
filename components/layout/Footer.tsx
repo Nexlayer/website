@@ -46,6 +46,14 @@ export const Footer = () => {
                     Blog
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/partners"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Hire a partner
+                  </a>
+                </li>
               </ul>
             </div>
 
