@@ -69,7 +69,7 @@ export const HowItWorksSection = () => {
               >
                 <div className="flex items-center mb-4">
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mr-3 ${
                       activeStep === step.id
                         ? "bg-cyan-400 text-black"
                         : "bg-gray-600 text-white"
