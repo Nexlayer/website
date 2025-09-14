@@ -4,7 +4,6 @@ import { Button } from "../../components/ui/button"
 import { Card } from "../../components/ui/card"
 import { Badge } from "../../components/ui/badge"
 import { Navigation } from "../../components/layout/Navigation"
-import { Footer } from "../../components/layout/Footer"
 
 export default function PartnersPage() {
   return (
@@ -149,8 +148,8 @@ export default function PartnersPage() {
                 </ul>
               </div>
               <Button 
-                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                onClick={() => window.open('mailto:contact@clouddeploypro.com', '_blank')}
+                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:!bg-cyan-400 hover:!text-black font-medium transition-all duration-300"
+                onClick={() => window.open('mailto:partnerships@nexlayer.com?subject=Hiring StellarStack for my Nexlayer project', '_blank')}
               >
                 Contact
               </Button>
@@ -181,7 +180,7 @@ export default function PartnersPage() {
               </div>
               <div className="space-y-2 mb-6">
                 <p className="text-white"><span className="text-gray-400">Budget:</span> Starting from $3,000</p>
-                <p className="text-white"><span className="text-gray-400">Hourly Rate:</span>$75/hr</p>
+                <p className="text-white"><span className="text-gray-400">Hourly Rate:</span>$100/hr</p>
                 <p className="text-cyan-400"><span className="text-gray-400">Website:</span>www.tekiesoft.com</p>
                 <p className="text-cyan-400"><span className="text-gray-400">Nexlayer Projects:</span>23</p>
               </div>
@@ -197,52 +196,52 @@ export default function PartnersPage() {
                 </ul>
               </div>
               <Button 
-                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                onClick={() => window.open('mailto:hello@aibuilders.co', '_blank')}
+                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:!bg-cyan-400 hover:!text-black font-medium transition-all duration-300"
+                onClick={() => window.open('mailto:partnerships@nexlayer.com?subject=Hiring Tekiesoft for my Nexlayer project', '_blank')}
               >
                 Contact
               </Button>
             </Card>
 
-            {/* Partner 3 */}
-            <Card className="bg-gray-900 border-gray-700 p-6">
+            {/* Become a Partner Card */}
+            <Card className="bg-gray-900 border-gray-700 p-6 border-2 border-dashed border-cyan-400/50 hover:border-cyan-400 transition-all duration-300">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4">
-                  <span className="text-white font-bold text-lg">SD</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">StartupDeploy</h3>
-                  <p className="text-gray-400 text-sm">Austin, TX • English</p>
+                  <h3 className="text-xl font-bold text-white">Become a Partner</h3>
+                  <p className="text-gray-400 text-sm">Join our partner network</p>
                 </div>
               </div>
               <div className="space-y-2 mb-6">
-                <p className="text-white"><span className="text-gray-400">Budget:</span> Starting from $3,500/mo</p>
-                <p className="text-white"><span className="text-gray-400">Hourly Rate:</span> $120/hr</p>
-                <p className="text-cyan-400"><span className="text-gray-400">Website:</span> www.startupdeploy.io</p>
-                <p className="text-cyan-400"><span className="text-gray-400">Nexlayer Projects:</span> 28</p>
+                <p className="text-white"><span className="text-gray-400">Benefits:</span> Preferred partner status</p>
+                <p className="text-white"><span className="text-gray-400">Support:</span> Dedicated partner resources</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Growth:</span> Access to our client network</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Training:</span> Nexlayer expertise certification</p>
               </div>
               <div className="mb-6">
-                <h4 className="text-white font-semibold mb-2">Key Services:</h4>
+                <h4 className="text-white font-semibold mb-2">What we're looking for:</h4>
                 <ul className="text-gray-300 space-y-1">
-                  <li>• MVP development</li>
-                  <li>• Startup consulting</li>
-                  <li>• Rapid prototyping</li>
-                  <li>• Product strategy</li>
-                  <li>• Technical due diligence</li>
+                  <li>• Proven development experience</li>
+                  <li>• Strong client communication</li>
+                  <li>• Nexlayer platform expertise</li>
+                  <li>• Portfolio of successful projects</li>
+                  <li>• Commitment to quality delivery</li>
                 </ul>
               </div>
               <Button 
-                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                onClick={() => window.open('mailto:contact@startupdeploy.io', '_blank')}
+                className="w-full bg-transparent border-2 border-cyan-400 text-cyan-400 hover:!bg-cyan-400 hover:!text-black font-medium transition-all duration-300"
+                onClick={() => window.open('mailto:partnerships@nexlayer.com?subject=Looking to become a Nexlayer partner?', '_blank')}
               >
-                Contact
+                Apply Now
               </Button>
             </Card>
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

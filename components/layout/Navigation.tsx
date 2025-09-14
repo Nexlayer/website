@@ -49,7 +49,7 @@ export const Navigation = () => {
               rel="noopener noreferrer"
               className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"
             >
-              Feedback & Community
+              Support
             </a>
           </div>
 
