@@ -25,16 +25,16 @@ export const HeroSection = () => {
       <section className="px-4 py-20 bg-black">
         <div className="text-center mx-auto">
           <h1
-            className="mt-12 sm:mt-20 text-4xl sm:text-6xl text-white mb-6 leading-tight font-medium"
+            className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight font-medium max-w-4xl mx-auto px-4"
           >
-            <span>The first </span>
+            The fastest way to go from{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-              agent-native cloud
+              MVP to production. Ever.
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-3xl mx-auto px-4">
-            The fastest way from code to cloud. 5,000+ apps deployed. The next is yours.
+          <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-4xl mx-auto px-4">
+            Nexlayer is the first agent-native cloud. Deploy your app live on your own domain in minutes.
           </p>
 
           {/* Main Input Area */}

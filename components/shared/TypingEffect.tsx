@@ -10,7 +10,7 @@ export const TypingEffect = ({ show = true }: TypingEffectProps) => {
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
-  const fullText = "Deploy my app https://github.com/Nexlayer/ai-code-arena to nexlayer"
+  const fullText = "Deploy my app https://github.com/username/repo-name to nexlayer"
   const typingSpeed = 50 // Twice as fast
   const pauseTime = 1000 // Shorter pause for smoother loop
 

@@ -4,6 +4,7 @@ import { Button } from "../../components/ui/button"
 import { Card } from "../../components/ui/card"
 import { Badge } from "../../components/ui/badge"
 import { Navigation } from "../../components/layout/Navigation"
+import { StellarStackLogo, TekiesoftLogo } from "../../components/logos/partners"
 
 export default function PartnersPage() {
   return (
@@ -21,7 +22,7 @@ export default function PartnersPage() {
             our partners have the expertise and industry knowledge to deliver the right solution.
           </p>
           <Button 
-            className="bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 text-lg font-medium rounded-lg transition-all duration-300"
+            className="bg-transparent border-2 border-cyan-400 text-cyan-400 hover:!bg-cyan-400 hover:!text-black px-8 py-3 text-lg font-medium rounded-lg transition-all duration-300"
             onClick={() => document.getElementById('partners-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Meet our partners
@@ -102,28 +103,8 @@ export default function PartnersPage() {
                 Preferred Partner
               </Badge>
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mr-4 relative overflow-hidden">
-                  {/* StellarStack isometric cube logo */}
-                  <div className="relative w-8 h-8">
-                    {/* Cube structure */}
-                    <div className="absolute inset-0 transform rotate-45">
-                      {/* Top face */}
-                      <div className="absolute top-0 left-0 w-4 h-4 bg-blue-300 border border-blue-400"></div>
-                      {/* Front face */}
-                      <div className="absolute top-2 left-2 w-4 h-4 bg-blue-600 border border-blue-700"></div>
-                      {/* Right face */}
-                      <div className="absolute top-1 left-3 w-2 h-4 bg-blue-800 border border-blue-900 transform skew-y-12"></div>
-                    </div>
-                    {/* Central star */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
-                    {/* Star rays */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-1 h-1 bg-white absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
-                      <div className="w-1 h-1 bg-white absolute -bottom-1 left-1/2 transform -translate-x-1/2"></div>
-                      <div className="w-1 h-1 bg-white absolute top-1/2 -left-1 transform -translate-y-1/2"></div>
-                      <div className="w-1 h-1 bg-white absolute top-1/2 -right-1 transform -translate-y-1/2"></div>
-                    </div>
-                  </div>
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 p-2">
+                  <StellarStackLogo width={32} height={32} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">StellarStack</h3>
@@ -133,7 +114,7 @@ export default function PartnersPage() {
               <div className="space-y-2 mb-6">
                 <p className="text-white"><span className="text-gray-400">Budget:</span> Starting from $1500</p>
                 <p className="text-white"><span className="text-gray-400">Hourly Rate:</span> $55/hr</p>
-                <p className="text-cyan-400"><span className="text-gray-400">Website:</span>https://www.stellarstack.co/</p>
+                <p className="text-cyan-400"><span className="text-gray-400">Website:</span>www.stellarstack.co/</p>
                 <p className="text-cyan-400"><span className="text-gray-400">Nexlayer Projects:</span>37</p>
               </div>
               <div className="mb-6">
@@ -161,17 +142,8 @@ export default function PartnersPage() {
                 Preferred Partner
               </Badge>
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4">
-                  {/* Tekiesoft logo - stylized human figure */}
-                  <div className="relative w-8 h-8">
-                    {/* Head (circle) */}
-                    <div className="absolute top-0 right-0 w-3 h-3 bg-blue-500 rounded-full"></div>
-                    {/* Body (curved shape) */}
-                    <div className="absolute top-1.5 left-0 w-6 h-5">
-                      <div className="w-full h-full bg-blue-500 rounded-full transform rotate-12"></div>
-                      <div className="absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full transform -rotate-12"></div>
-                    </div>
-                  </div>
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 p-2">
+                  <TekiesoftLogo width={32} height={32} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Tekiesoft</h3>
