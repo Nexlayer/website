@@ -102,7 +102,7 @@ export const Navigation = () => {
               Startup Program
             </a>
             <a
-              href="https://discord.gg/U9N23Zzd"
+              href="https://discord.gg/U26X9mmYnP"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"

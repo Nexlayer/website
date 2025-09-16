@@ -82,7 +82,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://discord.gg/vQWumBAR"
+                    href="https://discord.gg/U26X9mmYnP"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
