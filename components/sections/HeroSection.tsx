@@ -25,16 +25,16 @@ export const HeroSection = () => {
       <section className="px-4 py-20 bg-black">
         <div className="text-center mx-auto">
           <h1
-            className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight font-medium max-w-4xl mx-auto px-4"
+            className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-[0.9] font-bold max-w-5xl mx-auto px-4 tracking-tight"
           >
-            The fastest way to go from{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-              MVP to production. Ever.
+            <span className="block">Agent-Native</span>
+            <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-500 bg-clip-text text-transparent font-black">
+              Cloud Infrastructure
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-8 sm:mb-12 lg:mb-16 font-normal max-w-4xl mx-auto px-4">
-            Nexlayer is the first agent-native cloud. Deploy your app live on your own domain in minutes.
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-12 sm:mb-16 lg:mb-20 font-light max-w-3xl mx-auto px-4 leading-relaxed">
+            The first cloud built for agents to ship, manage, and scale software autonomously — from deployment to scale.
           </p>
 
           {/* Main Input Area */}
@@ -71,8 +71,8 @@ export const HeroSection = () => {
               </div>
 
               <div className="flex justify-center px-3 sm:px-4 pb-2">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700">
-                  <span className="text-xs text-gray-300 font-medium text-center">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700">
+                  <span className="text-sm text-gray-300 font-medium text-center leading-relaxed">
                     Nexlayer is in early beta. Start shipping → Give feedback → Help shape the future of the agent-native cloud.
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export const HeroSection = () => {
 
           {/* Social Proof Section */}
           <div className="max-w-4xl mx-auto mb-4 sm:mb-16 lg:mb-20 text-center px-4">
-            <p className="text-gray-400 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8">Built by a team who've scaled products for millions at</p>
+            <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-8 sm:mb-10 font-medium tracking-wide">Built by a team who've scaled products for millions at</p>
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12 opacity-60">
               {/* Google Logo */}
               <div className="flex items-center">
