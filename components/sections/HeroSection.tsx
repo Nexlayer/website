@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import React from "react";
+import Link from "next/link";
 import { Button } from "../ui/button";
 import { TypingEffect } from "../shared/TypingEffect";
 import { ComparisonSection } from "./ComparisonSection";
@@ -13,20 +14,11 @@ export const HeroSection = () => {
     setUserInput(e.target.value);
   };
 
-  const handleDeploy = () => {
-    window.open(
-      "https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=hero_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1",
-      "_blank"
-    );
-  };
-
   return (
     <>
       <section className="px-4 py-20 bg-black">
         <div className="text-center mx-auto">
-          <h1
-            className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-[0.9] font-bold max-w-5xl mx-auto px-4 tracking-tight"
-          >
+          <h1 className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-[0.9] font-bold max-w-5xl mx-auto px-4 tracking-tight">
             <span className="block">Agent-Native</span>
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-500 bg-clip-text text-transparent font-black">
               Cloud Infrastructure
@@ -34,7 +26,8 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-12 sm:mb-16 lg:mb-20 font-light max-w-3xl mx-auto px-4 leading-relaxed">
-            The first cloud built for agents to ship, manage, and scale software autonomously — from deployment to scale.
+            The first cloud built for agents to ship, manage, and scale software
+            autonomously — from deployment to scale.
           </p>
 
           {/* Main Input Area */}
@@ -57,23 +50,25 @@ export const HeroSection = () => {
                 <div className="flex items-center space-x-4">
                   {/* Removed Attach and Import buttons as per previous request */}
                 </div>
-                <div className="flex items-center space-x-2 w-full sm:w-auto">
-                  <Button
-                    onClick={handleDeploy}
-                    className="w-full sm:w-auto px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
-                    style={{ backgroundColor: "#28B8CD" }}
-                  >
-                    <span className="text-sm text-black font-bold">
-                      Join free beta
-                    </span>
-                  </Button>
-                </div>
+                <Link href="https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K70GFXHVBGK859QR0QEET9WF">
+                  <div className="flex items-center space-x-2 w-full sm:w-auto">
+                    <Button
+                      className="w-full sm:w-auto px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
+                      style={{ backgroundColor: "#28B8CD" }}
+                    >
+                      <span className="text-sm text-black font-bold">
+                        Join free beta
+                      </span>
+                    </Button>
+                  </div>
+                </Link>
               </div>
 
               <div className="flex justify-center px-3 sm:px-4 pb-2">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700">
                   <span className="text-sm text-gray-300 font-medium text-center leading-relaxed">
-                    Nexlayer is in early beta. Start shipping → Give feedback → Help shape the future of the agent-native cloud.
+                    Nexlayer is in early beta. Start shipping → Give feedback →
+                    Help shape the future of the agent-native cloud.
                   </span>
                 </div>
               </div>
@@ -82,7 +77,9 @@ export const HeroSection = () => {
 
           {/* Social Proof Section */}
           <div className="max-w-4xl mx-auto mb-4 sm:mb-16 lg:mb-20 text-center px-4">
-            <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-8 sm:mb-10 font-medium tracking-wide">Built by a team who've scaled products for millions at</p>
+            <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-8 sm:mb-10 font-medium tracking-wide">
+              Built by a team who've scaled products for millions at
+            </p>
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12 opacity-60">
               {/* Google Logo */}
               <div className="flex items-center">
