@@ -6,6 +6,10 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { TypingEffect } from "../shared/TypingEffect";
 import { ComparisonSection } from "./ComparisonSection";
+import { Cursor } from "../logos/Cursor";
+import { ClaudeAI } from "../logos/ClaudeAI";
+import { VisualStudioCode } from "../logos/VisualStudioCode";
+import { GitHubCopilot } from "../logos/GitHubCopilot";
 
 export const HeroSection = () => {
   const [userInput, setUserInput] = useState("");
@@ -18,22 +22,50 @@ export const HeroSection = () => {
     <>
       <section className="px-4 py-20 bg-black">
         <div className="text-center mx-auto">
-          <h1 className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-[0.9] font-bold max-w-5xl mx-auto px-4 tracking-tight">
-            <span className="block">Agent-Native</span>
-            <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-500 bg-clip-text text-transparent font-black">
-              Cloud Infrastructure
-            </span>
+          <h1 className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-[0.85] font-bold max-w-6xl mx-auto px-4 tracking-tight text-center whitespace-nowrap">
+          From AI code to live app.
           </h1>
 
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-12 sm:mb-16 lg:mb-20 font-light max-w-3xl mx-auto px-4 leading-relaxed">
-            The first cloud built for agents to ship, manage, and scale software
-            autonomously — from deployment to scale.
+            The easiest way to deploy AI-built products in minutes.
+            <br />
+            Any language. Any framework. Any stack.
           </p>
 
           {/* Main Input Area */}
           <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
             <div className="bg-black rounded-xl sm:rounded-2xl border-2 border-gray-600 p-1 shadow-lg">
-              <div className="flex items-center gap-1 px-3 sm:px-4 pt-3 pb-2"></div>
+              {/* Logo Tabs */}
+              <div className="flex items-center justify-center gap-4 px-3 sm:px-4 pt-3 pb-2">
+                <div className="flex items-center gap-3">
+                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
+                      <Cursor className="w-4 h-4 text-white" />
+                      <span className="text-xs text-gray-300 font-medium">Cursor</span>
+                    </div>
+                  </Link>
+                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
+                      <ClaudeAI className="w-4 h-4" />
+                      <span className="text-xs text-gray-300 font-medium">Claude</span>
+                    </div>
+                  </Link>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
+                      <VisualStudioCode className="w-4 h-4" />
+                      <span className="text-xs text-gray-300 font-medium">VS Code</span>
+                    </div>
+                  </Link>
+                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
+                      <GitHubCopilot className="w-4 h-4" />
+                      <span className="text-xs text-gray-300 font-medium">Copilot</span>
+                    </div>
+                  </Link>
+                </div>
+              </div>
 
               <div className="relative">
                 <TypingEffect show={true} />
@@ -50,28 +82,29 @@ export const HeroSection = () => {
                 <div className="flex items-center space-x-4">
                   {/* Removed Attach and Import buttons as per previous request */}
                 </div>
-                <Link href="https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K70GFXHVBGK859QR0QEET9WF">
-                  <div className="flex items-center space-x-2 w-full sm:w-auto">
+                <div className="flex items-center gap-3 w-full sm:w-auto">
+                  <Link href="https://docs.nexlayer.com/">
+                    <Button
+                      className="w-full sm:w-auto px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg bg-gray-700 hover:bg-gray-600"
+                    >
+                      <span className="text-sm text-white font-bold">
+                        View documentation
+                      </span>
+                    </Button>
+                  </Link>
+                  <Link href="https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K70GFXHVBGK859QR0QEET9WF">
                     <Button
                       className="w-full sm:w-auto px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
                       style={{ backgroundColor: "#28B8CD" }}
                     >
                       <span className="text-sm text-black font-bold">
-                        Join free beta
+                        Get started
                       </span>
                     </Button>
-                  </div>
-                </Link>
-              </div>
-
-              <div className="flex justify-center px-3 sm:px-4 pb-2">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700">
-                  <span className="text-sm text-gray-300 font-medium text-center leading-relaxed">
-                    Nexlayer is in early beta. Start shipping → Give feedback →
-                    Help shape the future of the agent-native cloud.
-                  </span>
+                  </Link>
                 </div>
               </div>
+
             </div>
           </div>
 

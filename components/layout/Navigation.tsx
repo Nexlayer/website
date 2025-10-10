@@ -129,7 +129,7 @@ export const Navigation = () => {
                 )
               }
             >
-              <span className="hidden sm:inline">Start free beta</span>
+              <span className="hidden sm:inline">Get started</span>
               <span className="sm:hidden">Free beta</span>
             </Button>
             <a

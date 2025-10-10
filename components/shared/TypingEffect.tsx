@@ -8,58 +8,72 @@ interface TypingEffectProps {
 
 export const TypingEffect = ({ show = true }: TypingEffectProps) => {
   const [displayText, setDisplayText] = useState("")
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
-  const fullText = "Deploy my app https://github.com/username/repo-name to nexlayer"
-  const typingSpeed = 50 // Twice as fast
-  const pauseTime = 1000 // Shorter pause for smoother loop
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  
+  const messages = [
+    "Install the Nexlayer connector for Cursor, Claude Code, or VSCode w/Copilot.",
+    "Installation complete.",
+    "Deploy my project to Nexlayer.",
+    "🎉 Deployment Successful!\nYour app is live https://your-app.alpha.nexlayer.ai"
+  ]
+  
+  const typingSpeed = 50
+  const pauseTime = 2000 // Pause between messages
 
   useEffect(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
     }
 
     if (!show) {
       setDisplayText("")
+      setCurrentMessageIndex(0)
       return
     }
 
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const nextIndex = prevIndex + 1
-        if (nextIndex <= fullText.length) {
-          setDisplayText(fullText.slice(0, nextIndex))
-          return nextIndex
-        } else {
-          clearInterval(intervalRef.current!)
-          setTimeout(() => {
-            setDisplayText("")
-            setCurrentIndex(0)
-          }, pauseTime)
-          return prevIndex
-        }
-      })
-    }, typingSpeed)
+    const currentMessage = messages[currentMessageIndex]
+    let charIndex = 0
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
+    const typeChar = () => {
+      if (charIndex < currentMessage.length) {
+        setDisplayText(currentMessage.slice(0, charIndex + 1))
+        charIndex++
+        timeoutRef.current = setTimeout(typeChar, typingSpeed)
+      } else {
+        // Message complete, pause then clear and move to next
+        timeoutRef.current = setTimeout(() => {
+          setDisplayText("") // Clear instantly
+          setCurrentMessageIndex(prev => (prev + 1) % messages.length)
+        }, pauseTime)
       }
     }
-  }, [currentIndex, fullText, show])
+
+    // Start typing immediately
+    setDisplayText("")
+    typeChar()
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [currentMessageIndex, show])
 
   if (!show) return null
 
   return (
     <div
-      className="w-full min-h-20 text-lg bg-black border-0 text-gray-400 px-6 font-medium flex items-center rounded-2xl"
+      className="w-full h-20 text-lg bg-black border-0 text-gray-400 px-6 font-medium flex items-center rounded-2xl"
       style={{
         wordBreak: "break-word",
         overflowWrap: "anywhere"
       }}
     >
-      <span className="text-gray-400 font-mono">{displayText}</span>
-      <span className="text-gray-400 animate-pulse ml-1">|</span>
+      <div className="flex items-center w-full">
+        <span className="text-gray-400 font-mono whitespace-pre-line text-left">{displayText}</span>
+        {displayText && <span className="text-gray-400 animate-pulse ml-1">|</span>}
+      </div>
     </div>
   )
 }

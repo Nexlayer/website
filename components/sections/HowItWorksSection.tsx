@@ -158,13 +158,13 @@ export const HowItWorksSection = () => {
           <button
             onClick={() =>
               window.open(
-                "https://jnsbqhb7fyt.typeform.com/to/a9DtuhOo?utm_source=website&utm_medium=how_it_works_cta&utm_campaign=mcp_onboarding_q3_2025&utm_term=intent_ship_now&utm_content=home_v1",
+                "https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77CC09JBMDSVV34VW5H9GM9",
                 "_blank"
               )
             }
             className="bg-cyan-400 text-black font-bold px-8 py-4 rounded-lg hover:bg-cyan-500 transition-all duration-300"
           >
-            Try the beta!
+            Get started!
           </button>
           <p className="text-gray-400 text-sm mt-3">
             Free to try in beta — deploy without signup. Claim it later if you
