@@ -47,7 +47,7 @@ export const HowItWorksSection = () => {
       <div className="max-w-[1250px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            See How It Works
+            It's easy to get started.
           </h2>
           <p className="text-xl text-gray-400">
             From AI-generated code to a live production-grade app in 5 minutes.

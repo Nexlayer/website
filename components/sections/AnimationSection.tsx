@@ -40,15 +40,11 @@ function AnimationSection({
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="text-sm font-medium text-cyan-400 mb-4 tracking-wider uppercase">
-            Agents are the new developers.
+            AI Agents are the new developers.
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            The Cloud Agents Trust.™
+            Nexlayer is the infrastructure agents can talk to.
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Nexlayer is the agent-native cloud — the runtime for AI-built apps,
-            APIs, and platforms. One repo, one prompt, production in minutes.
-          </p>
         </div>
 
         {/* Mobile layout: vertical, centered, glowing orb, icons above and below */}
