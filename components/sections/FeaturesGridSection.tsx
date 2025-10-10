@@ -14,8 +14,8 @@ export const FeaturesGridSection = () => {
             Ship to scale in minutes.
             </h2>
             <p className="mt-3 text-zinc-400 max-w-2xl">
-              Enterprise-grade cloud that handles orchestration, scaling, and uptime<br />
-              for you — so you can ship real apps, not just demos.
+              Enterprise-grade production infrastructure  from start the start that handles orchestration, scaling, and uptime<br />
+              for you automatically— so you can deploy real software, not just demos.
             </p>
           </div>
 

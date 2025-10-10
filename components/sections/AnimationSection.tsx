@@ -56,7 +56,7 @@ function AnimationSection({
             </div>
           </div>
           <div className="flex items-center justify-center gap-8 mb-4">
-            {sources.map((source, index) => {
+            {sources.map((source, _) => {
               if (
                 ["cursor", "claude", "vscode", "windsurf", "openai"].includes(
                   source.id
@@ -93,7 +93,7 @@ function AnimationSection({
           </div>
           {/* Bottom features/consumers */}
           <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
-            {consumers.map((consumer, index) => (
+            {consumers.map((consumer, _) => (
               <div
                 key={consumer.id}
                 className="group rounded-xl border border-indigo-500/20 bg-indigo-500/5 p-2 text-center hover:border-indigo-500/30 transition-all duration-300 w-[120px] min-h-[60px] flex flex-col justify-center"
