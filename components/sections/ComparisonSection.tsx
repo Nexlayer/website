@@ -235,31 +235,11 @@ export const ComparisonSection = () => {
           <div className="relative px-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 text-center">With Nexlayer</h2>
             <div className="space-y-3">
-              {/* One Prompt → Deploy */}
-              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-3 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400 text-white"></div>
-                  <span className="text-black font-bold text-sm sm:text-base">One Prompt → Deploy</span>
-                </div>
-              </div>
-
-              {/* Auto-containerized */}
-
-              {/* Nexlayer YAML */}
-
-              {/* Scaling Handled */}
-              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-3 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300">
+              {/* One prompt -> Live app URL */}
+              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-4 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300 ring-2 ring-[#28B8CD]/50">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400"></div>
-                  <span className="font-bold text-black text-sm sm:text-base">Agent-driven workflow</span>
-                </div>
-              </div>
-
-              {/* Live App URL */}
-              <div className="bg-[#28B8CD] border border-[#28B8CD] rounded-lg p-3 backdrop-blur-sm shadow-lg hover:shadow-[#28B8CD]/20 transition-all duration-300 ring-2 ring-[#28B8CD]/50">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full animate-pulse bg-lime-400"></div>
-                  <span className="font-bold text-black text-sm sm:text-base">Live App URL</span>
+                  <span className="font-bold text-black text-base sm:text-lg">One prompt → Live app URL</span>
                 </div>
               </div>
             </div>
