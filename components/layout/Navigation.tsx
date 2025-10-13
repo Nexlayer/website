@@ -111,7 +111,7 @@ export const Navigation = () => {
             </a>
           </div>
 
-          <div className="flex items-center space-x-2 sm:space-x-4">
+          <div className="max-sm:hidden flex items-center space-x-2 sm:space-x-4">
             <a
               href="https://docs.nexlayer.com/"
               target="_blank"

@@ -64,7 +64,7 @@ export const TypingEffect = ({ show = true }: TypingEffectProps) => {
 
   return (
     <div
-      className="w-full h-20 text-lg bg-black border-0 text-gray-400 px-6 font-medium flex items-center rounded-2xl"
+      className="w-full h-20 max-[420px]:text-sm text-lg bg-black border-0 text-gray-400 px-6 font-medium flex items-center rounded-2xl"
       style={{
         wordBreak: "break-word",
         overflowWrap: "anywhere"
