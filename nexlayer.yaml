@@ -4,7 +4,5 @@
     - name: website
       image: ghcr.io/nexlayer/nexlayer-website:latest
       path: "/"
-      servicePorts: [80]
-      vars:
-        NEXT_PUBLIC_POSTHOG_KEY: "phc_BIWHwy9gLiAR2qguS3E5zQgFFCPsbylBmxEZAevbWUm"
-        NEXT_PUBLIC_POSTHOG_HOST: "https://us.i.posthog.com"
+      servicePorts:
+      - 80
