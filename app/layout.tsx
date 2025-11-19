@@ -1,6 +1,7 @@
 import type React from "react";
 import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
+import { PostHogProvider } from "../components/PostHogProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -98,9 +99,11 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest"></link>
       </head>
       <body className="flex flex-col min-h-screen">
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <PostHogProvider>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </PostHogProvider>
       </body>
     </html>
   );
