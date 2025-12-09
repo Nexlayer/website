@@ -1,108 +1,190 @@
 "use client";
 
-import { useState } from "react";
-import React from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { TypingEffect } from "../shared/TypingEffect";
 import { ComparisonSection } from "./ComparisonSection";
 import { Cursor } from "../logos/Cursor";
 import { ClaudeAI } from "../logos/ClaudeAI";
-import { VisualStudioCode } from "../logos/VisualStudioCode";
 import { GitHubCopilot } from "../logos/GitHubCopilot";
+import { CheckCircle, MessageSquare } from "lucide-react";
+
+const demos = [
+  {
+    agent: "Cursor",
+    agentColor: "#00d4aa",
+    prompt: "Deploy my Next.js app with a Postgres database to nexlayer",
+    responses: ["Detected Next.js 14 + Prisma", "Provisioned Postgres with persistent storage", "Live at yourapp.nexlayer.ai"],
+    stack: "Next.js + Postgres"
+  },
+  {
+    agent: "Claude Code",
+    agentColor: "#cc785c",
+    prompt: "Ship this Python FastAPI with Redis caching to nexlayer",
+    responses: ["Configured FastAPI container", "Added Redis sidecar", "API live with auto-SSL"],
+    stack: "FastAPI + Redis"
+  },
+  {
+    agent: "GitHub Copilot",
+    agentColor: "#238636",
+    prompt: "Launch my RAG chatbot with Qdrant vector store to nexlayer",
+    responses: ["Set up Qdrant with 10Gi storage", "Mounted OpenAI key as secret", "Chatbot deployed"],
+    stack: "LangChain + Qdrant"
+  },
+];
 
 export const HeroSection = () => {
-  const [userInput, setUserInput] = useState("");
+  const [currentDemo, setCurrentDemo] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [showResponse, setShowResponse] = useState(false);
+  const [isTyping, setIsTyping] = useState(true);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUserInput(e.target.value);
+  useEffect(() => {
+    const demo = demos[currentDemo];
+    const text = demo.prompt;
+    let index = 0;
+    setDisplayedText('');
+    setShowResponse(false);
+    setIsTyping(true);
+
+    const typeInterval = setInterval(() => {
+      if (index < text.length) {
+        setDisplayedText(text.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(typeInterval);
+        setIsTyping(false);
+        setTimeout(() => setShowResponse(true), 400);
+        setTimeout(() => setCurrentDemo((prev) => (prev + 1) % demos.length), 4000);
+      }
+    }, 28);
+
+    return () => clearInterval(typeInterval);
+  }, [currentDemo]);
+
+  const currentAgent = demos[currentDemo];
+
+  const getAgentIcon = () => {
+    switch (currentAgent.agent) {
+      case "Cursor":
+        return <Cursor className="w-4 h-4" />;
+      case "Claude Code":
+        return <ClaudeAI className="w-4 h-4" />;
+      case "GitHub Copilot":
+        return <GitHubCopilot className="w-4 h-4" />;
+      default:
+        return null;
+    }
   };
 
   return (
     <>
       <section className="px-4 py-20 bg-black">
         <div className="text-center mx-auto">
-          <h1 className="mt-12 sm:mt-20 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-[0.85] font-bold max-w-6xl mx-auto px-4 tracking-tight text-center">
-          From AI code to live app.
+          {/* Top Label */}
+          <div className="mt-12 sm:mt-20 mb-8 flex justify-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-900/30 border border-green-500/40">
+              <span className="text-green-400 text-sm font-mono">• The Execution Layer for AI Agents</span>
+            </div>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-tight font-bold max-w-6xl mx-auto px-4 tracking-tight text-center">
+            Ship anything your{" "}
+            <br></br><span className="text-cyan-400"> coding agent can build</span> 
           </h1>
 
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-12 sm:mb-16 lg:mb-20 font-light max-w-3xl mx-auto px-4 leading-relaxed">
-            The easiest way to deploy AI-built products in minutes.
-            <br className="hidden sm:block"/>
-            Any language. Any framework. Any stack.
+          {/* Description */}
+          <p className="text-lg sm:text-xl text-gray-400 mb-12 sm:mb-16 font-light max-w-3xl mx-auto px-4 leading-relaxed">
+            Nexlayer is the execution layer where AI agents deploy and scale production software — not humans.
           </p>
 
-          {/* Main Input Area */}
-          <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
-            <div className="bg-black rounded-xl sm:rounded-2xl border-2 border-gray-600 p-1 shadow-lg">
-              {/* Logo Tabs */}
-              <div className="flex items-center max-sm:flex-wrap sm:justify-center gap-2 sm:gap-4 px-3 sm:px-4 pt-3 pb-2">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
-                    <div className="flex items-center max-[420px]:gap-1 gap-2 max-[420px]:px-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
-                      <Cursor className="w-4 h-4 text-white" />
-                      <span className="max-[420px]:text-[10px] text-xs text-gray-300 font-medium">Cursor</span>
-                    </div>
-                  </Link>
-                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
-                    <div className="flex items-center max-[420px]:gap-1 gap-2 max-[420px]:px-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
-                      <ClaudeAI className="w-4 h-4" />
-                      <span className="max-[420px]:text-[10px] text-xs text-gray-300 font-medium">Claude</span>
-                    </div>
-                  </Link>
-                </div>
-                <div className="sm:flex items-center gap-3">
-                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
-                    <div className="flex items-center max-[420px]:gap-1 gap-2 max-[420px]:px-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
-                      <VisualStudioCode className="w-4 h-4" />
-                      <span className="max-[420px]:text-[10px] text-xs text-gray-300 font-medium">VS Code</span>
-                    </div>
-                  </Link>
-                  <Link href="https://outgoing-violin-38-staging.authkit.app/?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77EBJCJN5AKYHP2FDZSXKQ3">
-                    <div className="hidden sm:flex items-center gap-2 max-[420px]:px-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 cursor-pointer transition-colors">
-                      <GitHubCopilot className="w-4 h-4" />
-                      <span className="max-[420px]:text-[10px] text-xs text-gray-300 font-medium">Copilot</span>
-                    </div>
-                  </Link>
-                </div>
+          {/* Agent Icons */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mb-8">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700">
+                <Cursor className="w-4 h-4 text-white" />
+                <span className="text-xs text-gray-300 font-medium">Cursor</span>
               </div>
-
-              <div className="relative">
-                <TypingEffect show={true} />
-                <input
-                  type="text"
-                  value={userInput}
-                  onChange={handleInputChange}
-                  className="absolute inset-0 w-full h-20 max-[420px]:!text-sm text-lg bg-black border-0 text-white px-6 font-medium flex items-center outline-none font-mono opacity-0 rounded-2xl text-wrap"
-                  placeholder=""
-                />
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700">
+                <ClaudeAI className="w-4 h-4" />
+                <span className="text-xs text-gray-300 font-medium">Claude</span>
               </div>
-
-              <div className="flex flex-col sm:flex-row items-center justify-between px-3 sm:px-4 pb-4 gap-3 sm:gap-0">
-                <div className="flex items-center gap-3 w-full sm:w-auto">
-                  <Link href="https://docs.nexlayer.com/">
-                    <Button
-                      className="w-full sm:w-auto px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg bg-gray-700 hover:bg-gray-600"
-                    >
-                      <span className="max-[420px]:text-xs text-sm text-white sm:font-bold">
-                        View documentation
-                      </span>
-                    </Button>
-                  </Link>
-                  <Link href="https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K70GFXHVBGK859QR0QEET9WF">
-                    <Button
-                      className="w-full sm:w-auto px-4 py-2 rounded-full flex items-center justify-center gap-2 transition-all duration-300 text-white shadow-md hover:shadow-lg"
-                      style={{ backgroundColor: "#28B8CD" }}
-                    >
-                      <span className="max-[420px]:text-xs text-sm text-black sm:font-bold">
-                        Get started
-                      </span>
-                    </Button>
-                  </Link>
-                </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700">
+                <GitHubCopilot className="w-4 h-4" />
+                <span className="text-xs text-gray-300 font-medium">Copilot</span>
               </div>
-
             </div>
+          </div>
+
+          {/* Animated Terminal Demo */}
+          <style dangerouslySetInnerHTML={{ __html: `
+            @keyframes slideIn { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+            @keyframes progress { 0% { width: 0%; } 100% { width: 100%; } }
+          `}} />
+          <div className="max-w-4xl mx-auto mb-12 px-4">
+            <div style={{ background: 'rgba(8, 8, 8, 0.95)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden', boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 0 80px ${currentAgent.agentColor}20, 0 40px 80px rgba(0,0,0,0.6)` }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(0,0,0,0.6)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }} />
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }} />
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27ca40' }} />
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '20px', height: '20px', flexShrink: 0 }}>
+                    {getAgentIcon()}
+                  </div>
+                  <span style={{ fontSize: '13px', color: currentAgent.agentColor, fontWeight: '600' }}>{currentAgent.agent}</span>
+                  <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>→ Nexlayer MCP</span>
+                </div>
+                <div style={{ padding: '5px 14px', background: 'rgba(39, 202, 64, 0.15)', borderRadius: '100px', fontSize: '11px', color: '#27ca40', letterSpacing: '0.5px', fontWeight: '500' }}>{currentAgent.stack}</div>
+              </div>
+
+              <div style={{ padding: '32px', minHeight: '260px', fontFamily: "'JetBrains Mono', monospace" }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', marginBottom: '28px' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: `linear-gradient(135deg, ${currentAgent.agentColor}, ${currentAgent.agentColor}99)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: `0 4px 20px ${currentAgent.agentColor}30` }}>
+                    <MessageSquare size={18} color="#000" />
+                  </div>
+                  <div style={{ flex: 1, paddingTop: '4px' }}>
+                    <div style={{ fontSize: '15px', color: '#fff', lineHeight: '1.5' }}>
+                      "{displayedText}{isTyping && <span style={{ color: currentAgent.agentColor }}>|</span>}"
+                    </div>
+                  </div>
+                </div>
+
+                {showResponse && (
+                  <div style={{ marginLeft: '50px' }}>
+                    {currentAgent.responses.map((r, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', marginBottom: '8px', background: 'rgba(0, 170, 192, 0.04)', borderLeft: '3px solid #00AAC0', borderRadius: '0 8px 8px 0', animation: `slideIn 0.35s ease-out ${i * 0.12}s both` }}>
+                        <CheckCircle size={16} style={{ color: '#00AAC0', flexShrink: 0 }} />
+                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.85)' }}>{r}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div style={{ height: '3px', background: 'rgba(255,255,255,0.05)', overflow: 'hidden' }}>
+                <div style={{ height: '100%', background: `linear-gradient(90deg, ${currentAgent.agentColor}, #00AAC0)`, animation: 'progress 4s linear infinite' }} />
+              </div>
+            </div>
+            <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '15px', color: 'rgba(255,255,255,0.45)' }}>Just ask in natural language. Your agent talks to Nexlayer. You ship.</p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-16">
+            <Link href="https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K70GFXHVBGK859QR0QEET9WF">
+              <Button
+                className="px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 bg-cyan-400 hover:bg-cyan-300 text-black"
+              >
+                Start Deploying
+              </Button>
+            </Link>
+            <Link href="https://docs.nexlayer.com/">
+              <span className="text-white hover:text-cyan-400 text-lg font-medium transition-colors duration-300 cursor-pointer">
+                View Documentation →
+              </span>
+            </Link>
           </div>
 
           {/* Social Proof Section */}
