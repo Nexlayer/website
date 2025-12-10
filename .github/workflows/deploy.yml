@@ -55,15 +55,15 @@ jobs:
           # Extract the short SHA
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
 
-          # Update the environment in nexlayer-update.yaml
-          sed -i "s|environment:.*|environment: ${{ secrets.NEXLAYER_WEBSITE_ENVIRONMENT }}|" nexlayer-update.yaml
-
           # Update the image in nexlayer-update.yaml
           sed -i "s|image:.*|image: ghcr.io/nexlayer/${{ env.IMAGE_NAME }}:$SHORT_SHA|" nexlayer-update.yaml
+
+          # Add environment variables
+          sed -i '' '/^      path: "\/"/a\      vars:\n        ${{ secrets.ENV_VAR_NAME_1 }}: ${{ secrets.ENV_VAR_VALUE_1 }}\n        ${{ secrets.ENV_VAR_NAME_2 }}: ${{ secrets.ENV_VAR_VALUE_2 }}' nexlayer-update.yaml
 
       - name: Deploy to Nexlayer
         run: |
           # Deploy update to Nexlayer using the API
-          curl -X POST https://app.nexlayer.io/updateUserDeployment \
+          curl -X POST https://app.nexlayer.io/startUserDeployment/${{ secrets.NEXLAYER_SESSION_TOKEN }} \
             -H "Content-Type: text/x-yaml" \
             --data-binary @nexlayer-update.yaml
