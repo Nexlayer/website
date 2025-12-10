@@ -1,136 +1,70 @@
 "use client";
 
-import { useState } from "react";
-import { MCPSetupComponent } from "../MCPSetupComponent";
+import { Terminal, Hexagon, Clock } from "lucide-react";
 
 export const HowItWorksSection = () => {
-  const [activeStep, setActiveStep] = useState(1);
-
   const steps = [
     {
-      id: 1,
-      title: "Connect your coding agent to Nexlayer",
-      description:
-        "Generate a token and link Cursor, Claude Code, Windsurf or any AI coding agent — one line, and you're connected.",
-      videoSrc: null, // Uses MCPSetupComponent instead
-      component: <MCPSetupComponent />,
+      icon: Terminal,
+      title: "Agent writes code",
+      description: "Cursor, Claude Code, or Copilot builds your app",
     },
     {
-      id: 2,
-      title: "Deploy with one prompt.",
-      description: 'Type: "Deploy my app https://github.com/repo to nexlayer".',
-      videoSrc:
-        "/deploy-production.mp4",
+      icon: Hexagon,
+      title: "Agent deploys via MCP",
+      description: "One command to Nexlayer, zero configuration",
     },
     {
-      id: 3,
-      title: "Share your live URL with the world.",
-      description:
-        "Your app is now live and auto-scaling for free. Claim it, extend it or reserve to keep it running.",
-      videoSrc:
-        "/from-local-to-global-app.mp4",
-    },
-    {
-      id: 4,
-      title: "Claim it, extend it and reserve it.",
-      description:
-        "Claim it to keep it live, share with friends, or reserve it to scale it globally in one click.",
-      videoSrc:
-        "/claim-extend.mp4",
+      icon: Clock,
+      title: "Live in production",
+      description: "Full-stack app running globally in seconds",
     },
   ];
 
-  const activeStepData = steps.find((step) => step.id === activeStep);
-
   return (
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#191919" }}>
-      <div className="max-w-[1250px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            It's easy to get started.
+    <section className="py-20 md:py-28 lg:py-32 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Headline */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 leading-tight">
+            Agent to production in one
+            <br />
+            step
           </h2>
-          <p className="text-xl text-gray-400">
-            From AI-generated code to a live production-grade app in 5 minutes.
+          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
+            Your coding agent connects directly to infrastructure.
           </p>
         </div>
 
-        <div className="flex max-lg:flex-col max-[385px]:gap-44 max-[410px]:gap-36 max-[475px]:gap-28 gap-12 lg:gap-6 items-start">
-          {/* Steps */}
-          <div className="space-y-4 w-full lg:w-[40%] h-[600px] flex flex-col justify-between">
-            {steps.map((step) => (
-              <div
-                key={step.id}
-                className={`flex-1 p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer ${
-                  activeStep === step.id
-                    ? "border-cyan-400 bg-black"
-                    : "border-gray-700 bg-black hover:border-gray-600"
-                }`}
-                onClick={() => setActiveStep(step.id)}
-              >
-                <div className="flex items-center mb-4">
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mr-3 ${
-                      activeStep === step.id
-                        ? "bg-cyan-400 text-black"
-                        : "bg-gray-600 text-white"
-                    }`}
-                  >
-                    {step.id}
+        {/* Three-Step Process */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 lg:gap-12 max-w-5xl mx-auto">
+          {steps.map((step, index) => {
+            const IconComponent = step.icon;
+            return (
+              <div key={index} className="flex items-center w-full md:w-auto">
+                {/* Step Card */}
+                <div className="flex flex-col items-center text-center flex-1 md:flex-initial">
+                  {/* Icon */}
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gray-800 flex items-center justify-center mb-4 flex-shrink-0">
+                    <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                   </div>
-                  <h3
-                    className={`text-lg font-bold ${
-                      activeStep === step.id ? "text-cyan-400" : "text-white"
-                    }`}
-                  >
+                  
+                  {/* Title */}
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                     {step.title}
                   </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm sm:text-base text-white/70 max-w-[280px]">
+                    {step.description}
+                  </p>
                 </div>
-                <p className="text-gray-400 text-sm">{step.description}</p>
-              </div>
-            ))}
-          </div>
 
-          {/* Video Demo */}
-          <div className="relative w-full lg:w-[60%]">
-            <div className="bg-black md:min-h-[396px] border border-gray-700 rounded-2xl overflow-hidden group">
-              {activeStepData?.component ? (
-                <div className="w-full h-full p-6">
-                  {activeStepData.component}
-                </div>
-              ) : activeStepData?.videoSrc ? (
-                <>
-                  <video
-                    key={activeStepData.videoSrc} 
-                    className="w-full h-full object-contain"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload ="auto"
-                  >
-                    <source src={activeStepData.videoSrc} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-
-                  <button
-                    onClick={(e) => {
-                      const video = e.currentTarget
-                        .previousElementSibling as HTMLVideoElement;
-                      if (!document.fullscreenElement) {
-                        video.requestFullscreen().catch((err) => {
-                          console.error(
-                            "Error attempting to enable fullscreen:",
-                            err
-                          );
-                        });
-                      } else {
-                        document.exitFullscreen();
-                      }
-                    }}
-                    className="absolute bottom-4 right-4 bg-black/70 hover:bg-black/90 text-white px-3 py-2 rounded-lg flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm font-medium"
-                  >
+                {/* Arrow (not shown after last step) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block mx-2 lg:mx-4 flex-shrink-0">
                     <svg
-                      className="w-4 h-4"
+                      className="w-6 h-6 lg:w-8 lg:h-8 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -139,37 +73,14 @@ export const HowItWorksSection = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                        d="M9 5l7 7-7 7"
                       />
                     </svg>
-                    Fullscreen
-                  </button>
-                </>
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  Select a step to view content
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <button
-            onClick={() =>
-              window.open(
-                "https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K77CC09JBMDSVV34VW5H9GM9",
-                "_blank"
-              )
-            }
-            className="bg-cyan-400 text-black font-bold px-8 py-4 rounded-lg hover:bg-cyan-500 transition-all duration-300"
-          >
-            Get started!
-          </button>
-          <p className="text-gray-400 text-sm mt-3">
-            Free to try in beta — deploy without signup. Claim it later if you
-            want.
-          </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

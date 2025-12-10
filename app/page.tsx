@@ -12,7 +12,9 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       <HeroSection />
       <HowItWorksSection />
-      <CloudAgentsTrustSection />
+      <div className="hidden">
+        <CloudAgentsTrustSection />
+      </div>
       <FeaturesGridSection />
       <PricingAndFAQSection />
       <TestimonialsSection />

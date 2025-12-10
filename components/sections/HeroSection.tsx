@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import { ComparisonSection } from "./ComparisonSection";
 import { Cursor } from "../logos/Cursor";
 import { ClaudeAI } from "../logos/ClaudeAI";
@@ -12,7 +11,7 @@ import { CheckCircle, MessageSquare } from "lucide-react";
 const demos = [
   {
     agent: "Cursor",
-    agentColor: "#00d4aa",
+    agentColor: "#ffffff",
     prompt: "Deploy my Next.js app with a Postgres database to nexlayer",
     responses: ["Detected Next.js 14 + Prisma", "Provisioned Postgres with persistent storage", "Live at yourapp.nexlayer.ai"],
     stack: "Next.js + Postgres"
@@ -26,7 +25,7 @@ const demos = [
   },
   {
     agent: "GitHub Copilot",
-    agentColor: "#238636",
+    agentColor: "#22A9F2",
     prompt: "Launch my RAG chatbot with Qdrant vector store to nexlayer",
     responses: ["Set up Qdrant with 10Gi storage", "Mounted OpenAI key as secret", "Chatbot deployed"],
     stack: "LangChain + Qdrant"
@@ -83,39 +82,57 @@ export const HeroSection = () => {
         <div className="text-center mx-auto">
           {/* Top Label */}
           <div className="mt-12 sm:mt-20 mb-8 flex justify-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-900/30 border border-green-500/40">
-              <span className="text-green-400 text-sm font-mono">• The Execution Layer for AI Agents</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/20">
+              <span className="text-white/80 text-sm font-medium">NEXLAYER</span>
             </div>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 leading-tight font-bold max-w-6xl mx-auto px-4 tracking-tight text-center">
-            Ship anything your{" "}
-            <br></br><span className="text-cyan-400"> coding agent can build</span> 
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white mb-6 leading-[0.95] font-bold max-w-5xl mx-auto px-4 tracking-[-0.03em] text-center">
+            Ship anything
+            <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">your agent can build.</span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg sm:text-xl text-gray-400 mb-12 sm:mb-16 font-light max-w-3xl mx-auto px-4 leading-relaxed">
-            Nexlayer is the execution layer where AI agents deploy and scale production software — not humans.
+          <p className="text-lg sm:text-xl text-gray-400 mb-14 font-normal max-w-2xl mx-auto px-4 leading-relaxed text-center">
+          Connect your coding agent to Nexlayer via MCP. Deploy full-stack apps in 90 seconds. No YAML. No DevOps. Just ship.
           </p>
 
           {/* Agent Icons */}
-          <div className="flex items-center justify-center gap-4 sm:gap-6 mb-8">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700">
-                <Cursor className="w-4 h-4 text-white" />
-                <span className="text-xs text-gray-300 font-medium">Cursor</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700">
-                <ClaudeAI className="w-4 h-4" />
-                <span className="text-xs text-gray-300 font-medium">Claude</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-800/50 border border-gray-700">
-                <GitHubCopilot className="w-4 h-4" />
-                <span className="text-xs text-gray-300 font-medium">Copilot</span>
-              </div>
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8">
+            <Link 
+              href="https://app.nexlayer.io/dashboard?tab=mcp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer"
+            >
+              <Cursor className="w-4 h-4 text-white" />
+              <span className="text-sm text-gray-300 font-medium">Connect to Cursor</span>
+            </Link>
+            <Link 
+              href="https://app.nexlayer.io/dashboard?tab=mcp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer"
+            >
+              <ClaudeAI className="w-4 h-4" />
+              <span className="text-sm text-gray-300 font-medium">Connect to Claude Code</span>
+            </Link>
+            <Link 
+              href="https://app.nexlayer.io/dashboard?tab=mcp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer"
+            >
+              <GitHubCopilot className="w-4 h-4" />
+              <span className="text-sm text-gray-300 font-medium">Connect to Copilot</span>
+            </Link>
           </div>
+
+          <p className="text-center mt-6 mb-8 text-sm sm:text-base text-gray-400">
+            Just ask in natural language. Your agent talks to Nexlayer. You ship.
+          </p>
 
           {/* Animated Terminal Demo */}
           <style dangerouslySetInnerHTML={{ __html: `
@@ -168,23 +185,6 @@ export const HeroSection = () => {
                 <div style={{ height: '100%', background: `linear-gradient(90deg, ${currentAgent.agentColor}, #00AAC0)`, animation: 'progress 4s linear infinite' }} />
               </div>
             </div>
-            <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '15px', color: 'rgba(255,255,255,0.45)' }}>Just ask in natural language. Your agent talks to Nexlayer. You ship.</p>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-16">
-            <Link href="https://outgoing-violin-38-staging.authkit.app/sign-up?client_id=client_01JR8JQE546PGK4K2DQCT1299E&redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K70GFXHVBGK859QR0QEET9WF">
-              <Button
-                className="px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 bg-cyan-400 hover:bg-cyan-300 text-black"
-              >
-                Start Deploying
-              </Button>
-            </Link>
-            <Link href="https://docs.nexlayer.com/">
-              <span className="text-white hover:text-cyan-400 text-lg font-medium transition-colors duration-300 cursor-pointer">
-                View Documentation →
-              </span>
-            </Link>
           </div>
 
           {/* Social Proof Section */}
