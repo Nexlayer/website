@@ -3,9 +3,8 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { CloudAgentsTrustSection } from "@/components/sections/CloudAgentsTrustSection";
 import { FeaturesGridSection } from "@/components/sections/FeaturesGridSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { PricingAndFAQSection } from "@/components/sections/PricingAndFAQSection";
-import { FAQSection } from "@/components/sections/FAQSection";
+import { SocialProofSection } from "@/components/sections/SocialProofSection";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function LandingPage() {
   return (
@@ -16,9 +15,8 @@ export default function LandingPage() {
         <CloudAgentsTrustSection />
       </div>
       <FeaturesGridSection />
-      <PricingAndFAQSection />
-      <TestimonialsSection />
-      <FAQSection />
+      <SocialProofSection />
+      <CTASection />
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { NexlayerLogo } from "../NexlayerLogo";
+import { Zap } from "lucide-react";
 
 // Simple hamburger icon component
 const Hamburger = ({
@@ -94,12 +95,10 @@ export const Navigation = () => {
           {/* Center Navigation Links */}
           <div className="hidden md:flex items-center space-x-6">
             <a
-              href="https://jnsbqhb7fyt.typeform.com/startupprogram?utm_source=nexlayer-website&utm_medium=web&utm_campaign=startup-program&utm_term=nexlayer-startup-program&utm_content=website"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/pricing"
               className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"
             >
-              Startup Program
+              Pricing
             </a>
             <a
               href="https://discord.gg/U26X9mmYnP"
@@ -112,16 +111,8 @@ export const Navigation = () => {
           </div>
 
           <div className="max-sm:hidden flex items-center space-x-2 sm:space-x-4">
-            <a
-              href="https://docs.nexlayer.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-cyan-400 text-xs sm:text-sm font-medium transition-colors duration-300"
-            >
-              Documentation
-            </a>
             <Button
-              className="bg-white !text-black hover:bg-transparent hover:border-cyan-400 hover:border-2 border-2 hover:!text-cyan-400 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 font-medium rounded-lg transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 text-white hover:from-cyan-300 hover:to-teal-400 hover:text-black text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
               onClick={() =>
                 window.open(
                   "https://outgoing-violin-38-staging.authkit.app/sign-up?redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K4JKPDTWM8VM5W1MMK7RQRRK",
@@ -129,17 +120,10 @@ export const Navigation = () => {
                 )
               }
             >
+              <Zap className="w-4 h-4" />
               <span className="hidden sm:inline">Get started</span>
               <span className="sm:hidden">Free beta</span>
             </Button>
-            <a
-              href="https://outgoing-violin-38-staging.authkit.app/?redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K45MN092W5FFWBEAPXVEPR8N"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-cyan-400 text-xs sm:text-sm font-medium transition-colors duration-300"
-            >
-              Login
-            </a>
           </div>
 
           <div className="flex sm:hidden items-center">
@@ -163,16 +147,14 @@ export const Navigation = () => {
           }}
         >
           <a
-            href="https://docs.nexlayer.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/pricing"
             className="text-white hover:text-cyan-400 text-lg font-medium transition-colors duration-300"
             onClick={() => setMenuOpen(false)}
           >
-            Documentation
+            Pricing
           </a>
           <Button
-            className="bg-white !text-black hover:bg-transparent hover:border-cyan-400 hover:border-2 border-2 hover:!text-cyan-400 text-lg px-6 py-2 font-medium rounded-lg transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 text-white hover:from-cyan-300 hover:to-teal-400 hover:text-black text-lg px-6 py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
             onClick={() => {
               setMenuOpen(false);
               window.open(
@@ -181,17 +163,9 @@ export const Navigation = () => {
               );
             }}
           >
+            <Zap className="w-5 h-5" />
             Start free beta
           </Button>
-          <a
-            href="https://outgoing-violin-38-staging.authkit.app/?redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K45MN092W5FFWBEAPXVEPR8N"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-cyan-400 text-lg font-medium transition-colors duration-300"
-            onClick={() => setMenuOpen(false)}
-          >
-            Login
-          </a>
         </div>
       )}
     </nav>

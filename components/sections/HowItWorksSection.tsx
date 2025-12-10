@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Terminal, Hexagon, Clock } from "lucide-react";
 
 export const HowItWorksSection = () => {
@@ -8,16 +9,25 @@ export const HowItWorksSection = () => {
       icon: Terminal,
       title: "Agent writes code",
       description: "Cursor, Claude Code, or Copilot builds your app",
+      iconColor: "#22d3ee", // Cyan
+      bgGradient: "from-cyan-500/20 to-blue-500/20",
+      borderColor: "border-cyan-400/30",
     },
     {
       icon: Hexagon,
       title: "Agent deploys via MCP",
       description: "One command to Nexlayer, zero configuration",
+      iconColor: "#a855f7", // Purple
+      bgGradient: "from-purple-500/20 to-pink-500/20",
+      borderColor: "border-purple-400/30",
     },
     {
       icon: Clock,
       title: "Live in production",
       description: "Full-stack app running globally in seconds",
+      iconColor: "#10b981", // Emerald
+      bgGradient: "from-emerald-500/20 to-teal-500/20",
+      borderColor: "border-emerald-400/30",
     },
   ];
 
@@ -27,12 +37,13 @@ export const HowItWorksSection = () => {
         {/* Main Headline */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 leading-tight">
-            Agent to production in one
-            <br />
-            step
+            Agent → Cloud.{" "}
+            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+              One step.
+            </span>
           </h2>
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
-            Your coding agent connects directly to infrastructure.
+            Your coding agent connects directly to Nexlayer.
           </p>
         </div>
 
@@ -41,28 +52,87 @@ export const HowItWorksSection = () => {
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
-              <div key={index} className="flex items-center w-full md:w-auto">
+              <motion.div
+                key={index}
+                className="flex items-center w-full md:w-auto"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+              >
                 {/* Step Card */}
                 <div className="flex flex-col items-center text-center flex-1 md:flex-initial">
                   {/* Icon */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gray-800 flex items-center justify-center mb-4 flex-shrink-0">
-                    <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                  </div>
+                  <motion.div
+                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${step.bgGradient} border ${step.borderColor} flex items-center justify-center mb-4 flex-shrink-0 relative overflow-hidden`}
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: index * 0.2 + 0.3,
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 15,
+                    }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {/* Glow effect */}
+                    <div
+                      className="absolute inset-0 rounded-xl opacity-50 blur-xl"
+                      style={{ backgroundColor: step.iconColor }}
+                    />
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.1, 1],
+                        opacity: [0.5, 0.8, 0.5],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute inset-0 rounded-xl"
+                      style={{ backgroundColor: step.iconColor }}
+                    />
+                    <IconComponent
+                      className="w-8 h-8 sm:w-10 sm:h-10 relative z-10"
+                      style={{ color: step.iconColor }}
+                    />
+                  </motion.div>
                   
                   {/* Title */}
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                  <motion.h3
+                    className="text-lg sm:text-xl font-bold text-white mb-2"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 + 0.5 }}
+                  >
                     {step.title}
-                  </h3>
+                  </motion.h3>
                   
                   {/* Description */}
-                  <p className="text-sm sm:text-base text-white/70 max-w-[280px]">
+                  <motion.p
+                    className="text-sm sm:text-base text-white/70 max-w-[280px]"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 + 0.6 }}
+                  >
                     {step.description}
-                  </p>
+                  </motion.p>
                 </div>
 
                 {/* Arrow (not shown after last step) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block mx-2 lg:mx-4 flex-shrink-0">
+                  <motion.div
+                    className="hidden md:block mx-2 lg:mx-4 flex-shrink-0"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 + 0.7 }}
+                  >
                     <svg
                       className="w-6 h-6 lg:w-8 lg:h-8 text-white"
                       fill="none"
@@ -76,9 +146,9 @@ export const HowItWorksSection = () => {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </div>
+                  </motion.div>
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -1,127 +1,108 @@
-"use client"
+"use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const faqs = [
+  {
+    question: "What happens when my free app goes to sleep?",
+    answer:
+      "It wakes up instantly when someone visits. No data lost. Your app is just paused, not deleted.",
+  },
+  {
+    question: "Can I use my own domain?",
+    answer:
+      "Yes. On the $49 plan you get 3 custom domains. Enterprise plans include unlimited domains.",
+  },
+  {
+    question: "What if I need to collaborate with my team?",
+    answer:
+      "Right now everyone gets their own account. Team features (shared projects, permissions) are on Enterprise. Join our waitlist for team features coming soon.",
+  },
+  {
+    question: "Is this actually production-ready?",
+    answer:
+      "Yes. Same infrastructure that handles millions of users. Auto-scaling, monitoring, security — all handled. We run production workloads for companies you've heard of.",
+  },
+  {
+    question: "What stacks can I deploy?",
+    answer:
+      "Any stack your agent can build — frontend, backend, APIs, databases, vector stores, or workers.\n\n1. If it runs in a container, it runs on Nexlayer.\n\n2. If it's an external API service, we wire it up automatically.",
+  },
+  {
+    question: "How is Nexlayer different from Lovable, Vercel, or AWS?",
+    answer:
+      "Lovable builds your MVP. Vercel hosts frontends. AWS makes you become DevOps. Nexlayer is the first cloud your AI coding agent can ship to enterprise-grade production scale— any stack, any service, in one step.",
+  },
+];
 
 export const FAQSection = () => {
-  const faqCategories = [
-    {
-      id: "getting-started",
-      title: "Getting Started",
-      icon: "🚀",
-      questions: [
-        {
-          question: "What happens after my 2hr and 30min free deploy ends?",
-          answer: "Your app automatically shuts down. Just redeploy if you want to keep testing, or upgrade to Scale for persistent, production-grade execution."
-        },
-        {
-          question: "How do I deploy?",
-          answer: "Deploy directly from AI tools via MCP (Cursor, Claude Code, Windsurf, etc.) — or from your existing pipelines like GitHub Actions, custom CI/CD, or even curl. Nexlayer integrates with your workflow so execution is seamless."
-        }
-      ]
-    },
-    {
-      id: "pricing-value",
-      title: "Pricing & Value",
-      icon: "$",
-      questions: [
-        {
-          question: "Why $49/mo — isn't that cheap for a production cloud?",
-          answer: "Yes — because Nexlayer is optimized for AI-driven software development. It's built on the same powerful, secure, and scalable orchestration technology trusted by Google, Apple, Spotify, Unity, and Cursor — but delivered without the infra complexity of AWS, GCP, or Azure, and without the cost of hiring a team of DevOps engineers or Kubernetes experts. Nexlayer gives that same big-tech execution power to AI builders and startup founders everywhere, regardless of geography."
-        },
-        {
-          question: "What does 'beta' mean for me as a user?",
-          answer: "During beta, you get generous execution limits and direct support as we refine Nexlayer with developer feedback. Pricing and features will only get stronger after launch — so early adopters lock in the best value."
-        }
-      ]
-    },
-    {
-      id: "tech-features",
-      title: "Tech & Features",
-      icon: "⚙️",
-      questions: [
-        {
-          question: "Is Nexlayer just hosting?",
-          answer: "No. Nexlayer is an intelligent execution layer. Hosting platforms keep your code online. Nexlayer connects directly with AI coding tools and CI/CD, normalizes any stack, and executes it instantly in production — without cold starts, lock-in, or infra overhead."
-        },
-        {
-          question: "How is Nexlayer different from Vercel, Render, or Railway?",
-          answer: "Nexlayer isn't limited to frontends or serverless functions. There are no cold starts, no lock-in, and no framework restrictions. If it builds in a Dockerfile, Nexlayer executes it: APIs, workers, schedulers, WebSockets, or full-stack apps in any language. Or skip containers and connect directly via API strings to services like Supabase or Neon."
-        },
-        {
-          question: "Do I get custom domains?",
-          answer: "Yes. Bring your own domains, powered by Nexlayer's native DNS with instant global propagation — no external config required."
-        },
-        {
-          question: "How do I manage environment variables and secrets?",
-          answer: "Nexlayer doesn't yet provide a built-in secret manager. We recommend securing secrets through your repo or CI/CD provider (e.g., GitHub Secrets, 1Password, Doppler, or Vault). Same best practice used by platforms like Lovable. Our team can guide you if needed."
-        }
-      ]
-    },
-    {
-      id: "security-scale",
-      title: "Security & Scale",
-      icon: "🛡️",
-      questions: [
-        {
-          question: "Where do my apps run?",
-          answer: "By default, your applications run on Nexlayer's AI-native Cloud Platform in the US East region. With Nexlayer's native DNS and edge routing, your apps are globally accessible with low-latency DNS resolution. Multi-region deployments and regional selection are available for customers on the Conquer (Enterprise)."
-        },
-        {
-          question: "What about security?",
-          answer: "Every app executes in isolated containers with production-grade networking. Enterprise customers can unlock advanced security, compliance, and dedicated resources."
-        },
-        {
-          question: "What if my startup grows fast?",
-          answer: "Each application executes independently and scales automatically. For custom AI workloads including GPUs/TPUs needs, multi-region scale, or compliance, you can upgrade to Conquer (Enterprise) and talk to one of our senior Nexlayer Engineers."
-        }
-      ]
-    }
-  ]
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-4 bg-black">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-400 mb-2">Questions? We got answers.</p>
-          <p className="text-cyan-400">
-            Don't see your answer?{" "}
-            <a 
-              href="https://cal.com/nexlayer/30min" 
-              className="underline hover:text-cyan-300 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Talk to Nexlayer Engineer
-            </a>
-          </p>
-        </div>
+    <section className="py-24 bg-black px-4">
+      <div className="max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl sm:text-5xl font-bold text-white mb-16 text-center"
+        >
+          Questions?
+        </motion.h2>
 
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqCategories.flatMap((category) => 
-              category.questions.map((faq, index) => (
-                <AccordionItem 
-                  key={`${category.id}-${index}`} 
-                  value={`${category.id}-${index}`} 
-                  className="border border-gray-700 rounded-lg px-6"
-                  style={{ backgroundColor: '#1E1E1E' }}
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-black border border-gray-800 rounded-xl overflow-hidden"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-900 transition-colors"
+              >
+                <span className="text-lg font-semibold text-white pr-4">
+                  {faq.question}
+                </span>
+                <svg
+                  className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <AccordionTrigger className="text-left text-white hover:text-cyan-400 py-6">
-                    <div className="flex items-center gap-3">
-                      <span className="text-cyan-400 text-lg">{'>'}</span>
-                      {faq.question}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-5 text-gray-300 leading-relaxed whitespace-pre-line">
+                      {faq.answer}
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 pb-6 pt-2">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))
-            )}
-          </Accordion>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
