@@ -20,6 +20,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Add ARGs and ENVs to Dockerfile
+        run: |
+          # Create the ARG and ENV lines
+          cat << 'EOF' > /tmp/docker_vars.txt
+          
+          # Build arguments
+          ARG ${{ secrets.ENV_VAR_NAME_1 }}
+          ARG ${{ secrets.ENV_VAR_NAME_2 }}
+
+          # Environment variables
+          ENV ${{ secrets.ENV_VAR_NAME_1 }}=$${{ secrets.ENV_VAR_NAME_1 }}
+          ENV ${{ secrets.ENV_VAR_NAME_2 }}=$${{ secrets.ENV_VAR_NAME_2 }}
+          EOF
+
+          # Insert into Dockerfile
+          sed -i '/^WORKDIR \/app$/r /tmp/docker_vars.txt' Dockerfile
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -47,6 +64,9 @@ jobs:
           platforms: linux/amd64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            ${{ secrets.ENV_VAR_NAME_1 }}=${{ secrets.ENV_VAR_VALUE_1 }}
+            ${{ secrets.ENV_VAR_NAME_2 }}=${{ secrets.ENV_VAR_VALUE_2 }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
