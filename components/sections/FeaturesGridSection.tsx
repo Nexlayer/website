@@ -213,7 +213,7 @@ export const FeaturesGridSection = () => {
                     <div className="space-y-2">
                       <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
                         You
-                </div>
+                      </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#f472b6" }} />
                         <div className="flex-1">
@@ -227,9 +227,9 @@ export const FeaturesGridSection = () => {
                             </span>
                             "
                           </span>
-                </div>
-              </div>
-            </div>
+                        </div>
+                      </div>
+                    </div>
 
                     {/* Agent Response */}
                     {showAgentResponse && (
@@ -242,15 +242,15 @@ export const FeaturesGridSection = () => {
                         <div className="text-xs text-gray-500 uppercase tracking-wider mb-1 flex items-center gap-2">
                           <ClaudeAI className="w-4 h-4" />
                           Claude
-                </div>
+                        </div>
                         <div className="flex items-start gap-3">
                           <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#a78bfa" }} />
                           <div className="flex-1">
                             <span style={{ color: "#a78bfa" }} className="font-medium">
                               Reviewing your project structure, then proceeding with Nexlayer deployment.
                             </span>
-                </div>
-              </div>
+                          </div>
+                        </div>
                       </motion.div>
                     )}
 
@@ -264,7 +264,7 @@ export const FeaturesGridSection = () => {
                       >
                         <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
                           Outcome
-            </div>
+                        </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#38bdf8" }} />
                           <div className="flex-1">
@@ -272,10 +272,10 @@ export const FeaturesGridSection = () => {
                               <div>Deployment successful.</div>
                               <div className="text-sm mt-2">
                                 Deployment details: <span className="font-mono text-cyan-300">www.my-awesome-app.nexlayer.ai</span>
-                </div>
-                </div>
-              </div>
-            </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </motion.div>
                     )}
                 </div>
