@@ -90,7 +90,7 @@ export const HeroSection = () => {
           {/* Main Heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white mb-6 leading-[0.95] font-bold max-w-5xl mx-auto px-4 tracking-[-0.03em] text-center">
             Ship anything
-            <br />
+          <br />
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">your agent can build.</span>
           </h1>
 
@@ -207,7 +207,7 @@ export const HeroSection = () => {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-m7c19LlD4LJefDOOuJLMWxWqkcPmAL.png"
                   alt="IBM"
-                  className="h-6 sm:h-8 w-auto"
+                  className="h-8 sm:h-10 w-auto"
                 />
               </div>
 
@@ -216,31 +216,22 @@ export const HeroSection = () => {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hSE4jSsjQGcWW0cbgDHaEKmtEgXK1l.png"
                   alt="MIT"
-                  className="h-6 sm:h-8 w-auto"
+                  className="h-8 sm:h-10 w-auto"
                 />
               </div>
 
-              {/* ADP Logo */}
+              {/* HubSpot Logo */}
               <div className="flex items-center">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N428ig9VCIaw0G5IipFov5uqk6edkk.png"
-                  alt="ADP"
-                  className="h-6 sm:h-8 w-auto"
-                />
-              </div>
-
-              {/* Experian Logo */}
-              <div className="flex items-center">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BL0T5WZyd4LqMhTnBuGLoqtd6h6j8z.png"
-                  alt="Experian"
-                  className="h-6 sm:h-8 w-auto"
+                  src="/logos/hubspot-logo.png"
+                  alt="HubSpot"
+                  className="h-8 sm:h-10 w-auto"
                 />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
       <ComparisonSection />
     </>

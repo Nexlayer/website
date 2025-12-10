@@ -4,32 +4,32 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
-  {
+        {
     question: "What happens when my free app goes to sleep?",
     answer:
       "It wakes up instantly when someone visits. No data lost. Your app is just paused, not deleted.",
-  },
-  {
+        },
+        {
     question: "Can I use my own domain?",
     answer:
       "Yes. On the $49 plan you get 3 custom domains. Enterprise plans include unlimited domains.",
   },
-  {
+        {
     question: "What if I need to collaborate with my team?",
     answer:
       "Right now everyone gets their own account. Team features (shared projects, permissions) are on Enterprise. Join our waitlist for team features coming soon.",
-  },
-  {
+        },
+        {
     question: "Is this actually production-ready?",
     answer:
       "Yes. Same infrastructure that handles millions of users. Auto-scaling, monitoring, security — all handled. We run production workloads for companies you've heard of.",
-  },
-  {
+        },
+        {
     question: "What stacks can I deploy?",
     answer:
       "Any stack your agent can build — frontend, backend, APIs, databases, vector stores, or workers.\n\n1. If it runs in a container, it runs on Nexlayer.\n\n2. If it's an external API service, we wire it up automatically.",
-  },
-  {
+        },
+        {
     question: "How is Nexlayer different from Lovable, Vercel, or AWS?",
     answer:
       "Lovable builds your MVP. Vercel hosts frontends. AWS makes you become DevOps. Nexlayer is the first cloud your AI coding agent can ship to enterprise-grade production scale— any stack, any service, in one step.",

@@ -117,14 +117,14 @@ export const FeaturesGridSection = () => {
 
   return (
     <section id="ship-any-tech" className="px-4 py-20 bg-black">
-      <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
         <div className="ship-any-tech-section-inner">
           <h2 className="ship-any-tech-heading">
             Any stack. Any service.{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
               One platform.
             </span>
-          </h2>
+            </h2>
           <p className="ship-any-tech-subhead">
             Whatever your agent builds — containers, databases, vector stores, or APIs.Nexlayer runs and wires it together automatically.
           </p>
@@ -195,7 +195,7 @@ export const FeaturesGridSection = () => {
                 </span>
               ))}
             </div>
-          </div>
+            </div>
 
           {/* Educational Message - Animated Interaction */}
           <AnimatePresence>
@@ -213,7 +213,7 @@ export const FeaturesGridSection = () => {
                     <div className="space-y-2">
                       <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
                         You
-                      </div>
+                </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#f472b6" }} />
                         <div className="flex-1">
@@ -227,9 +227,9 @@ export const FeaturesGridSection = () => {
                             </span>
                             "
                           </span>
-                        </div>
-                      </div>
-                    </div>
+                </div>
+              </div>
+            </div>
 
                     {/* Agent Response */}
                     {showAgentResponse && (
@@ -242,15 +242,15 @@ export const FeaturesGridSection = () => {
                         <div className="text-xs text-gray-500 uppercase tracking-wider mb-1 flex items-center gap-2">
                           <ClaudeAI className="w-4 h-4" />
                           Claude
-                        </div>
+                </div>
                         <div className="flex items-start gap-3">
                           <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#a78bfa" }} />
                           <div className="flex-1">
                             <span style={{ color: "#a78bfa" }} className="font-medium">
                               Reviewing your project structure, then proceeding with Nexlayer deployment.
                             </span>
-                          </div>
-                        </div>
+                </div>
+              </div>
                       </motion.div>
                     )}
 
@@ -264,7 +264,7 @@ export const FeaturesGridSection = () => {
                       >
                         <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
                           Outcome
-                        </div>
+            </div>
                         <div className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#38bdf8" }} />
                           <div className="flex-1">
@@ -272,13 +272,13 @@ export const FeaturesGridSection = () => {
                               <div>Deployment successful.</div>
                               <div className="text-sm mt-2">
                                 Deployment details: <span className="font-mono text-cyan-300">www.my-awesome-app.nexlayer.ai</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                </div>
+                </div>
+              </div>
+            </div>
                       </motion.div>
                     )}
-                  </div>
+                </div>
                 </div>
               </motion.div>
             )}
@@ -288,8 +288,8 @@ export const FeaturesGridSection = () => {
           <div className="mt-12">
             <a
               href="https://docs.nexlayer.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-2.5 bg-black border border-gray-700 text-gray-400 text-sm font-medium rounded-full hover:border-gray-600 hover:text-gray-300 transition-all duration-300"
             >
               Documentation

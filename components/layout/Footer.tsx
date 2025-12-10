@@ -121,10 +121,13 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 mb-8 border-t border-[#2a2a2a]">
-          <p className="text-gray-400 text-sm text-center">
+        <div className="mt-12 pt-8 border-t border-[#2a2a2a]">
+          <p className="text-cyan-400 text-xs sm:text-sm text-center mb-6">
+            Selected by Google AI Startup Program · Recognized by NVIDIA Inception
+          </p>
+          <p className="text-gray-400 text-sm text-center mb-8">
             © 2025 Nexlayer. All rights reserved. Nexlayer – The Cloud Agents
-            Trust™ are trademarks of AuditDeploy, Inc.
+            Trust™ are trademarks of Nexlayer Technologies Inc.
           </p>
         </div>
       </div>
