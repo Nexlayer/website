@@ -21,6 +21,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Add ARGs and ENVs to Dockerfile
+        run: |
+          # Create the ARG and ENV lines
+          cat << 'EOF' > /tmp/docker_vars.txt
+          
+          # Build arguments
+          ARG ${{ secrets.ENV_VAR_NAME_1 }}
+          ARG ${{ secrets.ENV_VAR_NAME_2 }}
+
+          # Environment variables
+          ENV ${{ secrets.ENV_VAR_NAME_1 }}=$${{ secrets.ENV_VAR_NAME_1 }}
+          ENV ${{ secrets.ENV_VAR_NAME_2 }}=$${{ secrets.ENV_VAR_NAME_2 }}
+          EOF
+
+          # Insert into Dockerfile
+          sed -i '/^WORKDIR \/app$/r /tmp/docker_vars.txt' Dockerfile
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -48,23 +65,26 @@ jobs:
           platforms: linux/amd64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            ${{ secrets.ENV_VAR_NAME_1 }}=${{ secrets.ENV_VAR_VALUE_1 }}
+            ${{ secrets.ENV_VAR_NAME_2 }}=${{ secrets.ENV_VAR_VALUE_2 }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Update nexlayer.yaml
+      - name: Update nexlayer-update.yaml
         run: |
           # Extract the short SHA
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
-          
-          # Update the image in nexlayer.yaml
+
+          # Update the image in nexlayer-update.yaml
           sed -i "s|image:.*|image: ghcr.io/nexlayer/${{ env.IMAGE_NAME }}:$SHORT_SHA|" nexlayer.yaml
-          
-          # Display the updated file for verification
-          cat nexlayer.yaml
+
+          # Add environment variables
+          sed -i '/^      path: "\/"/a\      vars:\n        ${{ secrets.ENV_VAR_NAME_1 }}: ${{ secrets.ENV_VAR_VALUE_1 }}\n        ${{ secrets.ENV_VAR_NAME_2 }}: ${{ secrets.ENV_VAR_VALUE_2 }}' nexlayer.yaml
 
       - name: Deploy to Nexlayer
         run: |
           # Deploy to Nexlayer using the API
-          curl -X POST https://app.nexlayer.io/startUserDeployment \
+          curl -X POST https://app.nexlayer.io/startUserDeployment/${{ secrets.NEXLAYER_TEST_SESSION_TOKEN }} \
             -H "Content-Type: text/x-yaml" \
             --data-binary @nexlayer.yaml
