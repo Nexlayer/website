@@ -26,7 +26,7 @@ const itemVariants = {
 }
 
 const yourCodeTags = ["Next.js", "FastAPI", "Express", "Go", "Rust", "Django"]
-const managedServicesTags = ["Supabase", "Neon", "Pinecone", "OpenAI", "Stripe", "Resend"]
+const managedServicesTags = ["Supabase", "Neon", "Pinecone", "OpenAI", "Stripe"]
 
 const pillars = [
   {
@@ -67,13 +67,14 @@ export const ProductionGradeSection = () => {
             <br />
             <span className="text-gray-400">Planet-scale.</span>
             <br />
-            <span className="text-emerald-400 drop-shadow-[0_0_60px_rgba(0,229,191,0.15)]">Invisible by design.</span>
+            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_60px_rgba(0,229,191,0.15)]">Invisible by design.</span>
           </h2>
           <p className="text-base md:text-[17px] text-gray-400 max-w-[680px] mx-auto leading-relaxed">
-            Run your own containers <span className="text-white font-semibold">and</span> connect managed services—all
-            wired together automatically.
+            Run your own containers <span className="text-white font-semibold">and</span> connect managed services—all wired together automatically.
             <br />
-            No Terraform. No glue code. No infrastructure rituals.
+            <br />
+            <span className="text-white/90">No Terraform. No glue code. No infrastructure rituals.</span>
+            <br />
             <br />
             Just tell your agent what you need.
           </p>
@@ -104,7 +105,7 @@ export const ProductionGradeSection = () => {
           </div>
 
           {/* Connector */}
-          <div className="flex items-center justify-center bg-[#08080a] border-x-0 md:border-x border-y md:border-y-0 border-white/[0.06] py-6 md:py-0 md:px-6 relative">
+          <div className="flex flex-col items-center justify-center bg-[#08080a] border-x-0 md:border-x border-y md:border-y-0 border-white/[0.06] py-6 md:py-0 md:px-6 relative">
             <motion.div
               className="w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,229,191,0.15)]"
               whileHover={{ scale: 1.1 }}
@@ -112,7 +113,7 @@ export const ProductionGradeSection = () => {
             >
               <Plus className="w-6 h-6 text-black" strokeWidth={2.5} />
             </motion.div>
-            <span className="absolute -bottom-7 md:bottom-auto md:-right-14 text-[11px] text-emerald-400 font-semibold uppercase tracking-[0.1em]">
+            <span className="mt-3 text-[11px] text-emerald-400 font-semibold uppercase tracking-[0.1em]">
               Unified
             </span>
           </div>
@@ -147,37 +148,11 @@ export const ProductionGradeSection = () => {
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-white">
             Your agent doesn't just deploy.
             <br />
-            <span className="text-emerald-400">It understands infrastructure.</span>
+            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">It understands infrastructure.</span>
           </h3>
           <p className="text-base md:text-lg text-gray-300 max-w-[700px] mx-auto leading-relaxed">
             Nexlayer MCP gives your coding agent real-time context about your deployment—so it can generate, validate, and self-correct without you lifting a finger.
           </p>
-        </motion.div>
-
-        {/* Three Pillars */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden mb-16"
-          variants={itemVariants}
-        >
-          {pillars.map((pillar) => (
-            <motion.div
-              key={pillar.label}
-              className="bg-[#08080a] p-8 md:p-10 transition-colors hover:bg-[#101012]"
-              whileHover={{ backgroundColor: "#101012" }}
-            >
-              <div className="w-11 h-11 relative mb-5">
-                <div className="absolute inset-0 bg-emerald-400/10 rounded-xl" />
-                <pillar.icon className="w-11 h-11 p-2.5 text-emerald-400 relative" />
-              </div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400 mb-2.5">
-                {pillar.label}
-              </div>
-              <h3 className="text-[17px] font-semibold tracking-tight mb-2.5 leading-tight text-white">
-                {pillar.title}
-              </h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">{pillar.description}</p>
-            </motion.div>
-          ))}
         </motion.div>
 
         {/* Unified Block - Chat Interface */}
@@ -320,7 +295,7 @@ export const ProductionGradeSection = () => {
           variants={itemVariants}
         >
           {/* Card 1 */}
-          <div className="bg-[#161618] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
+          <div className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
             <div className="text-emerald-400 font-semibold text-lg mb-4">01</div>
             <h4 className="text-white font-bold text-2xl mb-4">Generates valid configs</h4>
             <p className="text-gray-400 text-base leading-relaxed">
@@ -329,7 +304,7 @@ export const ProductionGradeSection = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#161618] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
+          <div className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
             <div className="text-emerald-400 font-semibold text-lg mb-4">02</div>
             <h4 className="text-white font-bold text-2xl mb-4">Validates before deploy</h4>
             <p className="text-gray-400 text-base leading-relaxed">
@@ -338,13 +313,39 @@ export const ProductionGradeSection = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#161618] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
+          <div className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
             <div className="text-emerald-400 font-semibold text-lg mb-4">03</div>
             <h4 className="text-white font-bold text-2xl mb-4">Self-corrects with context</h4>
             <p className="text-gray-400 text-base leading-relaxed">
               When something fails, Nexlayer sends back detailed context. Your agent reads it, understands it, and fixes it—automatically.
             </p>
           </div>
+        </motion.div>
+
+        {/* Three Pillars */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden mb-16"
+          variants={itemVariants}
+        >
+          {pillars.map((pillar) => (
+            <motion.div
+              key={pillar.label}
+              className="bg-[#08080a] p-8 md:p-10 transition-colors hover:bg-[#101012]"
+              whileHover={{ backgroundColor: "#101012" }}
+            >
+              <div className="w-11 h-11 relative mb-5">
+                <div className="absolute inset-0 bg-emerald-400/10 rounded-xl" />
+                <pillar.icon className="w-11 h-11 p-2.5 text-emerald-400 relative" />
+              </div>
+              <div className="text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400 mb-2.5">
+                {pillar.label}
+              </div>
+              <h3 className="text-[17px] font-semibold tracking-tight mb-2.5 leading-tight text-white">
+                {pillar.title}
+              </h3>
+              <p className="text-[13px] text-gray-500 leading-relaxed">{pillar.description}</p>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Closing */}

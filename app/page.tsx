@@ -11,11 +11,11 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       <HeroSection />
-      <HowItWorksSection />
       <div className="hidden">
         <CloudAgentsTrustSection />
       </div>
       <ProductionGradeSection />
+      <HowItWorksSection />
       <FeaturesGridSection />
       <SocialProofSection />
       <CTASection />

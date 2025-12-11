@@ -26,8 +26,9 @@ export const HowItWorksSection = () => {
       title: "Live in production",
       description: "Full-stack app running globally in seconds",
       iconColor: "#10b981", // Emerald
-      bgGradient: "from-emerald-500/20 to-teal-500/20",
-      borderColor: "border-emerald-400/30",
+      bgGradient: "from-cyan-500/20 via-teal-500/20 to-emerald-500/20",
+      borderColor: "border-transparent",
+      borderGradient: "bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400",
     },
   ];
 
@@ -63,43 +64,85 @@ export const HowItWorksSection = () => {
                 {/* Step Card */}
                 <div className="flex flex-col items-center text-center flex-1 md:flex-initial">
                   {/* Icon */}
-                  <motion.div
-                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${step.bgGradient} border ${step.borderColor} flex items-center justify-center mb-4 flex-shrink-0 relative overflow-hidden`}
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: index * 0.2 + 0.3,
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15,
-                    }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {/* Glow effect */}
-                    <div
-                      className="absolute inset-0 rounded-xl opacity-50 blur-xl"
-                      style={{ backgroundColor: step.iconColor }}
-                    />
+                  {step.borderGradient ? (
                     <motion.div
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.5, 0.8, 0.5],
-                      }}
+                      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl ${step.borderGradient} p-[1px] mb-4 flex-shrink-0`}
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
                       transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
+                        delay: index * 0.2 + 0.3,
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
                       }}
-                      className="absolute inset-0 rounded-xl"
-                      style={{ backgroundColor: step.iconColor }}
-                    />
-                    <IconComponent
-                      className="w-8 h-8 sm:w-10 sm:h-10 relative z-10"
-                      style={{ color: step.iconColor }}
-                    />
-                  </motion.div>
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className={`w-full h-full rounded-xl bg-gradient-to-br ${step.bgGradient} flex items-center justify-center relative overflow-hidden`}>
+                        {/* Glow effect */}
+                        <div
+                          className="absolute inset-0 rounded-xl opacity-50 blur-xl"
+                          style={{ backgroundColor: step.iconColor }}
+                        />
+                        <motion.div
+                          animate={{
+                            scale: [1, 1.1, 1],
+                            opacity: [0.5, 0.8, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                          className="absolute inset-0 rounded-xl"
+                          style={{ backgroundColor: step.iconColor }}
+                        />
+                        <IconComponent
+                          className="w-8 h-8 sm:w-10 sm:h-10 relative z-10"
+                          style={{ color: step.iconColor }}
+                        />
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${step.bgGradient} border ${step.borderColor} flex items-center justify-center mb-4 flex-shrink-0 relative overflow-hidden`}
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: index * 0.2 + 0.3,
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
+                      }}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {/* Glow effect */}
+                      <div
+                        className="absolute inset-0 rounded-xl opacity-50 blur-xl"
+                        style={{ backgroundColor: step.iconColor }}
+                      />
+                      <motion.div
+                        animate={{
+                          scale: [1, 1.1, 1],
+                          opacity: [0.5, 0.8, 0.5],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                        className="absolute inset-0 rounded-xl"
+                        style={{ backgroundColor: step.iconColor }}
+                      />
+                      <IconComponent
+                        className="w-8 h-8 sm:w-10 sm:h-10 relative z-10"
+                        style={{ color: step.iconColor }}
+                      />
+                    </motion.div>
+                  )}
                   
                   {/* Title */}
                   <motion.h3
