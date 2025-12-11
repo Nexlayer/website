@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { CloudAgentsTrustSection } from "@/components/sections/CloudAgentsTrustSection";
 import { FeaturesGridSection } from "@/components/sections/FeaturesGridSection";
+import { ProductionGradeSection } from "@/components/sections/ProductionGradeSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { CTASection } from "@/components/sections/CTASection";
 
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <div className="hidden">
         <CloudAgentsTrustSection />
       </div>
+      <ProductionGradeSection />
       <FeaturesGridSection />
       <SocialProofSection />
       <CTASection />
