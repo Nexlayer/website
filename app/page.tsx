@@ -14,8 +14,8 @@ export default function LandingPage() {
       <div className="hidden">
         <CloudAgentsTrustSection />
       </div>
-      <ProductionGradeSection />
       <HowItWorksSection />
+      <ProductionGradeSection />
       <FeaturesGridSection />
       <SocialProofSection />
       <CTASection />

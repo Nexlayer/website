@@ -297,34 +297,46 @@ export const ProductionGradeSection = () => {
         {/* Three Feature Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-20"
-          variants={itemVariants}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           {/* Card 1 */}
-          <div className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
+          <motion.div 
+            className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left"
+            variants={itemVariants}
+          >
             <div className="text-emerald-400 font-semibold text-lg mb-4">01</div>
             <h4 className="text-white font-bold text-2xl mb-4">Generates valid configs</h4>
             <p className="text-gray-400 text-base leading-relaxed">
               Your agent knows the Nexlayer schema. It creates deployment configs that actually work—no guessing, no copy-pasting from docs.
             </p>
-          </div>
+          </motion.div>
 
           {/* Card 2 */}
-          <div className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
+          <motion.div 
+            className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left"
+            variants={itemVariants}
+          >
             <div className="text-emerald-400 font-semibold text-lg mb-4">02</div>
             <h4 className="text-white font-bold text-2xl mb-4">Validates before deploy</h4>
             <p className="text-gray-400 text-base leading-relaxed">
               Before anything goes live, your agent checks the config against Nexlayer's validation. Catches errors before they cost you time.
             </p>
-          </div>
+          </motion.div>
 
           {/* Card 3 */}
-          <div className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left">
+          <motion.div 
+            className="bg-[#08080a] border border-white/[0.06] rounded-2xl p-10 md:p-14 text-left"
+            variants={itemVariants}
+          >
             <div className="text-emerald-400 font-semibold text-lg mb-4">03</div>
             <h4 className="text-white font-bold text-2xl mb-4">Self-corrects with context</h4>
             <p className="text-gray-400 text-base leading-relaxed">
               When something fails, Nexlayer sends back detailed context. Your agent reads it, understands it, and fixes it—automatically.
             </p>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Three Pillars */}
