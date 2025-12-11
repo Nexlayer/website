@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { BarChart3, Clock, Shield, Plus, ArrowRight, Globe, Layers, CheckCircle } from "lucide-react"
+import { ClaudeAI } from "../logos/ClaudeAI"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -189,18 +190,22 @@ export const ProductionGradeSection = () => {
             <div className="p-6 space-y-4 min-h-[400px]">
               {/* User Message */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xs font-semibold">Y</span>
+                <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+                  <img 
+                    src="/user-avatar.png" 
+                    alt="User" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="bg-[#101012] border border-white/[0.06] rounded-lg px-4 py-3 max-w-[80%]">
-                  <p className="text-sm text-gray-300">Deploy this app with Supabase and Redis</p>
+                  <p className="text-sm text-gray-300">Deploy my app to Nexlayer.</p>
                 </div>
               </div>
 
               {/* Claude MCP Message */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center flex-shrink-0 relative">
-                  <span className="text-white text-xs font-semibold">C</span>
+                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0 relative">
+                  <ClaudeAI className="w-[48px] h-[48px]" />
                   <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border border-[#0a0a0a]" />
                 </div>
                 <div className="flex-1">
@@ -220,8 +225,8 @@ export const ProductionGradeSection = () => {
 
               {/* Nexlayer Validation Error */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xs font-semibold">N</span>
+                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                  <img src="/nexlayer-logo-icon-transparent.svg" alt="Nexlayer" className="w-[48px] h-[48px]" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -241,8 +246,8 @@ export const ProductionGradeSection = () => {
 
               {/* Claude MCP Fix */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center flex-shrink-0 relative">
-                  <span className="text-white text-xs font-semibold">C</span>
+                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0 relative">
+                  <ClaudeAI className="w-[48px] h-[48px]" />
                   <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border border-[#0a0a0a]" />
                 </div>
                 <div className="flex-1">
@@ -266,8 +271,8 @@ export const ProductionGradeSection = () => {
 
               {/* Nexlayer Success */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xs font-semibold">N</span>
+                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                  <img src="/nexlayer-logo-icon-transparent.svg" alt="Nexlayer" className="w-[48px] h-[48px]" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
