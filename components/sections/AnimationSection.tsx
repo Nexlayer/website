@@ -42,7 +42,7 @@ function AnimationSection({
           <div className="text-sm font-medium text-cyan-400 mb-4 tracking-wider uppercase">
             AI Agents are the new developers.
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-normal text-white mb-6" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
             Nexlayer is the infrastructure agents can talk to.
           </h2>
         </div>

@@ -177,7 +177,7 @@ export const FeaturesSection: React.FC<Props> = ({
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-6xl font-normal text-white mb-6" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
               From prototype to production.<br />
               Ship apps that run real businesses.
             </h2>

@@ -37,7 +37,7 @@ export const HowItWorksSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Headline */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-4 leading-tight" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
             Agent → Cloud.{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
               One step.

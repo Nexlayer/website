@@ -67,7 +67,7 @@ export const PricingAndFAQSection = () => {
         {/* Pricing Section */}
         <div className="mb-20">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-normal text-white mb-4" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
               Plans & Billing
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">

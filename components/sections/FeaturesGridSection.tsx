@@ -119,7 +119,7 @@ export const FeaturesGridSection = () => {
     <section id="ship-any-tech" className="px-4 py-20 bg-black">
         <div className="max-w-6xl mx-auto">
         <div className="ship-any-tech-section-inner">
-          <h2 className="ship-any-tech-heading">
+          <h2 className="ship-any-tech-heading" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
             Any stack. Any service.{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
               One platform.
@@ -307,7 +307,7 @@ export const FeaturesGridSection = () => {
 
         #ship-any-tech .ship-any-tech-heading {
           font-size: clamp(2.5rem, 6vw, 4rem);
-          font-weight: 700;
+          font-weight: 400;
           letter-spacing: -0.03em;
           margin-bottom: 1rem;
           color: white;

@@ -37,6 +37,22 @@ export const HeroSection = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [showResponse, setShowResponse] = useState(false);
   const [isTyping, setIsTyping] = useState(true);
+  const [currentAgentIndex, setCurrentAgentIndex] = useState(0);
+
+  const agents = [
+    { name: "Cursor", icon: Cursor, color: "#ffffff" },
+    { name: "Claude", icon: ClaudeAI, color: "#C15F3C" },
+    { name: "Copilot", icon: GitHubCopilot, color: "#4100BB" },
+  ];
+
+  // Rotate agents in hero heading
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAgentIndex((prev) => (prev + 1) % agents.length);
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const demo = demos[currentDemo];
@@ -88,15 +104,27 @@ export const HeroSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white mb-6 leading-[0.95] font-bold max-w-5xl mx-auto px-4 tracking-[-0.03em] text-center">
-            Ship anything
-          <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">your agent can build.</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 leading-[0.95] font-normal max-w-5xl mx-auto px-4 tracking-[-0.03em] text-center whitespace-nowrap" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
+            Ship anything from{" "}
+            <span className="inline-flex items-center gap-2">
+              {(() => {
+                const AgentIcon = agents[currentAgentIndex].icon;
+                const currentAgent = agents[currentAgentIndex];
+                return (
+                  <>
+                    <AgentIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex-shrink-0" />
+                    <span style={{ color: currentAgent.color }}>
+                      {currentAgent.name}
+                    </span>
+                  </>
+                );
+              })()}
+            </span>
           </h1>
 
           {/* Description */}
           <p className="text-lg sm:text-xl text-gray-400 mb-14 font-normal max-w-2xl mx-auto px-4 leading-relaxed text-center">
-          Connect your coding agent to Nexlayer via MCP. Deploy full-stack apps in 90 seconds. No YAML. No DevOps. Just ship.
+          Tell your AI agent what to ship. Nexlayer handles the rest. Deploy production-ready apps directly from your coding agent—no DevOps, no YAML, no friction.
           </p>
 
           {/* Agent Icons */}
@@ -130,9 +158,6 @@ export const HeroSection = () => {
             </Link>
           </div>
 
-          <p className="text-center mt-6 mb-8 text-sm sm:text-base text-gray-400">
-            Just ask in natural language. Your agent talks to Nexlayer. You ship.
-          </p>
 
           {/* Animated Terminal Demo */}
           <style dangerouslySetInnerHTML={{ __html: `

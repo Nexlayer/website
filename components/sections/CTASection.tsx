@@ -11,7 +11,8 @@ export const CTASection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-normal text-white mb-6"
+          style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}
         >
           Ready to ship?
         </motion.h2>
@@ -38,7 +39,7 @@ export const CTASection = () => {
             href="https://app.nexlayer.io/dashboard?tab=mcp"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-400 to-teal-500 text-white font-semibold rounded-lg hover:from-cyan-300 hover:to-teal-400 hover:text-black transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-400 to-teal-500 text-black font-semibold rounded-lg hover:from-cyan-300 hover:to-teal-400 transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
           >
             <Zap className="w-5 h-5" />
             Deploy Now - Free

@@ -55,7 +55,8 @@ export const SocialProofSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl font-bold text-white mb-16 text-center"
+          className="text-4xl sm:text-5xl font-normal text-white mb-16 text-center"
+          style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}
         >
           Founders are shipping faster
         </motion.h2>

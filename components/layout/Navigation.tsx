@@ -112,7 +112,7 @@ export const Navigation = () => {
 
           <div className="max-sm:hidden flex items-center space-x-2 sm:space-x-4">
             <Button
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 text-white hover:from-cyan-300 hover:to-teal-400 hover:text-black text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 !text-black hover:from-cyan-300 hover:to-teal-400 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
               onClick={() =>
                 window.open(
                   "https://outgoing-violin-38-staging.authkit.app/sign-up?redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K4JKPDTWM8VM5W1MMK7RQRRK",
@@ -120,9 +120,9 @@ export const Navigation = () => {
                 )
               }
             >
-              <Zap className="w-4 h-4" />
-              <span className="hidden sm:inline">Get started</span>
-              <span className="sm:hidden">Free beta</span>
+              <Zap className="w-4 h-4 !text-black" />
+              <span className="hidden sm:inline !text-black">Get started</span>
+              <span className="sm:hidden !text-black">Free beta</span>
             </Button>
           </div>
 
@@ -154,7 +154,7 @@ export const Navigation = () => {
             Pricing
           </a>
           <Button
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 text-white hover:from-cyan-300 hover:to-teal-400 hover:text-black text-lg px-6 py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 !text-black hover:from-cyan-300 hover:to-teal-400 text-lg px-6 py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
             onClick={() => {
               setMenuOpen(false);
               window.open(
@@ -163,8 +163,8 @@ export const Navigation = () => {
               );
             }}
           >
-            <Zap className="w-5 h-5" />
-            Start free beta
+            <Zap className="w-5 h-5 !text-black" />
+            <span className="!text-black">Start free beta</span>
           </Button>
         </div>
       )}

@@ -63,21 +63,12 @@ export const ProductionGradeSection = () => {
       >
         {/* Header */}
         <motion.div className="text-center mb-16 md:mb-20" variants={itemVariants}>
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1] mb-8 text-balance">
-            <span className="text-white">Production-grade.</span>
-            <br />
-            <span className="text-gray-400">Planet-scale.</span>
-            <br />
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-normal tracking-tight leading-[1.1] mb-8 text-balance whitespace-nowrap" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
+            <span className="text-white">Planet-scale. </span>
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_60px_rgba(0,229,191,0.15)]">Invisible by design.</span>
           </h2>
           <p className="text-base md:text-[17px] text-gray-400 max-w-[680px] mx-auto leading-relaxed">
             Run your own containers <span className="text-white font-semibold">and</span> connect managed services—all wired together automatically.
-            <br />
-            <br />
-            <span className="text-white/90">No Terraform. No glue code. No infrastructure rituals.</span>
-            <br />
-            <br />
-            Just tell your agent what you need.
           </p>
         </motion.div>
 
@@ -144,18 +135,6 @@ export const ProductionGradeSection = () => {
           </div>
         </motion.div>
 
-        {/* Title Section */}
-        <motion.div className="text-center mb-12 md:mb-16" variants={itemVariants}>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-white">
-            Your agent doesn't just deploy.
-            <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">It understands infrastructure.</span>
-          </h3>
-          <p className="text-base md:text-lg text-gray-300 max-w-[700px] mx-auto leading-relaxed">
-            Nexlayer MCP gives your coding agent real-time context about your deployment—so it can generate, validate, and self-correct without you lifting a finger.
-          </p>
-        </motion.div>
-
         {/* Unified Block - Chat Interface */}
         <motion.div
           className="bg-gradient-to-b from-[#08080a] to-black border border-white/[0.06] rounded-2xl p-10 md:p-14 mb-20 relative overflow-hidden"
@@ -165,7 +144,7 @@ export const ProductionGradeSection = () => {
 
           {/* Header */}
           <div className="text-center mb-8 relative">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-3 text-white">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight mb-3 text-white" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
               See it in action
             </h3>
             <p className="text-base text-gray-400 max-w-[600px] mx-auto leading-relaxed">
@@ -300,7 +279,7 @@ export const ProductionGradeSection = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "0px" }}
         >
           {/* Card 1 */}
           <motion.div 
@@ -368,7 +347,7 @@ export const ProductionGradeSection = () => {
         {/* Closing */}
         <motion.div className="text-center pt-12 border-t border-white/[0.06]" variants={itemVariants}>
           <p className="text-[15px] text-gray-500 mb-2">This isn't hosting. This isn't glue code.</p>
-          <p className="text-xl font-semibold tracking-tight text-white">
+          <p className="text-2xl font-normal tracking-tight text-white" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
             This is <span className="text-emerald-400">production as a native capability for AI agents to ship your software.</span>
           </p>
         </motion.div>
