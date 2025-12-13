@@ -342,7 +342,7 @@ export const FeaturesGridSection = () => {
         
         @media (min-width: 1024px) {
           #ship-any-tech .ship-any-tech-subhead {
-            margin-bottom: 4rem;
+          margin-bottom: 4rem;
           }
         }
 

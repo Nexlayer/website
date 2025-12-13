@@ -96,10 +96,23 @@ export const HeroSection = () => {
     <>
       <section className="px-4 sm:px-6 py-12 sm:py-16 md:py-20 bg-black">
         <div className="text-center mx-auto">
-          {/* Top Label */}
+          {/* Top Label - Premium Animated Shiny Pill */}
           <div className="mt-12 sm:mt-20 mb-8 flex justify-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/20">
-              <span className="text-white/80 text-sm font-medium">NEXLAYER</span>
+            <div className="relative inline-flex items-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full overflow-hidden group cursor-default">
+              {/* Base background - solid black */}
+              <div className="absolute inset-0 bg-black rounded-full" />
+              
+              {/* Border wrapper with subtle silver border */}
+              <div className="absolute -inset-[1px] rounded-full bg-gray-400/30 group-hover:bg-gray-400/50 transition-opacity duration-500" />
+              <div className="absolute inset-[1px] rounded-full bg-black transition-colors duration-500" />
+              
+              {/* Glow effect on hover */}
+              <div className="absolute -inset-1 rounded-full bg-gray-400/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+              
+              {/* Text with silver color - static */}
+              <span className="relative z-10 text-xs sm:text-sm font-semibold tracking-wide" style={{ color: '#E5E5E5' }}>
+                Cloud for AI Agents
+              </span>
             </div>
           </div>
 

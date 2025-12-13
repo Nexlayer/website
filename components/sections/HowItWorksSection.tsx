@@ -105,43 +105,43 @@ export const HowItWorksSection = () => {
                       </div>
                     </motion.div>
                   ) : (
+                  <motion.div
+                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${step.bgGradient} border ${step.borderColor} flex items-center justify-center mb-4 flex-shrink-0 relative overflow-hidden`}
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: index * 0.2 + 0.3,
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 15,
+                    }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {/* Glow effect */}
+                    <div
+                      className="absolute inset-0 rounded-xl opacity-50 blur-xl"
+                      style={{ backgroundColor: step.iconColor }}
+                    />
                     <motion.div
-                      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${step.bgGradient} border ${step.borderColor} flex items-center justify-center mb-4 flex-shrink-0 relative overflow-hidden`}
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: index * 0.2 + 0.3,
-                        type: "spring",
-                        stiffness: 200,
-                        damping: 15,
+                      animate={{
+                        scale: [1, 1.1, 1],
+                        opacity: [0.5, 0.8, 0.5],
                       }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {/* Glow effect */}
-                      <div
-                        className="absolute inset-0 rounded-xl opacity-50 blur-xl"
-                        style={{ backgroundColor: step.iconColor }}
-                      />
-                      <motion.div
-                        animate={{
-                          scale: [1, 1.1, 1],
-                          opacity: [0.5, 0.8, 0.5],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                        className="absolute inset-0 rounded-xl"
-                        style={{ backgroundColor: step.iconColor }}
-                      />
-                      <IconComponent
-                        className="w-8 h-8 sm:w-10 sm:h-10 relative z-10"
-                        style={{ color: step.iconColor }}
-                      />
-                    </motion.div>
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute inset-0 rounded-xl"
+                      style={{ backgroundColor: step.iconColor }}
+                    />
+                    <IconComponent
+                      className="w-8 h-8 sm:w-10 sm:h-10 relative z-10"
+                      style={{ color: step.iconColor }}
+                    />
+                  </motion.div>
                   )}
                   
                   {/* Title */}
