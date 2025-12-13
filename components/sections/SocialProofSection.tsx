@@ -49,19 +49,19 @@ const testimonials = [
 
 export const SocialProofSection = () => {
   return (
-    <section className="py-24 bg-black">
+    <section className="py-16 sm:py-20 md:py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl font-normal text-white mb-16 text-center"
+          className="text-3xl sm:text-4xl md:text-5xl font-normal text-white mb-10 sm:mb-12 md:mb-16 text-center px-4"
           style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}
         >
           Founders are shipping faster
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -69,13 +69,13 @@ export const SocialProofSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="bg-black rounded-2xl p-8 border border-gray-800"
+              className="bg-black rounded-2xl p-6 sm:p-8 border border-gray-800"
             >
               {/* Quote marks - reuse existing style */}
-              <div className="text-4xl text-cyan-400 mb-6 font-serif">"</div>
+              <div className="text-3xl sm:text-4xl text-cyan-400 mb-4 sm:mb-6 font-serif">"</div>
 
               {/* Testimonial text */}
-              <p className="text-white text-lg mb-6 leading-relaxed">
+              <p className="text-white text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
                 {testimonial.quote}
               </p>
 

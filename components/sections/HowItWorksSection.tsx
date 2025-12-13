@@ -33,23 +33,23 @@ export const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-black">
+    <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Headline */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-4 leading-tight" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
+        <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-3 sm:mb-4 leading-tight" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
             Agent → Cloud.{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
               One step.
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
             Your coding agent connects directly to Nexlayer.
           </p>
         </div>
 
         {/* Three-Step Process */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 lg:gap-12 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-6 lg:gap-12 max-w-5xl mx-auto px-4">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (

@@ -116,7 +116,7 @@ export const FeaturesGridSection = () => {
   }, [selectedTech]);
 
   return (
-    <section id="ship-any-tech" className="px-4 py-20 bg-black">
+    <section id="ship-any-tech" className="px-4 sm:px-6 py-16 sm:py-20 md:py-24 bg-black">
         <div className="max-w-6xl mx-auto">
         <div className="ship-any-tech-section-inner">
           <h2 className="ship-any-tech-heading" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
@@ -306,11 +306,19 @@ export const FeaturesGridSection = () => {
         }
 
         #ship-any-tech .ship-any-tech-heading {
-          font-size: clamp(2.5rem, 6vw, 4rem);
+          font-size: clamp(1.875rem, 5vw, 2.5rem);
           font-weight: 400;
           letter-spacing: -0.03em;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           color: white;
+          line-height: 1.2;
+        }
+        
+        @media (min-width: 640px) {
+          #ship-any-tech .ship-any-tech-heading {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+          }
         }
 
         #ship-any-tech .ship-any-tech-accent {
@@ -318,9 +326,24 @@ export const FeaturesGridSection = () => {
         }
 
         #ship-any-tech .ship-any-tech-subhead {
-          font-size: 1rem;
+          font-size: 0.875rem;
           color: rgba(255, 255, 255, 0.6);
-          margin-bottom: 4rem;
+          margin-bottom: 2rem;
+          padding: 0 1rem;
+        }
+        
+        @media (min-width: 640px) {
+          #ship-any-tech .ship-any-tech-subhead {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            padding: 0;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          #ship-any-tech .ship-any-tech-subhead {
+            margin-bottom: 4rem;
+          }
         }
 
         .ship-any-tech-marquee-container {

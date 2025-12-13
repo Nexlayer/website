@@ -154,7 +154,7 @@ export const Navigation = () => {
             Pricing
           </a>
           <Button
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 !text-black hover:from-cyan-300 hover:to-teal-400 text-lg px-6 py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 !text-black hover:from-cyan-300 hover:to-teal-400 text-base sm:text-lg px-6 py-3 sm:py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105 min-h-[44px] w-full sm:w-auto"
             onClick={() => {
               setMenuOpen(false);
               window.open(

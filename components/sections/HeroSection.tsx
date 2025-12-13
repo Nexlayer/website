@@ -42,7 +42,7 @@ export const HeroSection = () => {
   const agents = [
     { name: "Cursor", icon: Cursor, color: "#ffffff" },
     { name: "Claude", icon: ClaudeAI, color: "#C15F3C" },
-    { name: "Copilot", icon: GitHubCopilot, color: "#4100BB" },
+    { name: "Copilot", icon: GitHubCopilot, color: "#22A9F2" },
   ];
 
   // Rotate agents in hero heading
@@ -94,7 +94,7 @@ export const HeroSection = () => {
 
   return (
     <>
-      <section className="px-4 py-20 bg-black">
+      <section className="px-4 sm:px-6 py-12 sm:py-16 md:py-20 bg-black">
         <div className="text-center mx-auto">
           {/* Top Label */}
           <div className="mt-12 sm:mt-20 mb-8 flex justify-center">
@@ -104,15 +104,15 @@ export const HeroSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 leading-[0.95] font-normal max-w-5xl mx-auto px-4 tracking-[-0.03em] text-center whitespace-nowrap" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
-            Ship anything from{" "}
-            <span className="inline-flex items-center gap-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 leading-[1.1] sm:leading-[0.95] font-normal max-w-5xl mx-auto px-4 tracking-[-0.03em] text-center" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
+            <span className="block sm:inline">Ship anything from</span>{" "}
+            <span className="inline-flex items-center gap-1.5 sm:gap-2 justify-center flex-wrap">
               {(() => {
                 const AgentIcon = agents[currentAgentIndex].icon;
                 const currentAgent = agents[currentAgentIndex];
                 return (
                   <>
-                    <AgentIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex-shrink-0" />
+                    <AgentIcon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex-shrink-0" />
                     <span style={{ color: currentAgent.color }}>
                       {currentAgent.name}
                     </span>
@@ -128,33 +128,33 @@ export const HeroSection = () => {
           </p>
 
           {/* Agent Icons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 px-4">
             <Link 
               href="https://app.nexlayer.io/dashboard?tab=mcp"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer min-h-[44px]"
             >
-              <Cursor className="w-4 h-4 text-white" />
-              <span className="text-sm text-gray-300 font-medium">Connect to Cursor</span>
+              <Cursor className="w-4 h-4 text-white flex-shrink-0" />
+              <span className="text-xs sm:text-sm text-gray-300 font-medium whitespace-nowrap">Connect to Cursor</span>
             </Link>
             <Link 
               href="https://app.nexlayer.io/dashboard?tab=mcp"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer min-h-[44px]"
             >
-              <ClaudeAI className="w-4 h-4" />
-              <span className="text-sm text-gray-300 font-medium">Connect to Claude Code</span>
+              <ClaudeAI className="w-4 h-4 flex-shrink-0" />
+              <span className="text-xs sm:text-sm text-gray-300 font-medium whitespace-nowrap">Connect to Claude Code</span>
             </Link>
             <Link 
               href="https://app.nexlayer.io/dashboard?tab=mcp"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-200 cursor-pointer min-h-[44px]"
             >
-              <GitHubCopilot className="w-4 h-4" />
-              <span className="text-sm text-gray-300 font-medium">Connect to Copilot</span>
+              <GitHubCopilot className="w-4 h-4 flex-shrink-0" />
+              <span className="text-xs sm:text-sm text-gray-300 font-medium whitespace-nowrap">Connect to Copilot</span>
             </Link>
           </div>
 
@@ -164,42 +164,42 @@ export const HeroSection = () => {
             @keyframes slideIn { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
             @keyframes progress { 0% { width: 0%; } 100% { width: 100%; } }
           `}} />
-          <div className="max-w-4xl mx-auto mb-12 px-4">
-            <div style={{ background: 'rgba(8, 8, 8, 0.95)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden', boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 0 80px ${currentAgent.agentColor}20, 0 40px 80px rgba(0,0,0,0.6)` }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(0,0,0,0.6)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }} />
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }} />
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27ca40' }} />
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
+            <div style={{ background: 'rgba(8, 8, 8, 0.95)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden', boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 0 80px ${currentAgent.agentColor}20, 0 40px 80px rgba(0,0,0,0.6)` }} className="sm:rounded-2xl">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', background: 'rgba(0,0,0,0.6)', borderBottom: '1px solid rgba(255,255,255,0.08)' }} className="sm:px-4 sm:py-3.5">
+                <div style={{ display: 'flex', gap: '6px' }} className="sm:gap-2">
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f56' }} className="sm:w-3 sm:h-3" />
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ffbd2e' }} className="sm:w-3 sm:h-3" />
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27ca40' }} className="sm:w-3 sm:h-3" />
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '20px', height: '20px', flexShrink: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }} className="sm:gap-2 flex-1 min-w-0 ml-2">
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '18px', height: '18px', flexShrink: 0 }} className="sm:w-5 sm:h-5">
                     {getAgentIcon()}
                   </div>
-                  <span style={{ fontSize: '13px', color: currentAgent.agentColor, fontWeight: '600' }}>{currentAgent.agent}</span>
-                  <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>→ Nexlayer MCP</span>
+                  <span style={{ fontSize: '11px', color: currentAgent.agentColor, fontWeight: '600' }} className="sm:text-sm truncate">{currentAgent.agent}</span>
+                  <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)' }} className="sm:text-sm hidden sm:inline">→ Nexlayer MCP</span>
                 </div>
-                <div style={{ padding: '5px 14px', background: 'rgba(39, 202, 64, 0.15)', borderRadius: '100px', fontSize: '11px', color: '#27ca40', letterSpacing: '0.5px', fontWeight: '500' }}>{currentAgent.stack}</div>
+                <div style={{ padding: '4px 10px', background: 'rgba(39, 202, 64, 0.15)', borderRadius: '100px', fontSize: '9px', color: '#27ca40', letterSpacing: '0.5px', fontWeight: '500' }} className="sm:px-3 sm:py-1.5 sm:text-xs flex-shrink-0 ml-1">{currentAgent.stack}</div>
               </div>
 
-              <div style={{ padding: '32px', minHeight: '260px', fontFamily: "'JetBrains Mono', monospace" }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', marginBottom: '28px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: `linear-gradient(135deg, ${currentAgent.agentColor}, ${currentAgent.agentColor}99)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: `0 4px 20px ${currentAgent.agentColor}30` }}>
-                    <MessageSquare size={18} color="#000" />
+              <div style={{ padding: '20px', minHeight: '200px', fontFamily: "'JetBrains Mono', monospace" }} className="sm:p-8 sm:min-h-[260px]">
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '20px' }} className="sm:gap-3.5 sm:mb-7">
+                  <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: `linear-gradient(135deg, ${currentAgent.agentColor}, ${currentAgent.agentColor}99)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: `0 4px 20px ${currentAgent.agentColor}30` }} className="sm:w-9 sm:h-9 sm:rounded-[10px]">
+                    <MessageSquare size={16} color="#000" style={{ width: '16px', height: '16px' }} className="sm:w-[18px] sm:h-[18px]" />
                   </div>
                   <div style={{ flex: 1, paddingTop: '4px' }}>
-                    <div style={{ fontSize: '15px', color: '#fff', lineHeight: '1.5' }}>
+                    <div style={{ fontSize: '13px', color: '#fff', lineHeight: '1.5' }} className="sm:text-[15px]">
                       "{displayedText}{isTyping && <span style={{ color: currentAgent.agentColor }}>|</span>}"
                     </div>
                   </div>
                 </div>
 
                 {showResponse && (
-                  <div style={{ marginLeft: '50px' }}>
+                  <div style={{ marginLeft: '0px' }} className="sm:ml-[50px]">
                     {currentAgent.responses.map((r, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', marginBottom: '8px', background: 'rgba(0, 170, 192, 0.04)', borderLeft: '3px solid #00AAC0', borderRadius: '0 8px 8px 0', animation: `slideIn 0.35s ease-out ${i * 0.12}s both` }}>
-                        <CheckCircle size={16} style={{ color: '#00AAC0', flexShrink: 0 }} />
-                        <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.85)' }}>{r}</span>
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 12px', marginBottom: '6px', background: 'rgba(0, 170, 192, 0.04)', borderLeft: '3px solid #00AAC0', borderRadius: '0 8px 8px 0', animation: `slideIn 0.35s ease-out ${i * 0.12}s both` }} className="sm:gap-3 sm:px-4 sm:py-3 sm:mb-2">
+                        <CheckCircle size={14} style={{ color: '#00AAC0', flexShrink: 0, width: '14px', height: '14px' }} className="sm:w-4 sm:h-4" />
+                        <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)' }} className="sm:text-sm">{r}</span>
                       </div>
                     ))}
                   </div>
@@ -213,11 +213,11 @@ export const HeroSection = () => {
           </div>
 
           {/* Social Proof Section */}
-          <div className="max-w-4xl mx-auto mb-4 sm:mb-16 lg:mb-20 text-center px-4">
-            <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-8 sm:mb-10 font-medium tracking-wide">
+          <div className="max-w-4xl mx-auto mb-4 sm:mb-12 md:mb-16 lg:mb-20 text-center px-4">
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 md:mb-10 font-medium tracking-wide">
               Built by a team who've scaled products for millions at
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12 opacity-60">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 opacity-60">
               {/* Google Logo */}
               <div className="flex items-center">
                 <img
