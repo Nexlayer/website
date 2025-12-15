@@ -284,15 +284,18 @@ export const FeaturesGridSection = () => {
             )}
           </AnimatePresence>
 
-          {/* Documentation Button */}
-          <div className="mt-12">
+          {/* Get Started Button */}
+          <div className="mt-12 flex items-center justify-center">
             <a
-              href="https://docs.nexlayer.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-2.5 bg-black border border-gray-700 text-gray-400 text-sm font-medium rounded-full hover:border-gray-600 hover:text-gray-300 transition-all duration-300"
+              href="https://outgoing-violin-38-staging.authkit.app/sign-up?redirect_uri=https%3A%2F%2Fapp.nexlayer.io%2Fcallback&authorization_session_id=01K4JKPDTWM8VM5W1MMK7RQRRK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 text-black hover:from-cyan-300 hover:to-teal-400 text-sm sm:text-base px-6 sm:px-8 py-2.5 sm:py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105 min-h-[44px]"
             >
-              Documentation
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Get started
             </a>
           </div>
         </div>

@@ -348,7 +348,7 @@ export const ProductionGradeSection = () => {
         <motion.div className="text-center pt-8 sm:pt-12 border-t border-white/[0.06] px-4" variants={itemVariants}>
           <p className="text-sm sm:text-[15px] text-gray-500 mb-2">This isn't hosting. This isn't glue code.</p>
           <p className="text-lg sm:text-xl md:text-2xl font-normal tracking-tight text-white" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
-            This is <span className="text-emerald-400">production as a native capability for AI agents to ship your software.</span>
+            Production. <span className="text-emerald-400">Built in.</span>
           </p>
         </motion.div>
       </motion.div>
