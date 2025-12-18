@@ -1,0 +1,33 @@
+<svg width="800" height="350" viewBox="0 0 800 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="350" fill="#111111"/>
+  <text x="400" y="40" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Plans &amp; Billing</text>
+  
+  <!-- Free Plan -->
+  <rect x="50" y="70" width="220" height="250" rx="8" fill="#1a1a1a" stroke="#333333" stroke-width="1"/>
+  <text x="160" y="100" text-anchor="middle" fill="#888888" font-family="system-ui" font-size="12">Current Plan</text>
+  <text x="160" y="130" text-anchor="middle" fill="white" font-family="system-ui" font-size="20" font-weight="bold">Free</text>
+  <rect x="70" y="250" width="180" height="36" rx="6" fill="#222222" stroke="#333333" stroke-width="1"/>
+  <text x="160" y="273" text-anchor="middle" fill="#666666" font-family="system-ui" font-size="12">Current plan</text>
+  
+  <!-- Scale Plan -->
+  <rect x="290" y="70" width="220" height="250" rx="8" fill="#1a1a1a" stroke="#22d3ee" stroke-width="2"/>
+  <text x="400" y="100" text-anchor="middle" fill="#22d3ee" font-family="system-ui" font-size="12">Scale Plan</text>
+  <text x="400" y="130" text-anchor="middle" fill="white" font-family="system-ui" font-size="20" font-weight="bold">$49</text>
+  <text x="430" y="130" fill="#666666" font-family="system-ui" font-size="14">/mo</text>
+  <rect x="310" y="250" width="180" height="36" rx="6" fill="url(#cyanGrad)"/>
+  <text x="400" y="273" text-anchor="middle" fill="black" font-family="system-ui" font-size="12" font-weight="600">Upgrade</text>
+  
+  <!-- Enterprise Plan -->
+  <rect x="530" y="70" width="220" height="250" rx="8" fill="#1a1a1a" stroke="#333333" stroke-width="1"/>
+  <text x="640" y="100" text-anchor="middle" fill="#888888" font-family="system-ui" font-size="12">Enterprise plan</text>
+  <text x="640" y="130" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="bold">Contact us</text>
+  <rect x="550" y="250" width="180" height="36" rx="6" fill="#222222" stroke="#333333" stroke-width="1"/>
+  <text x="640" y="273" text-anchor="middle" fill="#666666" font-family="system-ui" font-size="12">Contact sales</text>
+  
+  <defs>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+</svg>

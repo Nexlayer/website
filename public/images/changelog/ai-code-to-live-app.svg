@@ -1,0 +1,7 @@
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="200" fill="#111111"/>
+  <rect x="50" y="40" width="700" height="120" rx="8" fill="#1a1a1a" stroke="#333333" stroke-width="1"/>
+  <text x="400" y="85" text-anchor="middle" fill="white" font-family="system-ui" font-size="24" font-weight="bold">From AI code to live app.</text>
+  <text x="400" y="115" text-anchor="middle" fill="#666666" font-family="system-ui" font-size="14">The easiest way to deploy AI-built products in minutes.</text>
+  <text x="400" y="135" text-anchor="middle" fill="#666666" font-family="system-ui" font-size="14">Any language. Any framework. Any stack.</text>
+</svg>

@@ -108,6 +108,12 @@ export const Navigation = () => {
             >
               Support
             </a>
+            <a
+              href="/changelog"
+              className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"
+            >
+              Changelog
+            </a>
           </div>
 
           <div className="max-sm:hidden flex items-center space-x-2 sm:space-x-4">
@@ -152,6 +158,13 @@ export const Navigation = () => {
             onClick={() => setMenuOpen(false)}
           >
             Pricing
+          </a>
+          <a
+            href="/changelog"
+            className="text-white hover:text-cyan-400 text-lg font-medium transition-colors duration-300"
+            onClick={() => setMenuOpen(false)}
+          >
+            Changelog
           </a>
           <Button
             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 !text-black hover:from-cyan-300 hover:to-teal-400 text-base sm:text-lg px-6 py-3 sm:py-2 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105 min-h-[44px] w-full sm:w-auto"
