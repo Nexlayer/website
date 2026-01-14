@@ -101,12 +101,12 @@ export const Navigation = () => {
               Pricing
             </a>
             <a
-              href="https://discord.gg/U26X9mmYnP"
+              href="https://join.slack.com/t/nexlayercommunity/shared_invite/zt-3ns0038s0-16GWdSAD1aPdyxDzmbGaiw"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-cyan-400 text-sm font-medium transition-colors duration-300"
             >
-              Support
+              Community
             </a>
             <a
               href="/changelog"
