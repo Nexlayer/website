@@ -82,12 +82,12 @@ export const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://discord.gg/U26X9mmYnP"
+                    href="https://join.slack.com/t/nexlayercommunity/shared_invite/zt-3ns0038s0-16GWdSAD1aPdyxDzmbGaiw"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
                   >
-                    Support
+                    Community
                   </a>
                 </li>
               </ul>
