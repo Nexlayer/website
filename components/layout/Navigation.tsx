@@ -144,7 +144,7 @@ export const Navigation = () => {
       {/* Mobile menu overlay */}
       {menuOpen && (
         <div
-          className="sm:hidden fixed left-0 right-0 z-40 py-8 border-b border-[#222222] bg-[#0a0a0a] backdrop-blur-md flex flex-col items-center space-y-4 transition-all"
+          className="px-6 sm:hidden fixed left-0 right-0 z-40 py-8 border-b border-[#222222] bg-[#0a0a0a] backdrop-blur-md flex flex-col items-center space-y-4 transition-all"
           style={{
             top: "56px", // header height (h-14 = 56px)
             maxHeight: "calc(100dvh - 56px)",
