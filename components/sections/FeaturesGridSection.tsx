@@ -116,7 +116,7 @@ export const FeaturesGridSection = () => {
   }, [selectedTech]);
 
   return (
-    <section id="ship-any-tech" className="px-4 sm:px-6 py-16 sm:py-20 md:py-24 bg-black">
+    <section id="ship-any-tech" className="overflow-x-hidden px-4 sm:px-6 py-16 sm:py-20 md:py-24 bg-black">
         <div className="max-w-6xl mx-auto">
         <div className="ship-any-tech-section-inner">
           <h2 className="ship-any-tech-heading" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>

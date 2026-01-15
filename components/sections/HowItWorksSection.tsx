@@ -4,7 +4,7 @@ import { HowItWorksDemo } from "./how-it-works/HowItWorksDemo";
 
 export const HowItWorksSection = () => {
   return (
-    <section className="py-16 sm:py-20 md:py-28 lg:py-32 bg-black">
+    <section className="pt-16 sm:pt-20 md:pt-28 lg:pt-32 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Headline */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16 px-4">
