@@ -13,30 +13,30 @@ export const FeaturesGridSection = () => {
   const [showOutcome, setShowOutcome] = useState(false);
 
   const techPrompts: Record<string, string> = {
-    "FastAPI": "Deploy my FastAPI app with a health endpoint to nexlayer",
+    FastAPI: "Deploy my FastAPI app with a health endpoint to nexlayer",
     "Next.js": "Ship my Next.js frontend to nexlayer",
-    "PostgreSQL": "Add a Postgres database to my app on nexlayer",
-    "LangChain": "Deploy my LangChain with Pinecone to nexlayer",
-    "Redis": "Add Redis caching to my API on nexlayer",
-    "Django": "Deploy my Django app to nexlayer",
-    "Flask": "Ship my Flask API to nexlayer",
-    "Express": "Deploy my Express.js backend to nexlayer",
-    "React": "Deploy my React app to nexlayer",
-    "MongoDB": "Add a MongoDB database to my app on nexlayer",
-    "Qdrant": "Deploy my app with Qdrant vector store to nexlayer",
-    "Pinecone": "Add Pinecone vector database to my app on nexlayer",
-    "Weaviate": "Deploy with Weaviate vector store to nexlayer",
-    "Chroma": "Add Chroma vector database to nexlayer",
-    "Supabase": "Connect my app to Supabase on nexlayer",
-    "Neon": "Add Neon Postgres database to nexlayer",
-    "LlamaIndex": "Deploy my LlamaIndex app to nexlayer",
-    "CrewAI": "Ship my CrewAI multi-agent system to nexlayer",
-    "Hono": "Deploy my Hono API to nexlayer",
-    "Go": "Ship my Go application to nexlayer",
-    "Rust": "Deploy my Rust service to nexlayer",
-    "Ruby": "Ship my Ruby app to nexlayer",
-    "PHP": "Deploy my PHP application to nexlayer",
-    "Java": "Ship my Java backend to nexlayer",
+    PostgreSQL: "Add a Postgres database to my app on nexlayer",
+    LangChain: "Deploy my LangChain with Pinecone to nexlayer",
+    Redis: "Add Redis caching to my API on nexlayer",
+    Django: "Deploy my Django app to nexlayer",
+    Flask: "Ship my Flask API to nexlayer",
+    Express: "Deploy my Express.js backend to nexlayer",
+    React: "Deploy my React app to nexlayer",
+    MongoDB: "Add a MongoDB database to my app on nexlayer",
+    Qdrant: "Deploy my app with Qdrant vector store to nexlayer",
+    Pinecone: "Add Pinecone vector database to my app on nexlayer",
+    Weaviate: "Deploy with Weaviate vector store to nexlayer",
+    Chroma: "Add Chroma vector database to nexlayer",
+    Supabase: "Connect my app to Supabase on nexlayer",
+    Neon: "Add Neon Postgres database to nexlayer",
+    LlamaIndex: "Deploy my LlamaIndex app to nexlayer",
+    CrewAI: "Ship my CrewAI multi-agent system to nexlayer",
+    Hono: "Deploy my Hono API to nexlayer",
+    Go: "Ship my Go application to nexlayer",
+    Rust: "Deploy my Rust service to nexlayer",
+    Ruby: "Ship my Ruby app to nexlayer",
+    PHP: "Deploy my PHP application to nexlayer",
+    Java: "Ship my Java backend to nexlayer",
   };
 
   const frameworks = [
@@ -73,7 +73,7 @@ export const FeaturesGridSection = () => {
     if (techPrompts[tech]) {
       const isSameTech = selectedTech === tech;
       setSelectedTech(isSameTech ? null : tech);
-      
+
       if (!isSameTech) {
         // Reset animation state
         setDisplayedPrompt("");
@@ -90,7 +90,7 @@ export const FeaturesGridSection = () => {
 
     const prompt = techPrompts[selectedTech];
     let index = 0;
-    
+
     // Phase 1: Type the prompt
     const typeInterval = setInterval(() => {
       if (index < prompt.length) {
@@ -99,11 +99,11 @@ export const FeaturesGridSection = () => {
       } else {
         clearInterval(typeInterval);
         setIsTyping(false);
-        
+
         // Phase 2: Show agent response
         setTimeout(() => {
           setShowAgentResponse(true);
-          
+
           // Phase 3: Show deployment outcome
           setTimeout(() => {
             setShowOutcome(true);
@@ -116,17 +116,24 @@ export const FeaturesGridSection = () => {
   }, [selectedTech]);
 
   return (
-    <section id="ship-any-tech" className="overflow-x-hidden px-4 sm:px-6 py-16 sm:py-20 md:py-24 bg-black">
-        <div className="max-w-6xl mx-auto">
+    <section
+      id="ship-any-tech"
+      className="overflow-x-hidden px-4 sm:px-6 py-16 sm:py-20 md:py-24 bg-black"
+    >
+      <div className="max-w-6xl mx-auto">
         <div className="ship-any-tech-section-inner">
-          <h2 className="ship-any-tech-heading" style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}>
+          <h2
+            className="ship-any-tech-heading"
+            style={{ fontFamily: '"Anthropic Serif", Georgia, sans-serif' }}
+          >
             Any stack. Any service.{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
               One platform.
             </span>
-            </h2>
+          </h2>
           <p className="ship-any-tech-subhead">
-            Whatever your agent builds — containers, databases, vector stores, or APIs.Nexlayer runs and wires it together automatically.
+            Whatever your agent builds — containers, databases, vector stores,
+            or APIs.Nexlayer runs and wires it together automatically.
           </p>
 
           {/* First Row - Frameworks & Languages */}
@@ -195,7 +202,7 @@ export const FeaturesGridSection = () => {
                 </span>
               ))}
             </div>
-            </div>
+          </div>
 
           {/* Educational Message - Animated Interaction */}
           <AnimatePresence>
@@ -215,14 +222,23 @@ export const FeaturesGridSection = () => {
                         You
                       </div>
                       <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#f472b6" }} />
+                        <div
+                          className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                          style={{ backgroundColor: "#f472b6" }}
+                        />
                         <div className="flex-1">
                           <span className="font-medium text-white">
                             Tell your agent: "
-                            <span className="font-mono" style={{ color: "#f472b6" }}>
+                            <span
+                              className="font-mono"
+                              style={{ color: "#f472b6" }}
+                            >
                               {displayedPrompt}
                               {isTyping && (
-                                <span className="inline-block w-0.5 h-4 ml-1 animate-pulse" style={{ backgroundColor: "#f472b6" }} />
+                                <span
+                                  className="inline-block w-0.5 h-4 ml-1 animate-pulse"
+                                  style={{ backgroundColor: "#f472b6" }}
+                                />
                               )}
                             </span>
                             "
@@ -244,10 +260,17 @@ export const FeaturesGridSection = () => {
                           Claude
                         </div>
                         <div className="flex items-start gap-3">
-                          <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#a78bfa" }} />
+                          <div
+                            className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                            style={{ backgroundColor: "#a78bfa" }}
+                          />
                           <div className="flex-1">
-                            <span style={{ color: "#a78bfa" }} className="font-medium">
-                              Reviewing your project structure, then proceeding with Nexlayer deployment.
+                            <span
+                              style={{ color: "#a78bfa" }}
+                              className="font-medium"
+                            >
+                              Reviewing your project structure, then proceeding
+                              with Nexlayer deployment.
                             </span>
                           </div>
                         </div>
@@ -266,19 +289,28 @@ export const FeaturesGridSection = () => {
                           Outcome
                         </div>
                         <div className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#38bdf8" }} />
+                          <CheckCircle
+                            className="w-4 h-4 mt-1 flex-shrink-0"
+                            style={{ color: "#38bdf8" }}
+                          />
                           <div className="flex-1">
-                            <div style={{ color: "#38bdf8" }} className="font-medium space-y-1">
+                            <div
+                              style={{ color: "#38bdf8" }}
+                              className="font-medium space-y-1"
+                            >
                               <div>Deployment successful.</div>
                               <div className="text-sm mt-2">
-                                Deployment details: <span className="font-mono text-cyan-300">www.my-awesome-app.nexlayer.ai</span>
+                                Deployment details:{" "}
+                                <span className="font-mono text-cyan-300">
+                                  www.my-awesome-app.nexlayer.ai
+                                </span>
                               </div>
                             </div>
                           </div>
                         </div>
                       </motion.div>
                     )}
-                </div>
+                  </div>
                 </div>
               </motion.div>
             )}
@@ -292,8 +324,18 @@ export const FeaturesGridSection = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-teal-500 text-black hover:from-cyan-300 hover:to-teal-400 text-sm sm:text-base px-6 sm:px-8 py-2.5 sm:py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/50 hover:scale-105 min-h-[44px]"
             >
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
               </svg>
               Get started
             </a>
