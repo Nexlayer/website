@@ -142,7 +142,7 @@ export const FeaturesGridSection = () => {
               className="ship-any-tech-marquee-track"
               style={{
                 animationDirection: "normal",
-                animationDuration: "50s",
+                animationDuration: "40s",
               }}
             >
               {frameworks.map((tech, index) => (
@@ -177,7 +177,7 @@ export const FeaturesGridSection = () => {
               className="ship-any-tech-marquee-track"
               style={{
                 animationDirection: "reverse",
-                animationDuration: "50s",
+                animationDuration: "40s",
               }}
             >
               {databases.map((tech, index) => (
@@ -393,14 +393,16 @@ export const FeaturesGridSection = () => {
 
         .ship-any-tech-marquee-container {
           overflow: hidden;
-          margin: 0 -2rem;
-          padding: 2rem 0;
+          width: 100%;
+          position: relative;
         }
 
         .ship-any-tech-marquee-track {
           display: flex;
           gap: 1rem;
-          animation: ship-any-tech-marquee 60s linear infinite;
+          width: max-content;
+          animation: ship-any-tech-marquee 30s linear infinite;
+          padding: 1rem 0;
         }
 
         .ship-any-tech-marquee-track:hover {
@@ -427,6 +429,7 @@ export const FeaturesGridSection = () => {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           cursor: pointer;
           user-select: none;
+          white-space: nowrap;
         }
 
         .ship-any-tech-marquee-item:hover {
