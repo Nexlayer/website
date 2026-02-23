@@ -126,7 +126,7 @@ export const Footer = () => {
             Selected by Google AI Startup Program · Recognized by NVIDIA Inception
           </p>
           <p className="text-gray-400 text-sm text-center mb-8">
-            © 2025 Nexlayer. All rights reserved. Nexlayer – The Cloud Agents
+            © 2026 Nexlayer. All rights reserved. Nexlayer – The Cloud Agents
             Trust™ are trademarks of Nexlayer Technologies Inc.
           </p>
         </div>
