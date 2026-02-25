@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export',
+  output: process.env.NODE_ENV === 'development' ? undefined : 'export',
   distDir: 'build',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   async rewrites() {
