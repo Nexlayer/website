@@ -54,6 +54,15 @@ export const Footer = () => {
                     Hire a partner
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://cal.com/nexlayer/30min-ceo?layout=mobile"
+                    target="_blank"
+                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Investors
+                  </a>
+                </li>
               </ul>
             </div>
 
