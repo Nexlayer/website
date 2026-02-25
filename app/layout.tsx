@@ -27,12 +27,6 @@ export const metadata: Metadata = {
       "Nexlayer is the first AI agent-native cloud, enabling agents and developers to deploy any GitHub repo instantly. The Nexlayer-MCP auto-detects your stack, containerizes, orchestrates, and delivers a live production URL — no dashboards, no DevOps. The Cloud Agents Trust™.",
     type: "website",
     url: new URL("https://nexlayer.com"),
-    images: [
-      {
-        url: new URL("https://nexlayer.com/og-image.png"),
-        alt: "Nexlayer Open Graph Image",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -44,12 +38,6 @@ export const metadata: Metadata = {
     description:
       "Nexlayer is the first AI agent-native cloud, enabling agents and developers to deploy any GitHub repo instantly. The Nexlayer-MCP auto-detects your stack, containerizes, orchestrates, and delivers a live production URL — no dashboards, no DevOps. The Cloud Agents Trust™.",
     creator: "@nexlayer",
-    images: [
-      {
-        url: new URL("https://nexlayer.com/og-image.png"),
-        alt: "Nexlayer Twitter Image",
-      },
-    ],
   },
 };
 

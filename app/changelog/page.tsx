@@ -1,5 +1,23 @@
+import type { Metadata } from "next";
 import { getChangelogEntries } from "@/lib/changelog";
 import { ChangelogClient } from "./ChangelogClient";
+
+export const metadata: Metadata = {
+  title: "Changelog",
+  description:
+    "See what's new at Nexlayer — product updates, improvements, and new features shipped fast.",
+  openGraph: {
+    title: "Changelog | Nexlayer",
+    description:
+      "See what's new at Nexlayer — product updates, improvements, and new features shipped fast.",
+    url: "https://nexlayer.com/changelog",
+  },
+  twitter: {
+    title: "Changelog | Nexlayer",
+    description:
+      "See what's new at Nexlayer — product updates, improvements, and new features shipped fast.",
+  },
+};
 
 export default function ChangelogPage() {
   const entries = getChangelogEntries();
