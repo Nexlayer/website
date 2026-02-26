@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     title: "Partners | Nexlayer",
     description:
       "Hire a Nexlayer partner. Work with vetted experts who build and deploy on Nexlayer. Get your project live faster.",
+    images: [{ url: `/api/og/partners?title=${encodeURIComponent(partnersHeroData.title)}&description=${encodeURIComponent(partnersHeroData.description)}`, alt: partnersHeroData.title }],
   },
 };
 

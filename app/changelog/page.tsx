@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     title: "Changelog | Nexlayer",
     description:
       "See what's new at Nexlayer — product updates, improvements, and new features shipped fast.",
+    images: [{ url: `/api/og/changelog?title=${encodeURIComponent(changelogHeroData.title)}&description=${encodeURIComponent(changelogHeroData.description)}`, alt: changelogHeroData.title }],
   },
 };
 

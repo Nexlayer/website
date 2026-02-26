@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { CloudAgentsTrustSection } from "@/components/sections/CloudAgentsTrustSection";
@@ -10,6 +11,22 @@ export const heroData = {
   title: "Ship anything from Cursor",
   description:
     "Tell your AI agent what to ship. Nexlayer handles the rest. Deploy production-ready apps directly from your coding agent—no DevOps, no YAML, no friction.",
+};
+
+export const metadata: Metadata = {
+  openGraph: {
+    images: [
+      {
+        url: `/api/og/home?title=${encodeURIComponent(heroData.title)}&description=${encodeURIComponent(heroData.description)}`,
+        width: 1200,
+        height: 630,
+        alt: heroData.title,
+      },
+    ],
+  },
+  twitter: {
+    images: [{ url: `/api/og/home?title=${encodeURIComponent(heroData.title)}&description=${encodeURIComponent(heroData.description)}`, alt: heroData.title }],
+  },
 };
 
 export default function LandingPage() {

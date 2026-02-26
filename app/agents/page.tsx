@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     title: "Agents | Nexlayer",
     description:
       "Nexlayer is built for AI agents. Deploy instantly via MCP — no dashboards, no DevOps. The cloud that agents trust.",
+    images: [{ url: `/api/og/agents?title=${encodeURIComponent(heroData.title)}&description=${encodeURIComponent(heroData.description)}`, alt: heroData.title }],
   },
 };
 

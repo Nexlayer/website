@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Simple, transparent pricing for Nexlayer. Start free and scale as you grow. No hidden fees, no DevOps overhead — just instant deployment.",
   openGraph: {
-    title: "Pricing | Nexlayer",
+    title: "Pricing",
     description:
       "Simple, transparent pricing for Nexlayer. Start free and scale as you grow. No hidden fees, no DevOps overhead — just instant deployment.",
     url: "https://nexlayer.com/pricing",
@@ -27,9 +27,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Pricing | Nexlayer",
+    title: "Pricing",
     description:
       "Simple, transparent pricing for Nexlayer. Start free and scale as you grow. No hidden fees, no DevOps overhead — just instant deployment.",
+    images: [{ url: `/api/og/pricing?title=${encodeURIComponent(pricingHeroData.title)}&description=${encodeURIComponent(pricingHeroData.description)}`, alt: pricingHeroData.title }],
   },
 };
 
