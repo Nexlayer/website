@@ -9,6 +9,7 @@ export const runtime = "nodejs";
 
 export function generateStaticParams() {
   return [
+    { path: ["home"] },
     { path: ["pricing"] },
     { path: ["agents"] },
     { path: ["partners"] },
@@ -19,6 +20,7 @@ export function generateStaticParams() {
 // Static pages with exported heroData
 const staticPages: Record<string, { title: string; description: string }> = {
   "/": heroData,
+  "/home": heroData,
   "/pricing": pricingHeroData,
   "/agents": agentsHeroData,
   "/partners": partnersHeroData,
