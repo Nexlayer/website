@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Changelog | Nexlayer",
     description:
       "See what's new at Nexlayer — product updates, improvements, and new features shipped fast.",

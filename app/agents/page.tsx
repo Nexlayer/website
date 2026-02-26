@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Agents | Nexlayer",
     description:
       "Nexlayer is built for AI agents. Deploy instantly via MCP — no dashboards, no DevOps. The cloud that agents trust.",

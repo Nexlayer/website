@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Pricing",
     description:
       "Simple, transparent pricing for Nexlayer. Start free and scale as you grow. No hidden fees, no DevOps overhead — just instant deployment.",

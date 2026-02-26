@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Partners | Nexlayer",
     description:
       "Hire a Nexlayer partner. Work with vetted experts who build and deploy on Nexlayer. Get your project live faster.",
