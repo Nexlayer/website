@@ -9,7 +9,7 @@ import {
   TekiesoftLogo,
 } from "../../components/logos/partners";
 
-export default function PartnersClient() {
+export default function PartnersClient({ heroData }: { heroData: { title: string; description: string } }) {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -18,12 +18,10 @@ export default function PartnersClient() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            Hire a Nexlayer Partner
+            {heroData.title}
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Whether you're just getting started with Nexlayer or looking to
-            implement advanced functionality, our partners have the expertise
-            and industry knowledge to deliver the right solution.
+            {heroData.description}
           </p>
           <Button
             className="bg-transparent border-2 border-cyan-400 text-cyan-400 hover:!bg-cyan-400 hover:!text-black px-8 py-3 text-lg font-medium rounded-lg transition-all duration-300"

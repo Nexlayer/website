@@ -32,7 +32,7 @@ const demos = [
   },
 ];
 
-export const HeroSection = () => {
+export const HeroSection = ({ heroData }: { heroData: { title: string; description: string } }) => {
   const [currentDemo, setCurrentDemo] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [showResponse, setShowResponse] = useState(false);
@@ -137,7 +137,7 @@ export const HeroSection = () => {
 
           {/* Description */}
           <p className="text-lg sm:text-xl text-gray-400 mb-14 font-normal max-w-2xl mx-auto px-4 leading-relaxed text-center">
-          Tell your AI agent what to ship. Nexlayer handles the rest. Deploy production-ready apps directly from your coding agent—no DevOps, no YAML, no friction.
+            {heroData.description}
           </p>
 
           {/* Agent Icons */}

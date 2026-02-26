@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export const PricingSection = () => {
+export const PricingSection = ({ heroData }: { heroData: { title: string } }) => {
   const pricingPlans = [
     {
       name: "LAUNCH",
@@ -62,7 +62,7 @@ export const PricingSection = () => {
           viewport={{ once: true }}
           className="text-4xl sm:text-5xl font-bold text-white mb-16 text-center"
         >
-          Start free. Scale when you're ready.
+          {heroData.title}
         </motion.h2>
 
         {/* Zero Friction Entry Point */}

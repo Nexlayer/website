@@ -10,11 +10,12 @@ interface ChangelogHeaderProps {
 export const ChangelogHeader = ({
   searchQuery,
   onSearchChange,
-}: ChangelogHeaderProps) => {
+  heroData,
+}: ChangelogHeaderProps & { heroData: { title: string; description: string } }) => {
   return (
     <div className="flex flex-col gap-4 mb-8 sm:mb-12">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl sm:text-3xl font-bold text-white">Changelog</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-white">{heroData.title}</h1>
         <div className="flex gap-2 items-center">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
@@ -39,10 +40,7 @@ export const ChangelogHeader = ({
 
       {/* Description */}
       <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-3xl">
-        Nexlayer is an agent-native cloud platform. These updates improve how
-        apps are deployed, updated, and run — whether triggered by AI coding
-        agent or custom workflows. Works with Cursor, Claude Code, and VS Code
-        with Copilot.
+        {heroData.description}
       </p>
 
       {/* Search */}

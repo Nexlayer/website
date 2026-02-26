@@ -11,7 +11,7 @@ interface ChangelogClientProps {
   entries: ChangelogEntryType[];
 }
 
-export function ChangelogClient({ entries }: ChangelogClientProps) {
+export function ChangelogClient({ entries, heroData }: ChangelogClientProps & { heroData: { title: string; description: string } }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredEntries, setFilteredEntries] = useState<ChangelogEntryType[]>(entries);
 
@@ -37,6 +37,7 @@ export function ChangelogClient({ entries }: ChangelogClientProps) {
       <ChangelogHeader
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
+        heroData={heroData}
       />
       
       {/* Changelog entries */}

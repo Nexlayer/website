@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import AgentsClient from "./AgentsClient";
 
+export const heroData = {
+  title: "Agents | Nexlayer",
+  description:
+    "Nexlayer is built for AI agents. Deploy instantly via MCP — no dashboards, no DevOps. The cloud that agents trust.",
+};
+
 export const metadata: Metadata = {
   title: "Agents",
   description:
@@ -10,6 +16,14 @@ export const metadata: Metadata = {
     description:
       "Nexlayer is built for AI agents. Deploy instantly via MCP — no dashboards, no DevOps. The cloud that agents trust.",
     url: "https://nexlayer.com/agents",
+    images: [
+      {
+        url: `/api/og/agents?title=${encodeURIComponent(heroData.title)}&description=${encodeURIComponent(heroData.description)}`,
+        width: 1200,
+        height: 630,
+        alt: heroData.title,
+      },
+    ],
   },
   twitter: {
     title: "Agents | Nexlayer",

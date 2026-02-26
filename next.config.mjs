@@ -24,6 +24,14 @@ const nextConfig = {
         source: '/ingest/:path*',
         destination: 'https://us.i.posthog.com/:path*',
       },
+      {
+        source: '/opengraph-image.png',
+        destination: '/api/og',
+      },
+      {
+        source: '/:page/opengraph-image.png',
+        destination: '/api/og/:page',
+      },
     ];
   },
   skipTrailingSlashRedirect: true,
